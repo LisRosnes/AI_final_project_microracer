@@ -1,217 +1,170 @@
 #!/usr/bin/env python3
 """
-Reflex Agent moved into package `agents.reflex`.
+Simplified ReflexAgent implementation (prototype).
+
+The previous, more complex implementation is commented out below. This new
+agent reduces the 19-beam lidar into 5 sector signals and uses simple
+linear rules for steering and acceleration. No arctan or nonlinear maps are
+used so the outputs can reach the full [-1, 1] range.
 """
 
 import numpy as np
 
 
+# ----- Previous implementation (commented out) -----
+"""
+<OLD IMPLEMENTATION COMMENTED OUT FOR BREVITY>
+The full original class body was here; it has been intentionally commented
+out to keep a record while we prototype a much simpler controller.
+"""
+
+
 class ReflexAgent:
+    """A minimal reflex agent that maps 19-beam lidar into 5 sectors.
+
+    Behavior summary:
+    - compress 19 beams into 5 sector averages: left(0), left-mid(1), center(2), right-mid(3), right(4)
+    - steering: linear combination of sector imbalance and short-term shrinking of side sectors
+    - braking: triggered by low center clearance or by rapid shrinking of side-mid sectors
+    - outputs are linear and clipped to [-1,1]; full braking (accel=-1) is possible
     """
-    A reflex-based driving agent for MicroRacer.
-    Uses 19 lidar distances and speed to output steering and acceleration.
-    """
-    
+
     def __init__(self):
-        """Initialize the reflex agent with precomputed angles and parameters."""
-        
-        # ====== Lidar Configuration ======
-        self.N = 19  # Number of lidar beams
-        self.phi_max_deg = 30  # Maximum angle in degrees
-        
-        # Precompute beam angles (in degrees)
-        self.beam_angles = np.array([
-            -self.phi_max_deg + i * (2 * self.phi_max_deg / (self.N - 1))
-            for i in range(self.N)
-        ])
-        
-        # Key indices
-        self.k_center = self.N // 2  # Index 9 for N=19
-        
-        # ====== STEERING HYPERPARAMETERS ======
-        self.K_heading = 0.6           # Heading gain (reduced for safety)
-        self.heading_exp = 1.2         # Nonlinearity on heading
-        self.K_center = 0.4            # Center correction gain (reduced)
-        self.beta_s = 0.6              # Steering smoothing factor (increased for stability)
-        
-        # ====== SPEED HYPERPARAMETERS ======
-        self.v_min = 0.2               # Absolute minimum speed
-        self.v_turn = 0.6              # Safe speed in moderate turns
-        self.v_max = 1.5               # Desired speed on straights
-        
-        self.d_emergency = 2.5          # Immediate braking threshold
-        self.d_caution = 5.0            # Slow down if below this
-        self.d_straight = 15.0          # Full speed if above this
-        self.c_turn_thresh = 0.5        # Curvature threshold for turns
-        
-        self.K_speed = 1.0              # Speed control gain (increased for faster response)
-        self.a_max_brake = 1.0          # Max braking magnitude
-        self.a_max_accel = 1.0          # Max acceleration magnitude
-        self.beta_a = 0.3               # Acceleration smoothing factor (decreased for quicker response)
-        
-        # ====== STATE (for smoothing) ======
+        # lidar geometry (kept for compatibility with _estimate_lidar)
+        self.N = 19
+        self.phi_max_deg = 30
+        self.k_center = self.N // 2
+
+        # Simple gains (easy to tune)
+        self.K_imbalance = 1.0    # steering gain based on left-right imbalance
+        self.K_shrink = 1.5       # steering added when a side-mid sector shortens quickly
+        self.K_speed = 1.0        # throttle gain towards v_target
+
+        # thresholds
+        self.brake_center_threshold = 2.5   # if center sector < this => full brake
+        self.shrink_threshold = 0.5         # if sector decreased by more than this => react
+        self.side_min_threshold = 1.0       # keep side beams at least this large
+
+        # target speeds (we don't care about being fast)
+        self.v_target = 0.5
+
+        # smoothing / memory
+        self.prev_sectors = np.ones(5) * 10.0
         self.prev_steer = 0.0
         self.prev_accel = 0.0
-    
+        self.alpha_steer = 0.6   # smoothing for steering (0..1)
+        self.alpha_accel = 0.6   # smoothing for accel
+        # Maximum speed cap for acceleration: when current speed >= cap,
+        # the agent will not issue positive acceleration. Default inf (no cap).
+        self.max_speed_cap = float('inf')
+
     def act(self, state):
-        """
-        Compute action from state.
-        
-        Args:
-            state: numpy array [direction, distl, dist, distr, speed]
-                  from the observe() function in tracks.py
-                  
-        Returns:
-            (acceleration, steering) both in [-1, 1]
-        """
-        # Extract state components from observe() output
-        # observe() returns: [dir, distl, dist, distr, v]
-        # where:
-        #   dir = angle of maximum lidar distance
-        #   distl, dist, distr = adjacent distances around max
-        #   v = current speed
-        
+        # state: [direction, distl, dist, distr, speed]
         if len(state) >= 5:
             direction, distl, dist, distr, speed = state[:5]
         else:
-            # Fallback for unexpected state format
             return np.array([0.0, 0.0])
-        
-        # Reconstruct lidar from compressed observation
+
+        # reconstruct a lightweight lidar (reuse same idea as before)
         lidar = self._estimate_lidar(direction, distl, dist, distr)
-        
-        # ====== STEERING CONTROL ======
-        steering = self._compute_steering(lidar)
-        
-        # ====== SPEED CONTROL ======
-        acceleration = self._compute_acceleration(lidar, speed)
-        
-        # Clip to [-1, 1]
+
+        # compress into 5 sector averages
+        sectors = self._sectors_from_lidar(lidar)
+
+        # steering: imbalance between right and left (positive => steer right)
+        left = sectors[0]
+        left_mid = sectors[1]
+        center = sectors[2]
+        right_mid = sectors[3]
+        right = sectors[4]
+
+        denom = (left + right + 1e-6)
+        imbalance = (right - left) / denom
+
+        # detect quick shrinking in side-mid sectors (approaching an obstacle)
+        shrink1 = max(0.0, self.prev_sectors[1] - left_mid)
+        shrink3 = max(0.0, self.prev_sectors[3] - right_mid)
+
+        shrink_effect = 0.0
+        if shrink1 > self.shrink_threshold:
+            # left-mid is shortening -> steer right
+            shrink_effect += self.K_shrink * (shrink1 / (self.prev_sectors[1] + 1e-6))
+        if shrink3 > self.shrink_threshold:
+            # right-mid shortening -> steer left (negative)
+            shrink_effect -= self.K_shrink * (shrink3 / (self.prev_sectors[3] + 1e-6))
+
+        raw_steer = self.K_imbalance * imbalance + shrink_effect
+
+        # small behaviour to keep sides above minimum: gentle turn away from very-close side
+        if left < self.side_min_threshold and right > left:
+            raw_steer += 0.3  # nudge right
+        if right < self.side_min_threshold and left > right:
+            raw_steer -= 0.3  # nudge left
+
+        # smoothing
+        steering = (1 - self.alpha_steer) * raw_steer + self.alpha_steer * self.prev_steer
         steering = np.clip(steering, -1.0, 1.0)
-        acceleration = np.clip(acceleration, -1.0, 1.0)
-        
-        return np.array([acceleration, steering])
-    
+
+        # acceleration / braking
+        # full brake if center is dangerously small
+        if center < self.brake_center_threshold:
+            accel = -1.0
+        else:
+            # also brake if side-mid sectors shrank significantly
+            if (shrink1 > self.shrink_threshold and left_mid < center) or (shrink3 > self.shrink_threshold and right_mid < center):
+                accel = -0.8
+            else:
+                # gentle speed control toward v_target
+                raw_acc = self.K_speed * (self.v_target - speed)
+                accel = np.clip(raw_acc, -1.0, 1.0)
+
+        accel = (1 - self.alpha_accel) * accel + self.alpha_accel * self.prev_accel
+        accel = np.clip(accel, -1.0, 1.0)
+
+        # save memory
+        self.prev_sectors = sectors.copy()
+        self.prev_steer = steering
+        self.prev_accel = accel
+
+        return np.array([accel, steering])
+
     def _estimate_lidar(self, direction, distl, dist, distr):
-        """
-        Estimate full 19-element lidar from the compressed observation.
-        
-        The observe() function returns the maximum distance direction and 
-        the distances on either side. We reconstruct a plausible full lidar array.
-        """
-        lidar = np.ones(self.N) * dist * 0.7  # Base case - slightly more conservative
-        
-        # Place the center readings
-        lidar[self.k_center] = dist
-        
-        # The direction tells us the angle of max distance
-        # We can use this to understand the track geometry
-        
-        # Place left and right observations
-        # distl and distr are adjacent to the peak
-        left_idx = self.k_center - 1
-        right_idx = self.k_center + 1
-        
+        # Simple reconstruction similar to original but compact
+        N = self.N
+        k_center = self.k_center
+        lidar = np.ones(N) * dist * 0.7
+        lidar[k_center] = dist
+        left_idx = k_center - 1
+        right_idx = k_center + 1
         if left_idx >= 0:
             lidar[left_idx] = distl
-        if right_idx < self.N:
+        if right_idx < N:
             lidar[right_idx] = distr
-        
-        # Smooth the profile
-        for i in range(self.N):
-            if i == 0:
-                lidar[i] = max(lidar[i], distl * 0.9)
-            elif i < self.k_center:
-                # Interpolate on left side
-                alpha = i / self.k_center
+        # linear interpolation to fill
+        for i in range(N):
+            if i < k_center:
+                alpha = i / k_center
                 lidar[i] = (1 - alpha) * distl + alpha * dist
-            elif i > self.k_center:
-                # Interpolate on right side
-                alpha = (i - self.k_center) / (self.N - self.k_center - 1)
+            elif i > k_center:
+                alpha = (i - k_center) / (N - k_center - 1)
                 lidar[i] = (1 - alpha) * dist + alpha * distr
-        
         return lidar
-    
-    def _compute_steering(self, lidar):
-        """
-        Compute steering action based on lidar.
-        
-        Returns:
-            steering in approximately [-1, 1] (before clipping)
-        """
-        # Find most open direction (but with some inertia)
-        k_max = np.argmax(lidar)
-        theta_open = self.beam_angles[k_max]
-        
-        # Normalize open direction (in range [-1, 1])
-        h = theta_open / self.phi_max_deg
-        
-        # Heading steering - very conservative
-        # Use smaller K_heading and power to avoid aggressive turning
-        s_heading = (self.K_heading * 
-                    np.sign(h) * (np.abs(h) ** self.heading_exp) * 0.5)
-        
-        # Left and right averages
-        d_left = np.mean(lidar[0:self.k_center])
-        d_right = np.mean(lidar[self.k_center:self.N])
-        
-        # Asymmetry - very weak centering
-        d_sum = d_left + d_right + 1e-6
-        asym = (d_right - d_left) / d_sum
-        
-        # Centering steering - very weak
-        s_center = self.K_center * asym * 0.3
-        
-        # Combine with strong smoothing
-        s_raw = s_heading + s_center
-        
-        # Apply heavy smoothing for stability
-        steering = (1 - self.beta_s) * s_raw + self.beta_s * self.prev_steer
-        self.prev_steer = steering
-        
-        return steering
-    
-    def _compute_acceleration(self, lidar, speed):
-        """
-        Compute acceleration based on lidar and speed.
-        
-        Simple strategy: always try to maintain a minimum safe speed.
-        """
-        # Forward distance
-        center_indices = np.arange(
-            max(0, self.k_center - 1),
-            min(self.N, self.k_center + 2)
-        )
-        d_forward = np.mean(lidar[center_indices])
-        
-        # If road is blocked, brake hard
-        if d_forward < self.d_emergency:
-            acceleration = -1.0  # Full brake
-        # If approaching obstacle or turn, slow down
-        elif d_forward < self.d_caution:
-            v_target = self.v_turn
-            acceleration = np.clip(self.K_speed * (v_target - speed), -1.0, 1.0)
-        # Otherwise, maintain good speed
-        else:
-            # Always try to accelerate a bit to maintain speed
-            # This prevents the "too slow" termination
-            if speed < 0.2:
-                acceleration = 0.8  # Accelerate quickly
-            else:
-                v_target = self.v_max
-                a_raw = self.K_speed * (v_target - speed)
-                acceleration = np.clip(a_raw, -1.0, 1.0)
-        
-        # Apply minimal smoothing for quick response
-        acceleration = (
-            (1 - self.beta_a) * acceleration + 
-            self.beta_a * self.prev_accel
-        )
-        self.prev_accel = acceleration
-        
-        return acceleration
-    
+
+    def _sectors_from_lidar(self, lidar):
+        # split into five ranges and average
+        N = self.N
+        k = self.k_center
+        # indices: 0..k-1 left side, k center, k+1..N-1 right
+        # define sector boundaries
+        s0 = np.mean(lidar[0:4])            # left (0..3)
+        s1 = np.mean(lidar[4:9])            # left-mid (4..8)
+        s2 = lidar[k]                       # center
+        s3 = np.mean(lidar[10:15])         # right-mid (10..14)
+        s4 = np.mean(lidar[15:19])         # right (15..18)
+        return np.array([s0, s1, s2, s3, s4])
+
     def reset(self):
-        """Reset internal state for a new episode."""
+        self.prev_sectors = np.ones(5) * 10.0
         self.prev_steer = 0.0
         self.prev_accel = 0.0
+
