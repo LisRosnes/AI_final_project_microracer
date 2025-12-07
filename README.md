@@ -34,8 +34,32 @@ Maximum values for acceleration and turning angles can be configured.
 We currently equip the code with basic actors trained with DDPG, PPO, SAC and DSAC (weights included). Students are supposed to develop their own models. 
 
 ## Requirements
-The project just requires basic libraries: tensorflow, numpy, pyplotlib, scipy.interpolate (for Cubic Splines) and cython. 
-A requirements file is available so you can easily install all the dependencies just using "pip install -r requirements.txt"
+The project just requires basic libraries: tensorflow, numpy, matplotlib, scipy.interpolate (for Cubic Splines) and cython.
+
+There are two requirements manifests in the repository to help with different environments:
+
+- `requirements.txt` — a conservative, pinned set of packages intended for maximum compatibility and reproducibility. Use this when you need a stable, older or CPU-only environment, or when reproducibility is important.
+- `requirements-modern.txt` — a more up-to-date requirements file that pins fewer older versions and targets modern Python/TensorFlow stacks (for example Python 3.10+ and recent TensorFlow releases). Use this when you want newer packages, GPU-enabled TensorFlow builds, or you don't need strict backward compatibility.
+
+Notes and recommendations:
+- If you use conda, it's often easiest to create an environment and install TensorFlow and ffmpeg from `conda-forge` (these packages can be sensitive to platform and binary compatibility). Example:
+
+```bash
+conda create -n microracer python=3.10
+conda activate microracer
+conda install -c conda-forge ffmpeg tensorflow
+pip install -r requirements.txt   # or requirements-modern.txt as appropriate
+```
+
+- If you prefer a pip/venv workflow, create a virtualenv and install one of the requirement files:
+
+```bash
+python -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt   # or requirements-modern.txt
+```
+
+Use `requirements-modern.txt` when you're running a recent Python interpreter and want the latest compatible packages (or GPU support). If you need maximum portability or reproducibility (CI, older OS, or colleagues with older Python), use `requirements.txt` instead.
 
 ## Plans for future work
 We are extremely interested in collaborations, especially with colleagues teaching DRL at other Universities.
