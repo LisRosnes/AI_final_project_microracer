@@ -82,3 +82,44 @@ https://user-images.githubusercontent.com/93991100/157229440-ceb2be76-593c-4c10-
 
 
 
+## FGM (Follow-the-Gap) reflex: tuning, evaluation and visualization
+
+The repository contains a fast reflex agent based on the Follow-the-Gap (FGM) method. The canonical implementation and Optuna tuning entrypoint live under the `agents.fgm` package.
+
+Quick commands (using a conda environment that has the dependencies installed, e.g. `env`):
+
+Run Optuna tuning (example):
+
+```bash
+conda run -n old-ml-env --no-capture-output python3 -m agents.fgm.tune --trials 300 --episodes 10 --eval-episodes 100
+```
+
+Evaluate a saved config (example):
+
+```bash
+conda run -n env --no-capture-output python3 -m agents.fgm.tune --eval --config weights/best_fgm_config_optuna.py --episodes 100 --out logs/eval_fgm100.json
+```
+
+Create a visualization (MP4):
+
+```bash
+conda run -n env --no-capture-output python3 -m agents.fgm.tune --viz --config weights/best_fgm_config_optuna.py --out best_fgm_run.mp4
+```
+
+Programmatic usage (small example):
+
+```python
+from agents.fgm.fgm_agent import FGMReflexAgent
+from utils.eval_viz import evaluate_agent, visualize_agent
+
+agent = FGMReflexAgent()
+# Optionally load or set parameters from a saved config in `weights/`
+evaluate_agent(agent, num_episodes=10, out_path='logs/eval_sample.json')
+visualize_agent(agent, out='sample_run.mp4')
+```
+
+
+
+
+
+

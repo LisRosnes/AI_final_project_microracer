@@ -361,7 +361,8 @@ class Racer:
                 v = np.random.uniform()*.5
         else:
             v = init_v
-        print("initial speed = ", v)
+    # debug: initial speed during reset
+    # print("initial speed = ", v)
         self.sinit_v = v
         vnorm = v/((self.carvx ** 2 + self.carvy ** 2) ** .5)
         self.carvx *= vnorm
@@ -394,7 +395,8 @@ class Racer:
         on_route = self.map[int(newcarx*500)+650, int(newcary*500)+650]
         if on_route and no_inversion(newcartheta, self.cartheta):
             if newv<0.05 and self.low_speed_termination:
-                print("too slow")
+                # debug: low-speed termination
+                # print("too slow")
                 self.completation = 4
                 self.done = True
                 reward = -3
@@ -415,10 +417,12 @@ class Racer:
             return (n_state,reward,self.done)
         else:
             if not(on_route):
-                print("crossing border")
+                # debug: crossing border
+                # print("crossing border")
                 self.completation = 2
             else:
-                print("wrong direction")
+                # debug: wrong direction
+                # print("wrong direction")
                 self.completation = 3
             self.done = True
             reward = -3

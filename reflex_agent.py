@@ -1,9 +1,14 @@
-"""Backward-compat shim: re-export ReflexAgent from agents.reflex.reflex_agent
+"""Backward-compat shim: re-export a ReflexAgent from the consolidated
+`agents.reflex.reflex` module.
 
-This file keeps existing imports like `from reflex_agent import ReflexAgent`
-working after the package refactor.
+Code that previously did `from reflex_agent import ReflexAgent` will still
+work. The shim prefers a class named `ReflexAgent` if present; otherwise it
+falls back to `FGMReflexAgent` for backwards compatibility with older code.
 """
 
-from agents.reflex.reflex_agent import ReflexAgent
+try:
+	from agents.reflex.reflex import ReflexAgent  # preferred name
+except Exception:
+	from agents.reflex.reflex import FGMReflexAgent as ReflexAgent
 
 __all__ = ["ReflexAgent"]

@@ -1,0 +1,212 @@
+{
+  "mode": "flip_steer",
+  "episodes": 20,
+  "samples": [
+    {
+      "episode": 1,
+      "steps": 19,
+      "crashed": true,
+      "mean_speed": 0.19259249881061843,
+      "first": {
+        "state": [
+          -0.29088820866572157,
+          0.09000000078231109,
+          0.34999999497085826,
+          0.289999996311962,
+          0.16704509881061846
+        ],
+        "action": [
+          0.6723,
+          -0.0
+        ]
+      }
+    },
+    {
+      "episode": 2,
+      "steps": 12,
+      "crashed": true,
+      "mean_speed": 0.24399304758732435,
+      "first": {
+        "state": [
+          -0.3490658503988659,
+          0.1200000001117587,
+          0.24999999720603228,
+          0.20999999810010203,
+          0.22785784758732436
+        ],
+        "action": [
+          0.6723,
+          -0.0
+        ]
+      }
+    },
+    {
+      "episode": 3,
+      "steps": 22,
+      "crashed": true,
+      "mean_speed": 0.2181346089673447,
+      "first": {
+        "state": [
+          -0.23271056693257725,
+          0.10000000055879367,
+          0.3599999947473404,
+          0.31999999564141,
+          0.18855340896734463
+        ],
+        "action": [
+          0.6723,
+          -0.0
+        ]
+      }
+    },
+    {
+      "episode": 4,
+      "steps": 49,
+      "crashed": true,
+      "mean_speed": 0.13580675771594852,
+      "first": {
+        "state": [
+          0.058177641733144325,
+          0.2599999969825144,
+          0.27999999653548,
+          0.16999999899417118,
+          0.06992135771594837
+        ],
+        "action": [
+          0.6723,
+          -0.0
+        ]
+      }
+    },
+    {
+      "episode": 5,
+      "steps": 8,
+      "crashed": true,
+      "mean_speed": 0.476965727297536,
+      "first": {
+        "state": [
+          -0.29088820866572157,
+          0.0700000012293458,
+          0.27999999653547997,
+          0.249999997206032,
+          0.466208927297536
+        ],
+        "action": [
+          0.6723,
+          -0.0
+        ]
+      }
+    },
+    {
+      "episode": 6,
+      "steps": 8,
+      "crashed": true,
+      "mean_speed": 0.49436463700560945,
+      "first": null
+    },
+    {
+      "episode": 7,
+      "steps": 16,
+      "crashed": true,
+      "mean_speed": 0.31088079203987723,
+      "first": null
+    },
+    {
+      "episode": 8,
+      "steps": 22,
+      "crashed": true,
+      "mean_speed": 0.07965515817081235,
+      "first": null
+    },
+    {
+      "episode": 9,
+      "steps": 44,
+      "crashed": true,
+      "mean_speed": 0.17245513398247356,
+      "first": null
+    },
+    {
+      "episode": 10,
+      "steps": 14,
+      "crashed": true,
+      "mean_speed": 0.1492069128477309,
+      "first": null
+    },
+    {
+      "episode": 11,
+      "steps": 4,
+      "crashed": true,
+      "mean_speed": 0.47651473087566193,
+      "first": null
+    },
+    {
+      "episode": 12,
+      "steps": 53,
+      "crashed": true,
+      "mean_speed": 0.17593059210081366,
+      "first": null
+    },
+    {
+      "episode": 13,
+      "steps": 20,
+      "crashed": true,
+      "mean_speed": 0.175384623834003,
+      "first": null
+    },
+    {
+      "episode": 14,
+      "steps": 63,
+      "crashed": true,
+      "mean_speed": 0.10758959475989291,
+      "first": null
+    },
+    {
+      "episode": 15,
+      "steps": 8,
+      "crashed": true,
+      "mean_speed": 0.41535695049302845,
+      "first": null
+    },
+    {
+      "episode": 16,
+      "steps": 53,
+      "crashed": true,
+      "mean_speed": 0.1249684979428651,
+      "first": null
+    },
+    {
+      "episode": 17,
+      "steps": 32,
+      "crashed": true,
+      "mean_speed": 0.24676216709278817,
+      "first": null
+    },
+    {
+      "episode": 18,
+      "steps": 31,
+      "crashed": true,
+      "mean_speed": 0.13798273386681176,
+      "first": null
+    },
+    {
+      "episode": 19,
+      "steps": 15,
+      "crashed": true,
+      "mean_speed": 0.5069113033485995,
+      "first": null
+    },
+    {
+      "episode": 20,
+      "steps": 27,
+      "crashed": true,
+      "mean_speed": 0.07127752081068553,
+      "first": null
+    }
+  ],
+  "summary": {
+    "mean_steps": 26.0,
+    "std_steps": 17.140595088852663,
+    "crashes": 20,
+    "mean_speed": 0.24563669947752126
+  }
+}
