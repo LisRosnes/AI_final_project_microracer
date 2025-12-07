@@ -1,0 +1,11 @@
+# Modern requirements for Python 3.10+
+numpy>=1.24.0
+tensorflow>=2.13.0
+scipy>=1.10.0
+matplotlib>=3.7.0
+Cython>=0.29.30
+
+# Video tools
+# ffmpeg is required for MP4 export via matplotlib; install with conda:
+#   conda install -c conda-forge ffmpeg
+imageio-ffmpeg>=0.4.7
