@@ -5,7 +5,7 @@ Compares against PPO to show improvement/stability.
 """
 
 import numpy as np
-from reflex_agent import ReflexAgent
+from agents.reflex.reflex_agent import ReflexAgent
 import tracks
 import tensorflow as tf
 import warnings

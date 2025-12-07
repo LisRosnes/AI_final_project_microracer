@@ -106,8 +106,8 @@ def print_statistics(results):
 
 
 def main():
-    log_file = Path("/Users/calebfikes/Documents/Projects/AI_final_project_microracer/tune_optuna_500.log")
-    output_dir = Path("/Users/calebfikes/Documents/Projects/AI_final_project_microracer")
+    log_file = Path("tune_optuna_500.log")
+    output_dir = Path(".")
     
     if not log_file.exists():
         print(f"❌ Log file not found: {log_file}")

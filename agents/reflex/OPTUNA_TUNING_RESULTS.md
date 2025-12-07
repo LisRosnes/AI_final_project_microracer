@@ -71,7 +71,7 @@ The ReflexAgent's failure is NOT due to poor hyperparameter tuning, but due to f
 4. **Obstacle Density**: MicroRacer tracks have dense obstacles; simple left/right dodging can't navigate complex layouts
 5. **Parameter Conflicts**: Attempts to increase speed cause reckless steering; increasing stability causes stalling
 
-### Why Bayesian Optimization Couldn't Help
+## Why Bayesian Optimization Couldn't Help
 
 Even with intelligent sampling and 500 trials:
 - Optuna found no local minima with crash rate < 100%
