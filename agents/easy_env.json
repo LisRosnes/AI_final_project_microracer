@@ -1,0 +1,7 @@
+{
+  "seed": 8675301,
+  "obstacles": false,
+  "turn_limit": false,
+  "chicanes": false,
+  "low_speed_termination": false
+}

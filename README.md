@@ -121,5 +121,52 @@ visualize_agent(agent, out='sample_run.mp4')
 
 
 
+## Visualizing agents with viz_model.py
+
+The repository includes `viz_model.py`, a flexible visualization script that can render a single run and save it as an MP4 or GIF. It was extended to be model-agnostic and supports PPO (and other) actors.
+
+Key options
+- `--agent-path` / `-a`: specify the agent to visualize. Two forms are accepted:
+  - `module:Class` — import and instantiate the given class (must be constructible with no args). Example: `agents.fgm:FGMReflexAgent`.
+  - path to a saved Keras/TensorFlow SavedModel directory (for example `weights/ppo_actor_model_car`) — the script loads the model and wraps it so it can be used as an actor.
+- `--env-config` / `-e`: path to a JSON file containing keyword args to pass to `tracks.Racer` (for example `{"obstacles": false, "turn_limit": false}`). If omitted, defaults in the script are used (see below).
+- `--zoom-radius`: half-width of the zoomed inset (top-right quadrant) in world units (default `0.25`).
+- `--max-steps`: number of simulation steps/frames to render (same as before).
+
+Default environment
+- The default racer kwargs used when `--env-config` is not provided are defined in `viz_model.py` as:
+
+```python
+DEFAULT_RACER_KWARGS = dict(obstacles=True, turn_limit=True, chicanes=True, low_speed_termination=False)
+```
+
+Examples
+- Visualize the bundled PPO actor using the saved model and the default environment:
+
+```bash
+conda run -n old-ml-env --no-capture-output \
+  python3 viz_model.py \
+  --agent-path weights/ppo_actor_model_car \
+  --out best_ppo_run.mp4
+```
+
+- Visualize the PPO actor with a custom easy environment (example JSON included in the repo at `agents/easy_env.json`):
+
+```bash
+conda run -n old-ml-env --no-capture-output \
+  python3 viz_model.py \
+  --agent-path weights/ppo_actor_model_car \
+  --env-config agents/easy_env.json \
+  --zoom-radius 0.20 \
+  --out best_ppo_customenv.mp4
+```
+
+Notes
+- If you pass a `module:Class` that runs training on import (some reinforcement scripts do), that import may execute unwanted code. For inference it's safest to point at a saved Keras actor model or an inference-only wrapper class.
+- The top-right quadrant now shows a zoomed-in view centered on the racer and is updated each frame (use `--zoom-radius` to adjust how much of the track is visible).
+
+
+
+
 
 
