@@ -1,0 +1,6952 @@
+[
+  {
+    "config": {
+      "gamma": 0.9683524658235207,
+      "tau": 0.00892718030435363,
+      "critic_lr": 0.0029106359131330704,
+      "actor_lr": 0.0015751320499779737,
+      "buffer_size": 100000,
+      "batch_size": 256,
+      "noise_scale": 0.2581106602001054,
+      "noise_accel_mult": 1.4246782213565523,
+      "noise_steer_mult": 0.42727747704497043
+    },
+    "avg_reward": -2.9086290884450956,
+    "avg_steps": 11.9,
+    "crash_rate": 1.0,
+    "completion_rate": 0.0,
+    "results": [
+      {
+        "steps": 19,
+        "reward": -2.940919012535263,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 9,
+        "reward": -2.947854071230005,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 4,
+        "reward": -2.9563987003997974,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 6,
+        "reward": -2.954027777946174,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 7,
+        "reward": -2.923773444499072,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 13,
+        "reward": -2.9564940468404286,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 9,
+        "reward": -2.8741103159675445,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 7,
+        "reward": -2.9536223128231556,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 14,
+        "reward": -2.961833075469316,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 7,
+        "reward": -2.9548435327600306,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 7,
+        "reward": -2.95931088955499,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 13,
+        "reward": -2.965321098091971,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 14,
+        "reward": -2.784221763711073,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 47,
+        "reward": -2.5484147638116923,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 31,
+        "reward": -2.7736946329682017,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 2,
+        "reward": -2.997206330047626,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 5,
+        "reward": -2.946898061308109,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 7,
+        "reward": -2.9326206148623712,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 10,
+        "reward": -2.889099384559001,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 7,
+        "reward": -2.951917939516086,
+        "crashed": true,
+        "completion": 2
+      }
+    ]
+  },
+  {
+    "config": {
+      "gamma": 0.9589868209828182,
+      "tau": 0.0020148477884158666,
+      "critic_lr": 0.0011207606211860567,
+      "actor_lr": 0.0007309539835912913,
+      "buffer_size": 30000,
+      "batch_size": 128,
+      "noise_scale": 0.17855860960340292,
+      "noise_accel_mult": 2.184829137724085,
+      "noise_steer_mult": 0.3325152889039984
+    },
+    "avg_reward": 0.389558644706549,
+    "avg_steps": 202.6,
+    "crash_rate": 0.9,
+    "completion_rate": 0.1,
+    "results": [
+      {
+        "steps": 380,
+        "reward": 6.392871787453523,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 149,
+        "reward": -0.3640930504450939,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 46,
+        "reward": -2.218777435716789,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 443,
+        "reward": 7.2645088147917765,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 154,
+        "reward": -1.2143126536712825,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 425,
+        "reward": 3.375028277189392,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 391,
+        "reward": 3.158692178549887,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 133,
+        "reward": -1.4047741460962753,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 153,
+        "reward": -1.1158065269315698,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 326,
+        "reward": 2.4060086817423674,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 39,
+        "reward": -2.27217682139937,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 49,
+        "reward": -2.1880957436914557,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 246,
+        "reward": 0.6436124044087292,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 143,
+        "reward": -0.8319473500820536,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 114,
+        "reward": -1.7468110369612602,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 50,
+        "reward": -2.163093325613385,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 228,
+        "reward": 0.19813809001083804,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 214,
+        "reward": 0.34255308693847386,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 201,
+        "reward": -0.18316694467825867,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 168,
+        "reward": -0.2871853916672138,
+        "crashed": true,
+        "completion": 2
+      }
+    ]
+  },
+  {
+    "config": {
+      "gamma": 0.9797696977431705,
+      "tau": 0.0014808945119975188,
+      "critic_lr": 0.00013492834268013249,
+      "actor_lr": 0.007902619549708232,
+      "buffer_size": 10000,
+      "batch_size": 32,
+      "noise_scale": 0.0585971302788046,
+      "noise_accel_mult": 2.818640804157564,
+      "noise_steer_mult": 0.48114598712001183
+    },
+    "avg_reward": -2.5879072779093777,
+    "avg_steps": 40.05,
+    "crash_rate": 1.0,
+    "completion_rate": 0.0,
+    "results": [
+      {
+        "steps": 61,
+        "reward": -2.430164382513699,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 37,
+        "reward": -2.497738329171904,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 8,
+        "reward": -2.905102751900359,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 64,
+        "reward": -2.2879667993777,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 17,
+        "reward": -2.694541951522433,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 18,
+        "reward": -2.638032713022372,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 53,
+        "reward": -2.6608604082060245,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 18,
+        "reward": -2.640976932035797,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 51,
+        "reward": -2.4681520513864372,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 28,
+        "reward": -2.608421736253441,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 7,
+        "reward": -2.927001506802188,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 93,
+        "reward": -2.1259742882834134,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 48,
+        "reward": -2.5951699461691344,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 83,
+        "reward": -2.3951548086719128,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 32,
+        "reward": -2.5970896404945334,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 58,
+        "reward": -2.495285799555194,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 72,
+        "reward": -2.289154593076942,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 36,
+        "reward": -2.667019704208719,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 6,
+        "reward": -2.992808358790954,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 11,
+        "reward": -2.8415288567443957,
+        "crashed": true,
+        "completion": 2
+      }
+    ]
+  },
+  {
+    "config": {
+      "gamma": 0.9824635919333451,
+      "tau": 0.0020497980520950186,
+      "critic_lr": 0.001096821720752952,
+      "actor_lr": 0.0012399967836846098,
+      "buffer_size": 30000,
+      "batch_size": 128,
+      "noise_scale": 0.0989957156047863,
+      "noise_accel_mult": 1.0904545778210761,
+      "noise_steer_mult": 0.527731231534285
+    },
+    "avg_reward": -2.5436752855588987,
+    "avg_steps": 58.25,
+    "crash_rate": 1.0,
+    "completion_rate": 0.0,
+    "results": [
+      {
+        "steps": 31,
+        "reward": -2.736014818482631,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 10,
+        "reward": -2.8596229708996974,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 137,
+        "reward": -1.656306551664529,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 29,
+        "reward": -2.775028032924991,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 18,
+        "reward": -2.7450625956437915,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 36,
+        "reward": -2.941294247832856,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 47,
+        "reward": -2.4952656721478608,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 25,
+        "reward": -2.8812406418433723,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 130,
+        "reward": -2.560255297399936,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 37,
+        "reward": -2.3877458585298212,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 44,
+        "reward": -2.1271837569023915,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 40,
+        "reward": -2.885463441084389,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 174,
+        "reward": -1.4086927860542608,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 54,
+        "reward": -2.7129847296717937,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 151,
+        "reward": -2.523858503019121,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 81,
+        "reward": -1.9026862516418077,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 19,
+        "reward": -2.893882583156487,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 34,
+        "reward": -2.9561143771625265,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 36,
+        "reward": -2.4883645018098983,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 32,
+        "reward": -2.9364380933058114,
+        "crashed": true,
+        "completion": 2
+      }
+    ]
+  },
+  {
+    "config": {
+      "gamma": 0.9690451871947846,
+      "tau": 0.0018678802571070686,
+      "critic_lr": 0.004544383960336014,
+      "actor_lr": 0.0005170191786366995,
+      "buffer_size": 100000,
+      "batch_size": 64,
+      "noise_scale": 0.0513805292809006,
+      "noise_accel_mult": 2.6309228569096685,
+      "noise_steer_mult": 0.7948001406933319
+    },
+    "avg_reward": -2.605956107449784,
+    "avg_steps": 42.0,
+    "crash_rate": 1.0,
+    "completion_rate": 0.0,
+    "results": [
+      {
+        "steps": 57,
+        "reward": -2.467384871068525,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 92,
+        "reward": -2.091627737396244,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 47,
+        "reward": -2.5092289282134708,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 71,
+        "reward": -2.223607567799027,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 36,
+        "reward": -2.659646244771514,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 69,
+        "reward": -2.288462517745291,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 36,
+        "reward": -2.865886756382931,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 55,
+        "reward": -2.7304819722178686,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 22,
+        "reward": -2.656393419690336,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 46,
+        "reward": -2.315766040834042,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 7,
+        "reward": -2.888272532055196,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 5,
+        "reward": -2.9394339918401715,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 81,
+        "reward": -2.5430867972075535,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 76,
+        "reward": -2.47770060491204,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 49,
+        "reward": -2.409111167194466,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 27,
+        "reward": -2.8918336863384053,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 11,
+        "reward": -2.9662420595479753,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 34,
+        "reward": -2.4135825902546575,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 12,
+        "reward": -2.893535595051969,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 7,
+        "reward": -2.8878370684739982,
+        "crashed": true,
+        "completion": 2
+      }
+    ]
+  },
+  {
+    "config": {
+      "gamma": 0.9857213512340084,
+      "tau": 0.00590568592506064,
+      "critic_lr": 0.00014063366777718192,
+      "actor_lr": 0.0005211124595788264,
+      "buffer_size": 30000,
+      "batch_size": 256,
+      "noise_scale": 0.2093893678388033,
+      "noise_accel_mult": 2.774425485152653,
+      "noise_steer_mult": 0.6305504476133645
+    },
+    "avg_reward": -2.4536699057486486,
+    "avg_steps": 43.7,
+    "crash_rate": 1.0,
+    "completion_rate": 0.0,
+    "results": [
+      {
+        "steps": 211,
+        "reward": -0.27028360690503295,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 11,
+        "reward": -2.8652839729878963,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 37,
+        "reward": -2.515554458214688,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 11,
+        "reward": -2.96168612174353,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 22,
+        "reward": -2.936107198697209,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 11,
+        "reward": -2.933005784116221,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 2,
+        "reward": -2.9965936844953185,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 185,
+        "reward": -0.5326547395578305,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 6,
+        "reward": -2.945012707825209,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 29,
+        "reward": -2.632068279494129,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 60,
+        "reward": -2.173749523070708,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 7,
+        "reward": -2.9512619591580185,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 6,
+        "reward": -2.958787372158065,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 44,
+        "reward": -2.4490634741611936,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 41,
+        "reward": -2.4690247361015376,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 8,
+        "reward": -2.9579082158331462,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 6,
+        "reward": -2.955128380742601,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 133,
+        "reward": -1.1191647644536122,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 3,
+        "reward": -2.987184648612158,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 41,
+        "reward": -2.46387448664487,
+        "crashed": true,
+        "completion": 2
+      }
+    ]
+  },
+  {
+    "config": {
+      "gamma": 0.9558601180509767,
+      "tau": 0.005167075260023276,
+      "critic_lr": 0.0033233042062267943,
+      "actor_lr": 0.0013260331922696556,
+      "buffer_size": 10000,
+      "batch_size": 256,
+      "noise_scale": 0.12858899526908169,
+      "noise_accel_mult": 2.0171413823294055,
+      "noise_steer_mult": 0.9352965317482651
+    },
+    "avg_reward": -2.809942336060928,
+    "avg_steps": 23.95,
+    "crash_rate": 1.0,
+    "completion_rate": 0.0,
+    "results": [
+      {
+        "steps": 14,
+        "reward": -2.945802976297394,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 17,
+        "reward": -2.7033425972970466,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 31,
+        "reward": -2.89645363439661,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 7,
+        "reward": -2.922569009788608,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 32,
+        "reward": -2.4906804001060827,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 8,
+        "reward": -2.9442490795500285,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 84,
+        "reward": -2.1969487905305947,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 37,
+        "reward": -2.8765351776745076,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 8,
+        "reward": -2.9320206243348315,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 13,
+        "reward": -2.7718094842629983,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 11,
+        "reward": -2.9495322975959035,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 54,
+        "reward": -2.5690406533215775,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 14,
+        "reward": -2.949001685910413,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 7,
+        "reward": -2.9334377086238916,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 12,
+        "reward": -2.940898294225616,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 31,
+        "reward": -2.9144503574559097,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 19,
+        "reward": -2.890427090571952,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 66,
+        "reward": -2.4820378869813076,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 7,
+        "reward": -2.935680662106725,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 7,
+        "reward": -2.953928310186552,
+        "crashed": true,
+        "completion": 2
+      }
+    ]
+  },
+  {
+    "config": {
+      "gamma": 0.9622153192282948,
+      "tau": 0.0025726631332499555,
+      "critic_lr": 0.0032441600887341587,
+      "actor_lr": 0.00028681134821030097,
+      "buffer_size": 100000,
+      "batch_size": 128,
+      "noise_scale": 0.09664251472150896,
+      "noise_accel_mult": 2.7851179969799555,
+      "noise_steer_mult": 0.6775395693409555
+    },
+    "avg_reward": -1.4990353240152678,
+    "avg_steps": 236.15,
+    "crash_rate": 1.0,
+    "completion_rate": 0.0,
+    "results": [
+      {
+        "steps": 45,
+        "reward": -2.313248455966881,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 17,
+        "reward": -2.751010393313664,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 130,
+        "reward": -2.3016673920013364,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 329,
+        "reward": -1.034392954585903,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 28,
+        "reward": -2.8593129272822093,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 377,
+        "reward": -0.40818095205601734,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 639,
+        "reward": 1.094556631925789,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 104,
+        "reward": -2.2034546375608977,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 10,
+        "reward": -2.8800830213904334,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 407,
+        "reward": -0.17939883855708993,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 292,
+        "reward": -1.2754992728063699,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 195,
+        "reward": -1.9980069406073286,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 375,
+        "reward": -0.27844122329090526,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 312,
+        "reward": -1.4310013199366074,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 294,
+        "reward": -1.9107291978280092,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 250,
+        "reward": -1.295445985665497,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 329,
+        "reward": -1.1529071226289176,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 337,
+        "reward": -0.9817661954965375,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 224,
+        "reward": -1.310017905234179,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 29,
+        "reward": -2.510698376022363,
+        "crashed": true,
+        "completion": 2
+      }
+    ]
+  },
+  {
+    "config": {
+      "gamma": 0.989564567603039,
+      "tau": 0.00787211264452507,
+      "critic_lr": 0.0004325207525386532,
+      "actor_lr": 0.00016599837974449222,
+      "buffer_size": 100000,
+      "batch_size": 64,
+      "noise_scale": 0.0799663418334207,
+      "noise_accel_mult": 1.675230342807256,
+      "noise_steer_mult": 0.9600367927387634
+    },
+    "avg_reward": -0.8511758785360295,
+    "avg_steps": 170.6,
+    "crash_rate": 1.0,
+    "completion_rate": 0.0,
+    "results": [
+      {
+        "steps": 161,
+        "reward": -1.079673075742278,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 220,
+        "reward": -0.2015991639349206,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 421,
+        "reward": 2.39821913583651,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 15,
+        "reward": -2.734938496944397,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 218,
+        "reward": -0.03656495040557983,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 152,
+        "reward": -0.9775358579023199,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 249,
+        "reward": 0.3220105594624827,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 369,
+        "reward": 1.6392617922264163,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 26,
+        "reward": -2.84968645019519,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 63,
+        "reward": -2.226158128180537,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 287,
+        "reward": 0.39125809105498144,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 84,
+        "reward": -1.952931850738175,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 56,
+        "reward": -2.4378023231450117,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 32,
+        "reward": -2.8690025185772483,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 340,
+        "reward": 1.808527714757962,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 233,
+        "reward": -0.2916648248528584,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 187,
+        "reward": -0.7479956845584277,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 141,
+        "reward": -1.4823503307076111,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 43,
+        "reward": -2.395845534092903,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 115,
+        "reward": -1.2990456740814844,
+        "crashed": true,
+        "completion": 2
+      }
+    ]
+  },
+  {
+    "config": {
+      "gamma": 0.965836943669017,
+      "tau": 0.0033021030455152546,
+      "critic_lr": 0.0025470526233391183,
+      "actor_lr": 0.0005336533066379613,
+      "buffer_size": 10000,
+      "batch_size": 256,
+      "noise_scale": 0.1756697558072154,
+      "noise_accel_mult": 1.1029575024999787,
+      "noise_steer_mult": 0.495052524965628
+    },
+    "avg_reward": -2.2218080711135975,
+    "avg_steps": 188.3,
+    "crash_rate": 1.0,
+    "completion_rate": 0.0,
+    "results": [
+      {
+        "steps": 180,
+        "reward": -1.8452456409630793,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 163,
+        "reward": -1.854825716743595,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 30,
+        "reward": -2.9706883893338807,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 362,
+        "reward": -1.7370034463414332,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 353,
+        "reward": -1.7368725292548135,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 517,
+        "reward": -1.088516638128108,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 822,
+        "reward": -0.12571116849631592,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 38,
+        "reward": -2.9632540962154494,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 50,
+        "reward": -2.88716184708627,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 210,
+        "reward": -1.7790954308369455,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 24,
+        "reward": -2.6036366412741936,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 129,
+        "reward": -2.5487711012882217,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 231,
+        "reward": -2.278849272570116,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 206,
+        "reward": -1.6967409140782128,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 42,
+        "reward": -2.9722679395679825,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 118,
+        "reward": -2.3402919751304583,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 21,
+        "reward": -2.978269301481688,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 104,
+        "reward": -2.641977029113033,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 46,
+        "reward": -2.9429031897839133,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 120,
+        "reward": -2.4440791545842373,
+        "crashed": true,
+        "completion": 3
+      }
+    ]
+  },
+  {
+    "config": {
+      "gamma": 0.9590782349444958,
+      "tau": 0.0014148266107285987,
+      "critic_lr": 0.0012312177835578182,
+      "actor_lr": 0.000793554494300481,
+      "buffer_size": 30000,
+      "batch_size": 128,
+      "noise_scale": 0.2609071549458715,
+      "noise_accel_mult": 1.6155842681201473,
+      "noise_steer_mult": 0.37715282523810434
+    },
+    "avg_reward": -0.5469410163812551,
+    "avg_steps": 163.0,
+    "crash_rate": 0.95,
+    "completion_rate": 0.05,
+    "results": [
+      {
+        "steps": 415,
+        "reward": 2.8506373996163736,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 258,
+        "reward": 0.3442134139564734,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 153,
+        "reward": -0.7344024018241817,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 182,
+        "reward": -0.022972564197339285,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 204,
+        "reward": -0.4799719680338965,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 398,
+        "reward": 6.637722624914901,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 41,
+        "reward": -2.785106912942489,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 8,
+        "reward": -2.8687079739101864,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 143,
+        "reward": -0.7067064879510201,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 75,
+        "reward": -2.0840314395278776,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 36,
+        "reward": -2.7051994286919605,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 152,
+        "reward": -0.9372309300850952,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 261,
+        "reward": 0.5409315720953107,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 179,
+        "reward": -0.5724129818164374,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 241,
+        "reward": 0.539789912234836,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 53,
+        "reward": -2.305840945608928,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 338,
+        "reward": 1.5453885081747352,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 107,
+        "reward": -1.4197524198562737,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 6,
+        "reward": -2.9073922821483533,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 10,
+        "reward": -2.867775022023697,
+        "crashed": true,
+        "completion": 2
+      }
+    ]
+  },
+  {
+    "config": {
+      "gamma": 0.9528770249827184,
+      "tau": 0.0016513218486305405,
+      "critic_lr": 0.00160977452254077,
+      "actor_lr": 0.0012009251044557377,
+      "buffer_size": 30000,
+      "batch_size": 128,
+      "noise_scale": 0.2045986401677674,
+      "noise_accel_mult": 1.9636507257696176,
+      "noise_steer_mult": 0.39571061297510546
+    },
+    "avg_reward": -2.657669673544022,
+    "avg_steps": 41.7,
+    "crash_rate": 1.0,
+    "completion_rate": 0.0,
+    "results": [
+      {
+        "steps": 113,
+        "reward": -2.315162730945501,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 27,
+        "reward": -2.7055045155731645,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 68,
+        "reward": -2.453715181909354,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 9,
+        "reward": -2.8632467805209734,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 25,
+        "reward": -2.7831337085897485,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 93,
+        "reward": -2.48606057354164,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 7,
+        "reward": -2.9086107641468697,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 53,
+        "reward": -2.730103059616601,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 8,
+        "reward": -2.8864146134886024,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 119,
+        "reward": -1.9440605759903538,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 71,
+        "reward": -2.465879749559677,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 7,
+        "reward": -2.920824997332827,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 8,
+        "reward": -2.8747438124486324,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 22,
+        "reward": -2.893267866923383,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 68,
+        "reward": -2.554957242496556,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 24,
+        "reward": -2.587763746044769,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 8,
+        "reward": -2.865582112686627,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 18,
+        "reward": -2.7551312341635166,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 59,
+        "reward": -2.444951575509952,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 27,
+        "reward": -2.7142786293916985,
+        "crashed": true,
+        "completion": 2
+      }
+    ]
+  },
+  {
+    "config": {
+      "gamma": 0.9511820411496399,
+      "tau": 0.0014301311842957807,
+      "critic_lr": 0.000256924069068243,
+      "actor_lr": 0.000259216184300683,
+      "buffer_size": 30000,
+      "batch_size": 32,
+      "noise_scale": 0.25688538106698755,
+      "noise_accel_mult": 1.2024128038634738,
+      "noise_steer_mult": 0.352584014613831
+    },
+    "avg_reward": 1.8517446421612025,
+    "avg_steps": 340.85,
+    "crash_rate": 0.65,
+    "completion_rate": 0.35,
+    "results": [
+      {
+        "steps": 50,
+        "reward": -2.5826435914937544,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 357,
+        "reward": 0.8380769711119473,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 195,
+        "reward": 0.10592090387953101,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 624,
+        "reward": 7.162283107910475,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 544,
+        "reward": 3.172559313879667,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 628,
+        "reward": 6.666275746813857,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 2,
+        "reward": -2.999582663988199,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 55,
+        "reward": -2.007683959777351,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 330,
+        "reward": 0.5818553005437779,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 563,
+        "reward": 6.231331114123074,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 460,
+        "reward": 1.8972821979481358,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 255,
+        "reward": -0.5150505613448284,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 602,
+        "reward": 6.389695155567419,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 51,
+        "reward": -2.2685804261578584,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 538,
+        "reward": 6.46916407628787,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 263,
+        "reward": -0.2053256221206432,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 629,
+        "reward": 6.789294473288988,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 15,
+        "reward": -2.926612852724114,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 588,
+        "reward": 6.776193826969842,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 68,
+        "reward": -2.539559667493789,
+        "crashed": true,
+        "completion": 2
+      }
+    ]
+  },
+  {
+    "config": {
+      "gamma": 0.9506058530703249,
+      "tau": 0.0012279586697132657,
+      "critic_lr": 0.0001489535029176822,
+      "actor_lr": 0.0003107213784278854,
+      "buffer_size": 30000,
+      "batch_size": 32,
+      "noise_scale": 0.22737118590043975,
+      "noise_accel_mult": 1.1956786626039049,
+      "noise_steer_mult": 0.4838420548448722
+    },
+    "avg_reward": 5.3320945974693625,
+    "avg_steps": 758.85,
+    "crash_rate": 0.2,
+    "completion_rate": 0.8,
+    "results": [
+      {
+        "steps": 942,
+        "reward": 6.995221808570654,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 825,
+        "reward": 7.061972313084162,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 912,
+        "reward": 6.899623792590299,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 928,
+        "reward": 6.972437505549078,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 814,
+        "reward": 6.911769495695883,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 934,
+        "reward": 6.929936272259631,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 280,
+        "reward": -0.7521343243519989,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 802,
+        "reward": 6.369274783789793,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 952,
+        "reward": 7.32967464800379,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 837,
+        "reward": 6.34553531457868,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 919,
+        "reward": 6.837195542232471,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 673,
+        "reward": 2.2270746892591156,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 832,
+        "reward": 6.6883321543645335,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 766,
+        "reward": 6.044058789052157,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 904,
+        "reward": 6.915649339570682,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 96,
+        "reward": -1.9574042899551434,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 103,
+        "reward": -1.855033686708773,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 887,
+        "reward": 7.110257051897112,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 925,
+        "reward": 6.861325498021813,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 846,
+        "reward": 6.707125251883328,
+        "crashed": false,
+        "completion": 1
+      }
+    ]
+  },
+  {
+    "config": {
+      "gamma": 0.9514276395840816,
+      "tau": 0.001107827750475228,
+      "critic_lr": 0.0002117053626671808,
+      "actor_lr": 0.00014984128735232393,
+      "buffer_size": 30000,
+      "batch_size": 32,
+      "noise_scale": 0.18110823988136862,
+      "noise_accel_mult": 1.1469229094856632,
+      "noise_steer_mult": 0.5889717744878123
+    },
+    "avg_reward": 1.8087942555851133,
+    "avg_steps": 398.6,
+    "crash_rate": 0.75,
+    "completion_rate": 0.25,
+    "results": [
+      {
+        "steps": 304,
+        "reward": -0.04239685442523067,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 709,
+        "reward": 6.6989382162174245,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 45,
+        "reward": -2.4037339215055478,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 181,
+        "reward": -0.8582348473143666,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 206,
+        "reward": -0.7482061945348022,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 407,
+        "reward": 1.1218552301476512,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 136,
+        "reward": -1.7586838793301174,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 645,
+        "reward": 3.5555667039262486,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 518,
+        "reward": 2.3330907908782166,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 177,
+        "reward": -1.0068927702003332,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 179,
+        "reward": -1.0876489525068205,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 622,
+        "reward": 3.2915638354130152,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 369,
+        "reward": 0.7682052845952798,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 114,
+        "reward": -1.811932630565346,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 618,
+        "reward": 6.725207778302122,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 668,
+        "reward": 6.679673059896882,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 316,
+        "reward": 0.25983208365650867,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 699,
+        "reward": 6.854976417648601,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 399,
+        "reward": 0.9101273157454912,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 660,
+        "reward": 6.694578445657389,
+        "crashed": false,
+        "completion": 1
+      }
+    ]
+  },
+  {
+    "config": {
+      "gamma": 0.9693450659816959,
+      "tau": 0.0016506646233516637,
+      "critic_lr": 0.00048737962161821146,
+      "actor_lr": 0.00033301852133102834,
+      "buffer_size": 50000,
+      "batch_size": 32,
+      "noise_scale": 0.29580649345874,
+      "noise_accel_mult": 1.290719891955828,
+      "noise_steer_mult": 0.39248042545752787
+    },
+    "avg_reward": -1.9599238614104415,
+    "avg_steps": 127.05,
+    "crash_rate": 1.0,
+    "completion_rate": 0.0,
+    "results": [
+      {
+        "steps": 259,
+        "reward": -0.6450412540813248,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 121,
+        "reward": -2.2432585606074005,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 5,
+        "reward": -2.9235330024787585,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 41,
+        "reward": -2.719810181728703,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 193,
+        "reward": -1.3719841894196492,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 30,
+        "reward": -2.880407800758005,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 20,
+        "reward": -2.9592124851913284,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 221,
+        "reward": -1.4686199128546626,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 209,
+        "reward": -1.4919510589173586,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 65,
+        "reward": -2.7837958514191556,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 356,
+        "reward": 0.08793261376909234,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 125,
+        "reward": -1.7874983438802712,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 105,
+        "reward": -2.3786956797112064,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 88,
+        "reward": -2.3615912577508404,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 231,
+        "reward": -0.7940698660056333,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 32,
+        "reward": -2.524019763899185,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 177,
+        "reward": -1.505290942515587,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 7,
+        "reward": -2.8965431040180443,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 155,
+        "reward": -1.4816236696521374,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 101,
+        "reward": -2.0694629170886745,
+        "crashed": true,
+        "completion": 2
+      }
+    ]
+  },
+  {
+    "config": {
+      "gamma": 0.9526913654828683,
+      "tau": 0.0032685796091474163,
+      "critic_lr": 0.00028565185223334704,
+      "actor_lr": 0.00014148286487061361,
+      "buffer_size": 100000,
+      "batch_size": 64,
+      "noise_scale": 0.25005580803009414,
+      "noise_accel_mult": 1.4944401089137216,
+      "noise_steer_mult": 0.564627737967386
+    },
+    "avg_reward": -1.0174243101853113,
+    "avg_steps": 521.7,
+    "crash_rate": 1.0,
+    "completion_rate": 0.0,
+    "results": [
+      {
+        "steps": 700,
+        "reward": -0.29905643660146186,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 169,
+        "reward": -2.5733430293698305,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 281,
+        "reward": -1.2554538218167266,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 402,
+        "reward": -0.7590348501215267,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 877,
+        "reward": 0.3097091414582849,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 450,
+        "reward": -1.5382060463592626,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 1319,
+        "reward": 2.1854570475409867,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 636,
+        "reward": -0.6463313157330197,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 57,
+        "reward": -2.868912483205657,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 526,
+        "reward": -0.906524443620583,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 73,
+        "reward": -2.3637747960453863,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 459,
+        "reward": -0.8322450547257394,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 159,
+        "reward": -2.2468941170633667,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 1945,
+        "reward": 3.077309119276041,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 429,
+        "reward": -1.667899484152396,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 755,
+        "reward": -0.27849727651513057,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 524,
+        "reward": -0.8327468405765801,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 223,
+        "reward": -2.2876291672458495,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 290,
+        "reward": -2.2248108054635147,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 160,
+        "reward": -2.3396015433655073,
+        "crashed": true,
+        "completion": 3
+      }
+    ]
+  },
+  {
+    "config": {
+      "gamma": 0.9519399037567372,
+      "tau": 0.0017775134177356723,
+      "critic_lr": 0.00011476868520386355,
+      "actor_lr": 0.0023753149225178567,
+      "buffer_size": 10000,
+      "batch_size": 32,
+      "noise_scale": 0.24937320844174266,
+      "noise_accel_mult": 1.2015911303148252,
+      "noise_steer_mult": 0.40224388650309095
+    },
+    "avg_reward": -0.9837554522708178,
+    "avg_steps": 152.4,
+    "crash_rate": 0.95,
+    "completion_rate": 0.05,
+    "results": [
+      {
+        "steps": 127,
+        "reward": -2.552799626661887,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 86,
+        "reward": -2.0979807016434444,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 130,
+        "reward": -0.5539223647002918,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 95,
+        "reward": -1.275261569346015,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 56,
+        "reward": -2.6468567294115863,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 71,
+        "reward": -1.8199192854293207,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 546,
+        "reward": 6.881333175789415,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 274,
+        "reward": 0.9544666601043175,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 32,
+        "reward": -2.888646789783097,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 106,
+        "reward": -1.3365279382531707,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 246,
+        "reward": -0.45788945699980577,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 97,
+        "reward": -2.308576268323796,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 95,
+        "reward": -2.161510361006158,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 96,
+        "reward": -1.1694836152252055,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 24,
+        "reward": -2.8744824499052424,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 121,
+        "reward": -1.5209096947852518,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 180,
+        "reward": -1.02214615356182,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 83,
+        "reward": -1.5300343432443686,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 490,
+        "reward": 2.2351679146450785,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 93,
+        "reward": -1.5291294476747104,
+        "crashed": true,
+        "completion": 2
+      }
+    ]
+  },
+  {
+    "config": {
+      "gamma": 0.9596468408766217,
+      "tau": 0.0013165403666763468,
+      "critic_lr": 0.00024489837335239426,
+      "actor_lr": 0.00012090656754116098,
+      "buffer_size": 30000,
+      "batch_size": 32,
+      "noise_scale": 0.28682567839066847,
+      "noise_accel_mult": 1.980608208244722,
+      "noise_steer_mult": 0.30356486214436407
+    },
+    "avg_reward": 6.104426412660073,
+    "avg_steps": 808.5,
+    "crash_rate": 0.1,
+    "completion_rate": 0.9,
+    "results": [
+      {
+        "steps": 836,
+        "reward": 6.86824988416076,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 1048,
+        "reward": 6.704635114100143,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 886,
+        "reward": 6.82337429020614,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 884,
+        "reward": 7.026949233977051,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 787,
+        "reward": 6.673656665576427,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 839,
+        "reward": 6.910927553057606,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 637,
+        "reward": 2.060909505502093,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 815,
+        "reward": 6.918155852970327,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 750,
+        "reward": 6.79494283919097,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 730,
+        "reward": 6.302480397757543,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 773,
+        "reward": 6.4584268965594,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 727,
+        "reward": 6.078036860913757,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 839,
+        "reward": 6.768129883464611,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 855,
+        "reward": 6.8228925648365095,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 886,
+        "reward": 6.841177571783758,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 790,
+        "reward": 6.485890615515618,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 965,
+        "reward": 6.357401490359775,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 320,
+        "reward": -0.19762678787449772,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 874,
+        "reward": 6.870394459664764,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 929,
+        "reward": 6.519523361478694,
+        "crashed": false,
+        "completion": 1
+      }
+    ]
+  },
+  {
+    "config": {
+      "gamma": 0.9511624534507807,
+      "tau": 0.001161527291482366,
+      "critic_lr": 0.0004919953879301157,
+      "actor_lr": 0.00012073136742506557,
+      "buffer_size": 30000,
+      "batch_size": 32,
+      "noise_scale": 0.2693877633325243,
+      "noise_accel_mult": 2.251991694878539,
+      "noise_steer_mult": 0.4944876699781022
+    },
+    "avg_reward": 2.8607723946588384,
+    "avg_steps": 356.4,
+    "crash_rate": 0.55,
+    "completion_rate": 0.45,
+    "results": [
+      {
+        "steps": 221,
+        "reward": 0.052146563344593666,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 515,
+        "reward": 6.775321751520891,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 37,
+        "reward": -2.8426730397000473,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 565,
+        "reward": 7.3697891539474485,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 90,
+        "reward": -1.9651347114054503,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 537,
+        "reward": 6.485475983661589,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 554,
+        "reward": 6.857420282519403,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 343,
+        "reward": 1.3740224216387427,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 559,
+        "reward": 6.84869742899442,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 511,
+        "reward": 6.272831332459739,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 246,
+        "reward": 0.24134920747046973,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 78,
+        "reward": -1.8596501148526972,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 96,
+        "reward": -2.100626931685754,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 485,
+        "reward": 2.974812154453244,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 505,
+        "reward": 6.750481338693633,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 544,
+        "reward": 7.053055717975731,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 80,
+        "reward": -1.8853422441609635,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 276,
+        "reward": 0.4317749633230923,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 421,
+        "reward": 2.1188883749698473,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 465,
+        "reward": 6.262808260008841,
+        "crashed": false,
+        "completion": 1
+      }
+    ]
+  },
+  {
+    "config": {
+      "gamma": 0.9619367765076831,
+      "tau": 0.00392176733507762,
+      "critic_lr": 0.00010376998752444567,
+      "actor_lr": 0.000817121045089425,
+      "buffer_size": 30000,
+      "batch_size": 32,
+      "noise_scale": 0.17783050031968492,
+      "noise_accel_mult": 1.3359533664480703,
+      "noise_steer_mult": 0.41968330612397897
+    },
+    "avg_reward": -1.0932404120208727,
+    "avg_steps": 135.1,
+    "crash_rate": 1.0,
+    "completion_rate": 0.0,
+    "results": [
+      {
+        "steps": 55,
+        "reward": -2.8441473276649014,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 128,
+        "reward": -0.7632548386836602,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 369,
+        "reward": 2.833828777688775,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 46,
+        "reward": -2.2622382355818447,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 344,
+        "reward": 2.203729257016289,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 97,
+        "reward": -2.201383921430352,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 82,
+        "reward": -2.0179174333422845,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 25,
+        "reward": -2.677332732606392,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 154,
+        "reward": -0.5648196805766053,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 81,
+        "reward": -1.6282227843594193,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 279,
+        "reward": 0.7497476798135319,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 49,
+        "reward": -2.538231916923361,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 89,
+        "reward": -2.691882224052491,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 270,
+        "reward": 1.482680912617833,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 88,
+        "reward": -1.9072016068948277,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 17,
+        "reward": -2.904180955081454,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 166,
+        "reward": -0.457598134596918,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 168,
+        "reward": -0.6446411553146021,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 80,
+        "reward": -2.183108513412055,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 115,
+        "reward": -0.8486334070327155,
+        "crashed": true,
+        "completion": 2
+      }
+    ]
+  },
+  {
+    "config": {
+      "gamma": 0.9532704413154995,
+      "tau": 0.0015565017309777988,
+      "critic_lr": 0.00020926512804907084,
+      "actor_lr": 0.0001032735758545574,
+      "buffer_size": 30000,
+      "batch_size": 32,
+      "noise_scale": 0.27733501946688505,
+      "noise_accel_mult": 2.913840479536122,
+      "noise_steer_mult": 0.4674495059129382
+    },
+    "avg_reward": 2.7417263822120317,
+    "avg_steps": 344.85,
+    "crash_rate": 0.55,
+    "completion_rate": 0.45,
+    "results": [
+      {
+        "steps": 112,
+        "reward": -1.363669819908807,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 381,
+        "reward": 1.479203583586389,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 180,
+        "reward": -0.9525608325150938,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 66,
+        "reward": -1.8982734483379597,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 19,
+        "reward": -2.92159530299726,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 22,
+        "reward": -2.9239057007240605,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 515,
+        "reward": 6.754153294787112,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 404,
+        "reward": 2.1215023542839786,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 574,
+        "reward": 7.155615350064274,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 545,
+        "reward": 6.731015617710074,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 511,
+        "reward": 6.599184133770676,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 525,
+        "reward": 6.8168676833788195,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 242,
+        "reward": 0.022515586693742762,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 156,
+        "reward": -1.052933741712379,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 394,
+        "reward": 1.987743007847742,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 160,
+        "reward": -0.6319981378967934,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 526,
+        "reward": 6.707616864871636,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 534,
+        "reward": 6.7882114250002905,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 526,
+        "reward": 6.808464808841228,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 505,
+        "reward": 6.607370917497029,
+        "crashed": false,
+        "completion": 1
+      }
+    ]
+  },
+  {
+    "config": {
+      "gamma": 0.9581896949308224,
+      "tau": 0.0012146854144346054,
+      "critic_lr": 0.0007678970575790262,
+      "actor_lr": 0.00010350322119248185,
+      "buffer_size": 30000,
+      "batch_size": 256,
+      "noise_scale": 0.2700198285580608,
+      "noise_accel_mult": 1.8257211697512337,
+      "noise_steer_mult": 0.4387630161121445
+    },
+    "avg_reward": 6.697400028794213,
+    "avg_steps": 778.2,
+    "crash_rate": 0.0,
+    "completion_rate": 1.0,
+    "results": [
+      {
+        "steps": 818,
+        "reward": 6.801134770961231,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 697,
+        "reward": 6.496335151617648,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 805,
+        "reward": 6.632221049232395,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 739,
+        "reward": 6.463133127498411,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 784,
+        "reward": 6.6681909857595985,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 807,
+        "reward": 7.086887016237589,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 753,
+        "reward": 6.431926119739672,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 771,
+        "reward": 6.584663824153718,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 772,
+        "reward": 6.998371655977812,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 814,
+        "reward": 7.090300652085226,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 801,
+        "reward": 6.752267712661124,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 802,
+        "reward": 6.808086423017881,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 778,
+        "reward": 6.538578473924698,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 763,
+        "reward": 6.413420423293748,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 774,
+        "reward": 6.48483681831265,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 790,
+        "reward": 6.724559652247501,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 766,
+        "reward": 6.8854312265713675,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 735,
+        "reward": 6.6860788529713275,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 788,
+        "reward": 6.612196337411517,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 807,
+        "reward": 6.789380302209162,
+        "crashed": false,
+        "completion": 1
+      }
+    ]
+  },
+  {
+    "config": {
+      "gamma": 0.9606957261483616,
+      "tau": 0.0016718434629023936,
+      "critic_lr": 0.0002304640507169689,
+      "actor_lr": 0.00011298328069883837,
+      "buffer_size": 10000,
+      "batch_size": 256,
+      "noise_scale": 0.2965918183768585,
+      "noise_accel_mult": 1.5774527276490613,
+      "noise_steer_mult": 0.5756519052382124
+    },
+    "avg_reward": 4.134452671508601,
+    "avg_steps": 493.4,
+    "crash_rate": 0.35,
+    "completion_rate": 0.65,
+    "results": [
+      {
+        "steps": 655,
+        "reward": 6.801180066639648,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 689,
+        "reward": 7.051041423244145,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 645,
+        "reward": 6.832938410275246,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 320,
+        "reward": 0.25562323111608265,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 24,
+        "reward": -2.608968475587605,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 650,
+        "reward": 6.720689877375434,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 644,
+        "reward": 6.955535806146177,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 596,
+        "reward": 6.571567956947141,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 580,
+        "reward": 6.3905662251394215,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 652,
+        "reward": 6.683689436395428,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 15,
+        "reward": -2.7454985606494025,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 44,
+        "reward": -2.374971185606688,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 657,
+        "reward": 6.702286639463404,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 350,
+        "reward": 0.3807767753512801,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 644,
+        "reward": 6.936109589546362,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 639,
+        "reward": 6.876168016116064,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 614,
+        "reward": 6.328549093150176,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 602,
+        "reward": 3.1214976380811743,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 224,
+        "reward": -0.7179293215646712,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 624,
+        "reward": 6.5282007885932005,
+        "crashed": false,
+        "completion": 1
+      }
+    ]
+  },
+  {
+    "config": {
+      "gamma": 0.950956930341606,
+      "tau": 0.0018086343429890809,
+      "critic_lr": 0.0002453565055998492,
+      "actor_lr": 0.00012536777474256918,
+      "buffer_size": 100000,
+      "batch_size": 256,
+      "noise_scale": 0.21751032433474624,
+      "noise_accel_mult": 2.2591506236215957,
+      "noise_steer_mult": 0.36878806979178985
+    },
+    "avg_reward": 0.1418944519747805,
+    "avg_steps": 478.5,
+    "crash_rate": 0.9,
+    "completion_rate": 0.1,
+    "results": [
+      {
+        "steps": 674,
+        "reward": 0.9953906944432718,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 695,
+        "reward": 1.3196876681006442,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 790,
+        "reward": 1.805658449196411,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 389,
+        "reward": -0.4648252505604735,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 59,
+        "reward": -2.7867916742168504,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 298,
+        "reward": -1.380429774776787,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 232,
+        "reward": -1.5270126794261556,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 599,
+        "reward": 0.6340086527945097,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 316,
+        "reward": -0.49052880244907726,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 603,
+        "reward": 1.1265923679787928,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 512,
+        "reward": -0.24171456316912776,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 1188,
+        "reward": 6.713391114189527,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 174,
+        "reward": -2.204553928979851,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 173,
+        "reward": -2.1813288771288275,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 713,
+        "reward": 1.329030590793515,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 497,
+        "reward": -0.4169294752708499,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 96,
+        "reward": -2.678852182508161,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 1073,
+        "reward": 6.551752588448019,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 111,
+        "reward": -2.1406817295608174,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 378,
+        "reward": -1.1239741484021029,
+        "crashed": true,
+        "completion": 2
+      }
+    ]
+  },
+  {
+    "config": {
+      "gamma": 0.9641977527360336,
+      "tau": 0.0021010704193720055,
+      "critic_lr": 0.0012725930699593298,
+      "actor_lr": 0.00010818582227147646,
+      "buffer_size": 30000,
+      "batch_size": 64,
+      "noise_scale": 0.2802686156762356,
+      "noise_accel_mult": 1.387886503514385,
+      "noise_steer_mult": 0.32245646577696996
+    },
+    "avg_reward": -2.367178794260582,
+    "avg_steps": 83.45,
+    "crash_rate": 1.0,
+    "completion_rate": 0.0,
+    "results": [
+      {
+        "steps": 64,
+        "reward": -2.65473759641341,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 7,
+        "reward": -2.8873061655413053,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 173,
+        "reward": -1.744005742662338,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 12,
+        "reward": -2.90842027714716,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 13,
+        "reward": -2.8510751610169116,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 36,
+        "reward": -2.4140373745580113,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 6,
+        "reward": -2.939328317977302,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 173,
+        "reward": -1.5774302464298704,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 30,
+        "reward": -2.790172056721185,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 8,
+        "reward": -2.900869538719626,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 14,
+        "reward": -2.7844671303750133,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 140,
+        "reward": -1.8416693165115479,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 105,
+        "reward": -2.3077522878593113,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 191,
+        "reward": -1.564509402530444,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 139,
+        "reward": -2.0193358481529144,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 299,
+        "reward": -1.0232524782224628,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 96,
+        "reward": -2.3451785875389985,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 147,
+        "reward": -1.9746370220843164,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 6,
+        "reward": -2.939924167585747,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 10,
+        "reward": -2.8754671671637744,
+        "crashed": true,
+        "completion": 2
+      }
+    ]
+  },
+  {
+    "config": {
+      "gamma": 0.9793901804066817,
+      "tau": 0.001125124719879682,
+      "critic_lr": 0.00041623795324515866,
+      "actor_lr": 0.00034718655169830784,
+      "buffer_size": 30000,
+      "batch_size": 32,
+      "noise_scale": 0.2409689609104822,
+      "noise_accel_mult": 1.9740709978179831,
+      "noise_steer_mult": 0.3886963767916706
+    },
+    "avg_reward": -1.5566779347323725,
+    "avg_steps": 181.3,
+    "crash_rate": 1.0,
+    "completion_rate": 0.0,
+    "results": [
+      {
+        "steps": 120,
+        "reward": -2.1110991044819682,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 262,
+        "reward": -0.8595883917534239,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 294,
+        "reward": -0.7747815459868908,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 344,
+        "reward": -0.23213650385910345,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 114,
+        "reward": -2.016909719122177,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 210,
+        "reward": -1.4728508553458746,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 50,
+        "reward": -2.5817463327675587,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 112,
+        "reward": -1.7442509474266108,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 133,
+        "reward": -1.7682236452755435,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 355,
+        "reward": -0.4175222109976491,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 324,
+        "reward": -0.1298943958033263,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 38,
+        "reward": -2.7101365955137244,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 235,
+        "reward": -1.1909535675522132,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 128,
+        "reward": -1.9796550580343988,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 83,
+        "reward": -2.323362450560881,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 51,
+        "reward": -2.467718960280506,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 215,
+        "reward": -1.5236238340549788,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 180,
+        "reward": -1.3479587915974254,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 210,
+        "reward": -1.4193909721497624,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 168,
+        "reward": -2.061754812083434,
+        "crashed": true,
+        "completion": 2
+      }
+    ]
+  },
+  {
+    "config": {
+      "gamma": 0.9532851735758112,
+      "tau": 0.0011547470670465257,
+      "critic_lr": 0.0001349126112881261,
+      "actor_lr": 0.002532715004710622,
+      "buffer_size": 30000,
+      "batch_size": 256,
+      "noise_scale": 0.14840581400112746,
+      "noise_accel_mult": 1.3227848795272092,
+      "noise_steer_mult": 0.3482193634161199
+    },
+    "avg_reward": -2.290585159617763,
+    "avg_steps": 85.95,
+    "crash_rate": 1.0,
+    "completion_rate": 0.0,
+    "results": [
+      {
+        "steps": 40,
+        "reward": -2.489734665080676,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 35,
+        "reward": -2.4476851875990073,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 99,
+        "reward": -2.4608415078896044,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 69,
+        "reward": -2.104253594457185,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 5,
+        "reward": -2.9508108601785263,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 9,
+        "reward": -2.9228459288143522,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 69,
+        "reward": -2.053697282539573,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 8,
+        "reward": -2.9205962441661657,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 119,
+        "reward": -0.9879303831618937,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 668,
+        "reward": -0.4112521433429399,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 12,
+        "reward": -2.85302681652409,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 25,
+        "reward": -2.7374573686972075,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 21,
+        "reward": -2.8397868096252354,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 101,
+        "reward": -1.4279588374617962,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 25,
+        "reward": -2.733344322766883,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 32,
+        "reward": -2.5118144260845576,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 279,
+        "reward": -1.6287756906667052,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 33,
+        "reward": -2.4234940878767466,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 55,
+        "reward": -2.043029232673519,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 15,
+        "reward": -2.863367802748591,
+        "crashed": true,
+        "completion": 2
+      }
+    ]
+  },
+  {
+    "config": {
+      "gamma": 0.9707289181918018,
+      "tau": 0.0013971930721439554,
+      "critic_lr": 0.0006408980392866098,
+      "actor_lr": 0.0002384003956864313,
+      "buffer_size": 30000,
+      "batch_size": 256,
+      "noise_scale": 0.2783469522061016,
+      "noise_accel_mult": 2.013538023190041,
+      "noise_steer_mult": 0.3387610671325973
+    },
+    "avg_reward": -2.326109703924705,
+    "avg_steps": 49.5,
+    "crash_rate": 1.0,
+    "completion_rate": 0.0,
+    "results": [
+      {
+        "steps": 17,
+        "reward": -2.7531699291986476,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 34,
+        "reward": -2.4939285631015022,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 110,
+        "reward": -1.886115992757838,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 12,
+        "reward": -2.777441866785002,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 45,
+        "reward": -2.22002941074259,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 104,
+        "reward": -2.1691403416573767,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 42,
+        "reward": -2.3792105745264567,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 39,
+        "reward": -2.2483629670106464,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 47,
+        "reward": -2.2139281595339693,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 112,
+        "reward": -1.1898719015457466,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 6,
+        "reward": -2.9325053367615936,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 11,
+        "reward": -2.825634589858256,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 27,
+        "reward": -2.5499347961403567,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 85,
+        "reward": -1.7714773681670588,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 106,
+        "reward": -1.8415573179530578,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 12,
+        "reward": -2.824811572357044,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 10,
+        "reward": -2.82471045910186,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 53,
+        "reward": -2.0914865172940837,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 91,
+        "reward": -1.9766979198549275,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 27,
+        "reward": -2.5521784941460828,
+        "crashed": true,
+        "completion": 2
+      }
+    ]
+  },
+  {
+    "config": {
+      "gamma": 0.9561524087799791,
+      "tau": 0.0010005007694740475,
+      "critic_lr": 0.0018933592551275513,
+      "actor_lr": 0.00033389811433668954,
+      "buffer_size": 100000,
+      "batch_size": 256,
+      "noise_scale": 0.27486765749560865,
+      "noise_accel_mult": 1.7509476790846783,
+      "noise_steer_mult": 0.5235988192001229
+    },
+    "avg_reward": -2.340657185411728,
+    "avg_steps": 64.55,
+    "crash_rate": 1.0,
+    "completion_rate": 0.0,
+    "results": [
+      {
+        "steps": 7,
+        "reward": -2.929389463440577,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 92,
+        "reward": -2.12554777174635,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 80,
+        "reward": -2.2661408895265573,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 30,
+        "reward": -2.6343038752350325,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 108,
+        "reward": -1.8727682679656596,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 100,
+        "reward": -2.1341868841504397,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 25,
+        "reward": -2.596903223550762,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 15,
+        "reward": -2.803399222784775,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 61,
+        "reward": -2.5136423616487296,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 11,
+        "reward": -2.884449492319266,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 126,
+        "reward": -1.7291553743817776,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 76,
+        "reward": -1.9472491359918132,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 80,
+        "reward": -2.180952138444721,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 109,
+        "reward": -1.8464019957969307,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 29,
+        "reward": -2.4993455398048354,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 95,
+        "reward": -1.9049049874243116,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 32,
+        "reward": -2.4862761328310747,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 83,
+        "reward": -2.2928284511001356,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 58,
+        "reward": -2.68014185708722,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 74,
+        "reward": -2.4851566430035885,
+        "crashed": true,
+        "completion": 2
+      }
+    ]
+  },
+  {
+    "config": {
+      "gamma": 0.9613039172339246,
+      "tau": 0.001292540988742214,
+      "critic_lr": 0.0001602014902460834,
+      "actor_lr": 0.00020234251445132133,
+      "buffer_size": 10000,
+      "batch_size": 32,
+      "noise_scale": 0.21418091062462707,
+      "noise_accel_mult": 1.8932784332805976,
+      "noise_steer_mult": 0.5499602100839921
+    },
+    "avg_reward": 6.526329343259446,
+    "avg_steps": 776.2,
+    "crash_rate": 0.05,
+    "completion_rate": 0.95,
+    "results": [
+      {
+        "steps": 799,
+        "reward": 6.52771384570921,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 750,
+        "reward": 6.680136891743113,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 862,
+        "reward": 7.075112296267217,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 827,
+        "reward": 7.082936010430277,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 730,
+        "reward": 6.524964381837791,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 782,
+        "reward": 6.49805947182824,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 731,
+        "reward": 6.3126808306894295,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 788,
+        "reward": 6.56445814966828,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 783,
+        "reward": 6.8094875719283445,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 884,
+        "reward": 7.293939779937856,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 735,
+        "reward": 6.164087332128524,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 772,
+        "reward": 6.356642286536493,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 746,
+        "reward": 6.705674965662206,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 734,
+        "reward": 3.20645285993682,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 835,
+        "reward": 7.067422189967223,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 695,
+        "reward": 6.346007246746352,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 712,
+        "reward": 7.0468830884114855,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 808,
+        "reward": 6.857337854913511,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 788,
+        "reward": 6.75414908007428,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 763,
+        "reward": 6.65244073077227,
+        "crashed": false,
+        "completion": 1
+      }
+    ]
+  },
+  {
+    "config": {
+      "gamma": 0.969882046242433,
+      "tau": 0.001116990738972682,
+      "critic_lr": 0.00013813404742808226,
+      "actor_lr": 0.0001632738078674436,
+      "buffer_size": 10000,
+      "batch_size": 32,
+      "noise_scale": 0.19624462963912448,
+      "noise_accel_mult": 1.691285779233899,
+      "noise_steer_mult": 0.6901698220068777
+    },
+    "avg_reward": 4.563186720008475,
+    "avg_steps": 541.05,
+    "crash_rate": 0.3,
+    "completion_rate": 0.7,
+    "results": [
+      {
+        "steps": 649,
+        "reward": 6.611796930707951,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 638,
+        "reward": 6.3108589512499815,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 39,
+        "reward": -2.6498413577428677,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 646,
+        "reward": 6.824471579621215,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 681,
+        "reward": 6.7846237365902144,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 702,
+        "reward": 6.925948957186945,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 593,
+        "reward": 2.6152672778097346,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 7,
+        "reward": -2.8854376167616835,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 643,
+        "reward": 6.691664941344484,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 629,
+        "reward": 6.676691967715099,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 662,
+        "reward": 6.567878056905376,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 606,
+        "reward": 6.049867969900896,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 714,
+        "reward": 7.312060754720896,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 540,
+        "reward": 2.5370663401410294,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 631,
+        "reward": 6.507299786163155,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 673,
+        "reward": 6.6203556289767835,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 635,
+        "reward": 6.4222776069821,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 435,
+        "reward": 1.2859402771519246,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 61,
+        "reward": -2.3720716316678234,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 637,
+        "reward": 6.42701424317409,
+        "crashed": false,
+        "completion": 1
+      }
+    ]
+  },
+  {
+    "config": {
+      "gamma": 0.965057125014469,
+      "tau": 0.0015099004860757764,
+      "critic_lr": 0.0002568501248414896,
+      "actor_lr": 0.00020106947864082596,
+      "buffer_size": 100000,
+      "batch_size": 32,
+      "noise_scale": 0.29830543198654963,
+      "noise_accel_mult": 2.0680411214504013,
+      "noise_steer_mult": 0.3757558247431029
+    },
+    "avg_reward": 1.9194059095726967,
+    "avg_steps": 256.55,
+    "crash_rate": 0.75,
+    "completion_rate": 0.25,
+    "results": [
+      {
+        "steps": 103,
+        "reward": -1.450529449462216,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 266,
+        "reward": 0.840526501672298,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 436,
+        "reward": 6.877772685332986,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 372,
+        "reward": 6.370534681941401,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 306,
+        "reward": 2.241187730008913,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 305,
+        "reward": 2.091615173760217,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 124,
+        "reward": -1.7980375127879091,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 98,
+        "reward": -1.2207378586700797,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 179,
+        "reward": 0.22736625452330284,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 317,
+        "reward": 2.066419342954588,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 402,
+        "reward": 6.778504923157353,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 249,
+        "reward": 0.4894019607774416,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 352,
+        "reward": 2.9402418990637775,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 274,
+        "reward": 1.9261003181205822,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 98,
+        "reward": -1.4195471085384233,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 159,
+        "reward": 0.048786767432024813,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 351,
+        "reward": 6.229579027528312,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 387,
+        "reward": 6.109877123747215,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 250,
+        "reward": 1.1016297348469744,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 103,
+        "reward": -2.06257400395482,
+        "crashed": true,
+        "completion": 2
+      }
+    ]
+  },
+  {
+    "config": {
+      "gamma": 0.9563014953650352,
+      "tau": 0.003357814436688129,
+      "critic_lr": 0.00023353864000729826,
+      "actor_lr": 0.00010953163817464462,
+      "buffer_size": 10000,
+      "batch_size": 32,
+      "noise_scale": 0.18886606754120233,
+      "noise_accel_mult": 1.9676293600845545,
+      "noise_steer_mult": 0.4199312584214561
+    },
+    "avg_reward": -2.0872262088007645,
+    "avg_steps": 84.3,
+    "crash_rate": 1.0,
+    "completion_rate": 0.0,
+    "results": [
+      {
+        "steps": 35,
+        "reward": -2.6171667659721374,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 96,
+        "reward": -1.8727756589769924,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 170,
+        "reward": -1.2919533802199703,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 240,
+        "reward": -0.33782113018023585,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 51,
+        "reward": -2.086953282079131,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 61,
+        "reward": -2.4341574602580383,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 124,
+        "reward": -1.5054749087071384,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 6,
+        "reward": -2.907093445606456,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 125,
+        "reward": -1.9084598024518804,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 146,
+        "reward": -1.6761599275861228,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 46,
+        "reward": -2.3536834983766086,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 8,
+        "reward": -2.90474067009537,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 29,
+        "reward": -2.519567287677025,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 126,
+        "reward": -1.9253233157010687,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 136,
+        "reward": -1.4513570696815696,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 57,
+        "reward": -2.222812436366112,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 124,
+        "reward": -1.4853897063559038,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 10,
+        "reward": -2.8850542905079135,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 5,
+        "reward": -2.93005821180486,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 91,
+        "reward": -2.428521927410751,
+        "crashed": true,
+        "completion": 2
+      }
+    ]
+  },
+  {
+    "config": {
+      "gamma": 0.9562272963486103,
+      "tau": 0.0015581064573597114,
+      "critic_lr": 0.00017536038804028228,
+      "actor_lr": 0.00027930316511310527,
+      "buffer_size": 30000,
+      "batch_size": 32,
+      "noise_scale": 0.29146204970696077,
+      "noise_accel_mult": 2.058530165106505,
+      "noise_steer_mult": 0.3141114237062523
+    },
+    "avg_reward": -0.8336949428617239,
+    "avg_steps": 240.75,
+    "crash_rate": 1.0,
+    "completion_rate": 0.0,
+    "results": [
+      {
+        "steps": 603,
+        "reward": 1.6942851875591476,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 146,
+        "reward": -1.7371756519335513,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 336,
+        "reward": -0.08775244506064617,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 98,
+        "reward": -2.2190815506390296,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 153,
+        "reward": -1.2105314344851734,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 237,
+        "reward": -0.22804749607867958,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 666,
+        "reward": 2.6314890248391087,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 102,
+        "reward": -1.8866177083698392,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 85,
+        "reward": -2.1912448030437353,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 260,
+        "reward": -0.3124815730818744,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 185,
+        "reward": -1.487010221958575,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 125,
+        "reward": -1.9835932077064646,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 114,
+        "reward": -1.9464307844170077,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 395,
+        "reward": 0.2194915101652688,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 373,
+        "reward": 0.26734268062988065,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 405,
+        "reward": 0.7103798829611372,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 198,
+        "reward": -1.342774784843735,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 123,
+        "reward": -1.76452594615056,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 123,
+        "reward": -1.5727661743976578,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 88,
+        "reward": -2.2268533612224926,
+        "crashed": true,
+        "completion": 2
+      }
+    ]
+  },
+  {
+    "config": {
+      "gamma": 0.9520423796867554,
+      "tau": 0.0011390166870271809,
+      "critic_lr": 0.00010927323111485,
+      "actor_lr": 0.00014149234145383331,
+      "buffer_size": 50000,
+      "batch_size": 32,
+      "noise_scale": 0.1421420560538197,
+      "noise_accel_mult": 2.175490382602909,
+      "noise_steer_mult": 0.6504446679853172
+    },
+    "avg_reward": 5.396532084988535,
+    "avg_steps": 705.25,
+    "crash_rate": 0.2,
+    "completion_rate": 0.8,
+    "results": [
+      {
+        "steps": 768,
+        "reward": 6.972010473513621,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 82,
+        "reward": -1.4693663145880498,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 665,
+        "reward": 6.563483750841329,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 839,
+        "reward": 7.017020737935046,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 828,
+        "reward": 6.788323822850868,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 102,
+        "reward": -1.3067550078871075,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 67,
+        "reward": -1.9385054351002347,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 856,
+        "reward": 7.036503753571149,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 809,
+        "reward": 3.896757546497601,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 899,
+        "reward": 7.061749875571425,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 903,
+        "reward": 6.625763001830377,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 749,
+        "reward": 6.3555866856244725,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 904,
+        "reward": 7.124702681166904,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 751,
+        "reward": 6.202071417832226,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 778,
+        "reward": 6.437307510675797,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 864,
+        "reward": 7.06927988152977,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 847,
+        "reward": 7.006737988738893,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 828,
+        "reward": 7.005676940968063,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 805,
+        "reward": 6.486405007454713,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 761,
+        "reward": 6.99588738074385,
+        "crashed": false,
+        "completion": 1
+      }
+    ]
+  },
+  {
+    "config": {
+      "gamma": 0.9563179492720749,
+      "tau": 0.0012556441646000888,
+      "critic_lr": 0.00013850668223447816,
+      "actor_lr": 0.0005803503953462449,
+      "buffer_size": 50000,
+      "batch_size": 32,
+      "noise_scale": 0.12665745100764392,
+      "noise_accel_mult": 2.4009185749376907,
+      "noise_steer_mult": 0.6700102316196833
+    },
+    "avg_reward": 3.9689925421815815,
+    "avg_steps": 488.55,
+    "crash_rate": 0.35,
+    "completion_rate": 0.65,
+    "results": [
+      {
+        "steps": 649,
+        "reward": 6.697747096132601,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 631,
+        "reward": 6.710738348125355,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 728,
+        "reward": 7.4656438984304065,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 667,
+        "reward": 6.832872787740524,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 629,
+        "reward": 6.5751370112077,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 644,
+        "reward": 6.707444630475004,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 682,
+        "reward": 6.860609896891723,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 416,
+        "reward": 1.31847277095806,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 660,
+        "reward": 6.748639335468378,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 643,
+        "reward": 6.458537411126665,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 664,
+        "reward": 6.7280190046012365,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 37,
+        "reward": -2.4248081451750663,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 302,
+        "reward": 0.24714863553434263,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 652,
+        "reward": 6.828325065265299,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 414,
+        "reward": 1.0158888642393125,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 634,
+        "reward": 6.4124900520642525,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 637,
+        "reward": 6.38487041368183,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 8,
+        "reward": -2.8671105666339,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 63,
+        "reward": -2.5163680643539488,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 11,
+        "reward": -2.804447602148137,
+        "crashed": true,
+        "completion": 2
+      }
+    ]
+  },
+  {
+    "config": {
+      "gamma": 0.9540641828882271,
+      "tau": 0.0018781466835721635,
+      "critic_lr": 0.0001609422172157932,
+      "actor_lr": 0.000157613586694562,
+      "buffer_size": 50000,
+      "batch_size": 128,
+      "noise_scale": 0.1228913423334531,
+      "noise_accel_mult": 2.192801135749834,
+      "noise_steer_mult": 0.5593657196368956
+    },
+    "avg_reward": 0.5501981900139453,
+    "avg_steps": 319.05,
+    "crash_rate": 0.85,
+    "completion_rate": 0.15,
+    "results": [
+      {
+        "steps": 103,
+        "reward": -2.0994122413734404,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 13,
+        "reward": -2.802370055366502,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 404,
+        "reward": 1.159648491738528,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 691,
+        "reward": 3.8378990467362275,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 622,
+        "reward": 6.1504637118893735,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 227,
+        "reward": -0.8364269428471638,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 89,
+        "reward": -1.9491394975472538,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 693,
+        "reward": 6.936547291986066,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 272,
+        "reward": -0.6060578617114754,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 472,
+        "reward": 1.3894252539182865,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 608,
+        "reward": 2.956284963478817,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 310,
+        "reward": -0.07359850835597337,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 693,
+        "reward": 6.712107670577271,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 372,
+        "reward": 0.5746978567905519,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 212,
+        "reward": -1.1827874026280742,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 230,
+        "reward": -0.7863951644857381,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 115,
+        "reward": -1.8456067428785778,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 17,
+        "reward": -2.7256051584977965,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 141,
+        "reward": -1.7236555858186775,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 97,
+        "reward": -2.0820553253255425,
+        "crashed": true,
+        "completion": 2
+      }
+    ]
+  },
+  {
+    "config": {
+      "gamma": 0.9545349599471,
+      "tau": 0.001939910423234523,
+      "critic_lr": 0.0008992454245384049,
+      "actor_lr": 0.00014801022497491618,
+      "buffer_size": 30000,
+      "batch_size": 256,
+      "noise_scale": 0.26502236146448477,
+      "noise_accel_mult": 1.797106681581351,
+      "noise_steer_mult": 0.3350594247910148
+    },
+    "avg_reward": -0.714852519674915,
+    "avg_steps": 141.25,
+    "crash_rate": 1.0,
+    "completion_rate": 0.0,
+    "results": [
+      {
+        "steps": 388,
+        "reward": 3.687072434312854,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 261,
+        "reward": 1.400740170214796,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 230,
+        "reward": 0.9574421419858608,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 28,
+        "reward": -2.572711795475702,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 42,
+        "reward": -2.8418819349990065,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 236,
+        "reward": 1.2848872699627814,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 102,
+        "reward": -1.166568686605211,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 53,
+        "reward": -2.1419418175574676,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 256,
+        "reward": 1.4601245138660088,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 249,
+        "reward": 0.4967318882245242,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 13,
+        "reward": -2.952285368255276,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 226,
+        "reward": 0.8302927376031048,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 46,
+        "reward": -2.2666181135606154,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 34,
+        "reward": -2.506224336329362,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 7,
+        "reward": -2.9146450136988524,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 48,
+        "reward": -2.226376429042192,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 129,
+        "reward": -1.079431111063483,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 170,
+        "reward": -0.5846107268524467,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 5,
+        "reward": -2.9235777807367826,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 302,
+        "reward": 1.7625315645081674,
+        "crashed": true,
+        "completion": 2
+      }
+    ]
+  },
+  {
+    "config": {
+      "gamma": 0.9642997131277313,
+      "tau": 0.0014729594005848956,
+      "critic_lr": 0.00019505062001830856,
+      "actor_lr": 0.00010486754611973897,
+      "buffer_size": 50000,
+      "batch_size": 32,
+      "noise_scale": 0.18491603912553128,
+      "noise_accel_mult": 1.9604292156926972,
+      "noise_steer_mult": 0.5407739677825849
+    },
+    "avg_reward": 2.964181615195414,
+    "avg_steps": 324.0,
+    "crash_rate": 0.45,
+    "completion_rate": 0.55,
+    "results": [
+      {
+        "steps": 495,
+        "reward": 6.7929113395424165,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 154,
+        "reward": -0.937111990926573,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 501,
+        "reward": 6.870903770525237,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 541,
+        "reward": 7.24895507255098,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 188,
+        "reward": -0.22464646025263457,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 27,
+        "reward": -2.9016442837559984,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 488,
+        "reward": 6.815404039217394,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 70,
+        "reward": -1.9321459944043462,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 522,
+        "reward": 7.042253965617837,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 515,
+        "reward": 6.970311226885622,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 476,
+        "reward": 6.367412379472539,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 68,
+        "reward": -2.5759615309816657,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 472,
+        "reward": 6.189503045046266,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 520,
+        "reward": 6.7106661025493155,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 536,
+        "reward": 6.924999890418101,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 221,
+        "reward": -0.04430499609400895,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 29,
+        "reward": -2.843434795549565,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 28,
+        "reward": -2.527238657660174,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 89,
+        "reward": -1.9290138014214793,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 540,
+        "reward": 7.2658139831290125,
+        "crashed": false,
+        "completion": 1
+      }
+    ]
+  },
+  {
+    "config": {
+      "gamma": 0.9530783469711739,
+      "tau": 0.0013563140641636882,
+      "critic_lr": 0.00018761832286154354,
+      "actor_lr": 0.0001491366398763812,
+      "buffer_size": 10000,
+      "batch_size": 32,
+      "noise_scale": 0.15005479147342712,
+      "noise_accel_mult": 2.573536094640029,
+      "noise_steer_mult": 0.8836800156615165
+    },
+    "avg_reward": 4.687009685099394,
+    "avg_steps": 760.95,
+    "crash_rate": 0.3,
+    "completion_rate": 0.7,
+    "results": [
+      {
+        "steps": 867,
+        "reward": 6.650146891444399,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 932,
+        "reward": 6.907045301595875,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 582,
+        "reward": 1.5219978471953768,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 774,
+        "reward": 6.010072667770399,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 994,
+        "reward": 6.467018789721847,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 607,
+        "reward": 1.1575485728689276,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 924,
+        "reward": 6.777412811476766,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 202,
+        "reward": -1.1516269746634835,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 319,
+        "reward": -0.44470353394561624,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 455,
+        "reward": 0.4049003952333403,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 919,
+        "reward": 6.899646523418167,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 958,
+        "reward": 6.820173733878846,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 931,
+        "reward": 6.620452750644475,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 884,
+        "reward": 6.446764053761045,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 849,
+        "reward": 6.516977975008555,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 944,
+        "reward": 6.969667018579541,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 913,
+        "reward": 6.572469065192714,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 939,
+        "reward": 6.683171586057959,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 944,
+        "reward": 6.869370496656624,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 282,
+        "reward": -0.9583122699078719,
+        "crashed": true,
+        "completion": 2
+      }
+    ]
+  },
+  {
+    "config": {
+      "gamma": 0.9513003810051114,
+      "tau": 0.0014169241114150306,
+      "critic_lr": 0.0001794484683993226,
+      "actor_lr": 0.00041723763673973715,
+      "buffer_size": 30000,
+      "batch_size": 128,
+      "noise_scale": 0.2038882016361827,
+      "noise_accel_mult": 1.272766330984753,
+      "noise_steer_mult": 0.545235114449506
+    },
+    "avg_reward": -0.696085419884415,
+    "avg_steps": 244.0,
+    "crash_rate": 0.95,
+    "completion_rate": 0.05,
+    "results": [
+      {
+        "steps": 7,
+        "reward": -2.889075779203256,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 9,
+        "reward": -2.844137047149073,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 128,
+        "reward": -2.092342676869441,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 119,
+        "reward": -2.093315540856806,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 7,
+        "reward": -2.909155461841482,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 450,
+        "reward": 1.0948564195942447,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 77,
+        "reward": -2.0827307959035055,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 74,
+        "reward": -2.035159878248631,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 558,
+        "reward": 1.711869128622527,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 92,
+        "reward": -2.1898173182122624,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 63,
+        "reward": -2.3008914398621365,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 512,
+        "reward": 1.4156747000634864,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 142,
+        "reward": -1.6713916518562342,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 192,
+        "reward": -1.5206958083934319,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 26,
+        "reward": -2.5684530438584665,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 512,
+        "reward": 1.4196035614619156,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 122,
+        "reward": -1.9690795412187427,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 232,
+        "reward": -1.0927274213130194,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 739,
+        "reward": 3.2456228484097522,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 819,
+        "reward": 7.449638348946262,
+        "crashed": false,
+        "completion": 1
+      }
+    ]
+  },
+  {
+    "config": {
+      "gamma": 0.9647153414089155,
+      "tau": 0.001342752562441628,
+      "critic_lr": 0.0004638040984139296,
+      "actor_lr": 0.00010275236055523046,
+      "buffer_size": 30000,
+      "batch_size": 256,
+      "noise_scale": 0.1826940702368956,
+      "noise_accel_mult": 1.8245852433984795,
+      "noise_steer_mult": 0.5772635040810696
+    },
+    "avg_reward": -1.358016725182504,
+    "avg_steps": 155.65,
+    "crash_rate": 0.95,
+    "completion_rate": 0.05,
+    "results": [
+      {
+        "steps": 114,
+        "reward": -2.0163096183711704,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 76,
+        "reward": -2.1427979419772227,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 728,
+        "reward": 6.900124357368446,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 20,
+        "reward": -2.8439986864892397,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 98,
+        "reward": -2.284761377652413,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 414,
+        "reward": 1.0722055185410948,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 11,
+        "reward": -2.9308600475344253,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 31,
+        "reward": -2.574131860599054,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 472,
+        "reward": 1.5417139701195222,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 634,
+        "reward": 3.46773612451066,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 175,
+        "reward": -1.2760676597512666,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 26,
+        "reward": -2.7482761595608025,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 17,
+        "reward": -2.881803018895475,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 79,
+        "reward": -2.130534427052859,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 115,
+        "reward": -1.8912557446088325,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 9,
+        "reward": -2.9214293944909344,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 21,
+        "reward": -2.936637404187055,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 8,
+        "reward": -2.9350614811814064,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 35,
+        "reward": -2.7634476253465095,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 30,
+        "reward": -2.864742026491135,
+        "crashed": true,
+        "completion": 2
+      }
+    ]
+  },
+  {
+    "config": {
+      "gamma": 0.9591087669792419,
+      "tau": 0.0010928839604114778,
+      "critic_lr": 0.0001469659913580517,
+      "actor_lr": 0.00035278725335032316,
+      "buffer_size": 10000,
+      "batch_size": 128,
+      "noise_scale": 0.248344594788737,
+      "noise_accel_mult": 1.7254598448818195,
+      "noise_steer_mult": 0.6893551031826277
+    },
+    "avg_reward": -1.5338014226239998,
+    "avg_steps": 131.2,
+    "crash_rate": 0.95,
+    "completion_rate": 0.05,
+    "results": [
+      {
+        "steps": 80,
+        "reward": -2.1814886727711316,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 16,
+        "reward": -2.931655201493051,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 144,
+        "reward": -1.6690791240295852,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 102,
+        "reward": -1.7366057337782843,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 110,
+        "reward": -1.6162920112127643,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 354,
+        "reward": 0.5570632053550044,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 78,
+        "reward": -2.415202166091498,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 62,
+        "reward": -2.1642900650607166,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 60,
+        "reward": -2.4119404748214213,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 294,
+        "reward": -0.07277443778368697,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 2,
+        "reward": -2.997900192468793,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 67,
+        "reward": -2.4896340569923807,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 25,
+        "reward": -2.8348127406230974,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 51,
+        "reward": -2.407282375943408,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 20,
+        "reward": -2.8971327775745173,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 143,
+        "reward": -1.5935055738453519,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 167,
+        "reward": -1.4144568118795586,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 135,
+        "reward": -1.5165527897438786,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 680,
+        "reward": 6.881039790411455,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 34,
+        "reward": -2.76352624213333,
+        "crashed": true,
+        "completion": 2
+      }
+    ]
+  },
+  {
+    "config": {
+      "gamma": 0.9518157954585381,
+      "tau": 0.0015456618918195122,
+      "critic_lr": 0.0009708207672950071,
+      "actor_lr": 0.00014326090636349758,
+      "buffer_size": 50000,
+      "batch_size": 256,
+      "noise_scale": 0.2831979226363975,
+      "noise_accel_mult": 2.2202404258518413,
+      "noise_steer_mult": 0.46385214795602187
+    },
+    "avg_reward": -2.251184458506865,
+    "avg_steps": 55.5,
+    "crash_rate": 1.0,
+    "completion_rate": 0.0,
+    "results": [
+      {
+        "steps": 8,
+        "reward": -2.882832119454598,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 43,
+        "reward": -2.6986770029599465,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 68,
+        "reward": -2.5224510289028053,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 8,
+        "reward": -2.926975729717201,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 31,
+        "reward": -2.6380155648890873,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 25,
+        "reward": -2.688942534014827,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 7,
+        "reward": -2.9170297978883046,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 236,
+        "reward": 0.34496211821803024,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 67,
+        "reward": -1.8683953192336658,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 7,
+        "reward": -2.896693853454733,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 19,
+        "reward": -2.7762153175613675,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 98,
+        "reward": -1.9637533700495877,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 111,
+        "reward": -1.3983683302059806,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 28,
+        "reward": -2.6290280659121104,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 55,
+        "reward": -2.13412942630822,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 43,
+        "reward": -2.2244193444440112,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 8,
+        "reward": -2.926069954950495,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 85,
+        "reward": -1.628850335025867,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 133,
+        "reward": -1.075403793640145,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 30,
+        "reward": -2.5724003997423934,
+        "crashed": true,
+        "completion": 2
+      }
+    ]
+  },
+  {
+    "config": {
+      "gamma": 0.9517730769955624,
+      "tau": 0.0010234362105035312,
+      "critic_lr": 0.0002486483018786605,
+      "actor_lr": 0.000138325689477645,
+      "buffer_size": 100000,
+      "batch_size": 32,
+      "noise_scale": 0.13919334246825138,
+      "noise_accel_mult": 1.837177018527382,
+      "noise_steer_mult": 0.6946432602057703
+    },
+    "avg_reward": 6.814739181805992,
+    "avg_steps": 856.2,
+    "crash_rate": 0.0,
+    "completion_rate": 1.0,
+    "results": [
+      {
+        "steps": 891,
+        "reward": 6.808275205170991,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 825,
+        "reward": 7.000894645194187,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 815,
+        "reward": 6.822355769008661,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 848,
+        "reward": 6.825264495568779,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 875,
+        "reward": 6.888296690852005,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 865,
+        "reward": 6.602481414173051,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 914,
+        "reward": 6.86511227594137,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 831,
+        "reward": 6.7402846896561455,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 980,
+        "reward": 7.297546386130317,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 838,
+        "reward": 6.6655404322923895,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 870,
+        "reward": 7.149751019835829,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 824,
+        "reward": 6.615400912770215,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 865,
+        "reward": 6.863684103909046,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 794,
+        "reward": 6.308200762482952,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 776,
+        "reward": 6.077713822117933,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 879,
+        "reward": 6.981714631429868,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 837,
+        "reward": 6.905850643492916,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 887,
+        "reward": 7.08303022566129,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 861,
+        "reward": 6.7409058541302,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 849,
+        "reward": 7.052479656301687,
+        "crashed": false,
+        "completion": 1
+      }
+    ]
+  },
+  {
+    "config": {
+      "gamma": 0.955120912643391,
+      "tau": 0.0010068320244785232,
+      "critic_lr": 0.0002931225624615445,
+      "actor_lr": 0.00015328984828794269,
+      "buffer_size": 100000,
+      "batch_size": 32,
+      "noise_scale": 0.14982632728787898,
+      "noise_accel_mult": 1.4682180415143677,
+      "noise_steer_mult": 0.7164328376750482
+    },
+    "avg_reward": -1.244006231980028,
+    "avg_steps": 384.65,
+    "crash_rate": 1.0,
+    "completion_rate": 0.0,
+    "results": [
+      {
+        "steps": 447,
+        "reward": -0.6934928785981005,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 148,
+        "reward": -2.198516792514221,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 259,
+        "reward": -1.619019607538582,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 19,
+        "reward": -2.8723075716056656,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 542,
+        "reward": 0.790700440414986,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 238,
+        "reward": -1.7857992245822203,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 478,
+        "reward": -1.4209305790730076,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 116,
+        "reward": -2.549574474754274,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 623,
+        "reward": -1.8563833472452356,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 32,
+        "reward": -2.9083633928739623,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 495,
+        "reward": -0.7182420194373615,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 11,
+        "reward": -2.944513114751113,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 607,
+        "reward": -0.3254627543248132,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 284,
+        "reward": -1.751837027401415,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 920,
+        "reward": 1.185086522394295,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 721,
+        "reward": -0.3703426864798911,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 546,
+        "reward": -0.15332888456690963,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 966,
+        "reward": 1.6843164687445586,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 15,
+        "reward": -2.9873577877875044,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 226,
+        "reward": -1.3847559276201185,
+        "crashed": true,
+        "completion": 2
+      }
+    ]
+  },
+  {
+    "config": {
+      "gamma": 0.9543453340032477,
+      "tau": 0.0016904772864417125,
+      "critic_lr": 0.0003764846788714197,
+      "actor_lr": 0.00039754642472607894,
+      "buffer_size": 100000,
+      "batch_size": 256,
+      "noise_scale": 0.11974199448567474,
+      "noise_accel_mult": 1.7752644403787232,
+      "noise_steer_mult": 0.7813266267718932
+    },
+    "avg_reward": -2.696221618867949,
+    "avg_steps": 37.15,
+    "crash_rate": 1.0,
+    "completion_rate": 0.0,
+    "results": [
+      {
+        "steps": 42,
+        "reward": -2.446421025065039,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 44,
+        "reward": -2.1509306893339737,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 83,
+        "reward": -2.0972384853675736,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 10,
+        "reward": -2.8620138016535295,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 51,
+        "reward": -2.7580646592488485,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 46,
+        "reward": -2.7724673153280723,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 44,
+        "reward": -2.9584741160871317,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 7,
+        "reward": -2.999340500096365,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 14,
+        "reward": -2.8196887268072537,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 122,
+        "reward": -2.713976655100754,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 30,
+        "reward": -2.4873373978393074,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 27,
+        "reward": -2.880209821797891,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 9,
+        "reward": -2.909803838731274,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 30,
+        "reward": -2.7893793168890904,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 13,
+        "reward": -2.877933780876769,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 98,
+        "reward": -1.982999654848205,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 8,
+        "reward": -2.874219880459198,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 46,
+        "reward": -2.6876441857049365,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 12,
+        "reward": -2.941321386218677,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 7,
+        "reward": -2.9149671399050976,
+        "crashed": true,
+        "completion": 2
+      }
+    ]
+  },
+  {
+    "config": {
+      "gamma": 0.9586671254087917,
+      "tau": 0.001859348020043871,
+      "critic_lr": 0.0007214394134726122,
+      "actor_lr": 0.00019222991938496029,
+      "buffer_size": 10000,
+      "batch_size": 32,
+      "noise_scale": 0.0868597475688799,
+      "noise_accel_mult": 1.693254345844258,
+      "noise_steer_mult": 0.6716357444294166
+    },
+    "avg_reward": 4.986841368003057,
+    "avg_steps": 547.65,
+    "crash_rate": 0.25,
+    "completion_rate": 0.75,
+    "results": [
+      {
+        "steps": 472,
+        "reward": 2.353517609166741,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 654,
+        "reward": 6.936053340984125,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 629,
+        "reward": 6.336015866803471,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 679,
+        "reward": 6.682839129021039,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 656,
+        "reward": 6.465617064859769,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 650,
+        "reward": 6.724180546360795,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 593,
+        "reward": 6.523154225147958,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 58,
+        "reward": -2.086088493728645,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 656,
+        "reward": 6.720686583013782,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 625,
+        "reward": 6.358356777323448,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 608,
+        "reward": 6.506131939856554,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 535,
+        "reward": 2.7961991009025864,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 129,
+        "reward": -1.8748312982791382,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 616,
+        "reward": 6.5473641076261675,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 616,
+        "reward": 7.137651809269387,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 592,
+        "reward": 6.0261401517476445,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 640,
+        "reward": 6.750759246597266,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 632,
+        "reward": 6.47388793503528,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 253,
+        "reward": -0.6278240912912048,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 660,
+        "reward": 6.987015809644116,
+        "crashed": false,
+        "completion": 1
+      }
+    ]
+  },
+  {
+    "config": {
+      "gamma": 0.9500744784770595,
+      "tau": 0.001098925082895288,
+      "critic_lr": 0.00025976384612213426,
+      "actor_lr": 0.00010013464506268799,
+      "buffer_size": 50000,
+      "batch_size": 256,
+      "noise_scale": 0.13424571987835635,
+      "noise_accel_mult": 2.2104351441097734,
+      "noise_steer_mult": 0.713944541231988
+    },
+    "avg_reward": 4.481560658616527,
+    "avg_steps": 500.25,
+    "crash_rate": 0.25,
+    "completion_rate": 0.75,
+    "results": [
+      {
+        "steps": 681,
+        "reward": 6.852114662223608,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 664,
+        "reward": 6.84574222199695,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 648,
+        "reward": 6.734864663921841,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 6,
+        "reward": -2.9157624818555354,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 47,
+        "reward": -2.3532994103733005,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 7,
+        "reward": -2.9007259985779306,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 12,
+        "reward": -2.8533856361133223,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 587,
+        "reward": 6.334400983161035,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 581,
+        "reward": 6.213140739076626,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 650,
+        "reward": 6.87451813878807,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 458,
+        "reward": 1.4490676254401524,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 620,
+        "reward": 6.517043539506545,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 667,
+        "reward": 6.793818529950621,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 600,
+        "reward": 6.360403869589551,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 659,
+        "reward": 6.878684874280324,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 623,
+        "reward": 6.554304353833843,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 575,
+        "reward": 6.317521206585523,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 644,
+        "reward": 6.790198222541855,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 647,
+        "reward": 6.607256246027432,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 629,
+        "reward": 6.531306822326644,
+        "crashed": false,
+        "completion": 1
+      }
+    ]
+  }
+]

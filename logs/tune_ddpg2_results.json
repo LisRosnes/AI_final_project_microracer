@@ -1,0 +1,6304 @@
+[
+  {
+    "config": {
+      "gamma": 0.9683524658235207,
+      "tau": 0.00892718030435363,
+      "critic_lr": 0.0029106359131330704,
+      "actor_lr": 0.0015751320499779737,
+      "buffer_size": 100000,
+      "batch_size": 256,
+      "param_noise_stddev": 0.4245991883601898
+    },
+    "avg_reward": -2.9588067595829517,
+    "avg_steps": 7.9,
+    "crash_rate": 1.0,
+    "completion_rate": 0.0,
+    "results": [
+      {
+        "steps": 4,
+        "reward": -2.94161723985522,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 4,
+        "reward": -2.97144994895748,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 5,
+        "reward": -2.9571442945534447,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 27,
+        "reward": -2.9224172304181812,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 5,
+        "reward": -2.976582568955918,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 5,
+        "reward": -2.947781827299523,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 3,
+        "reward": -2.9627968055413616,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 20,
+        "reward": -2.9750187218539286,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 4,
+        "reward": -2.9729264982376074,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 32,
+        "reward": -2.91190431862742,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 5,
+        "reward": -2.963368566344385,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 4,
+        "reward": -2.9660209777257873,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 16,
+        "reward": -2.9901213306489174,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 4,
+        "reward": -2.959608470142375,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 3,
+        "reward": -2.962164468854423,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 3,
+        "reward": -2.960306648946231,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 5,
+        "reward": -2.918586568536076,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 3,
+        "reward": -2.961404945803257,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 4,
+        "reward": -2.959739194730345,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 2,
+        "reward": -2.9951745656271473,
+        "crashed": true,
+        "completion": 3
+      }
+    ]
+  },
+  {
+    "config": {
+      "gamma": 0.9604046164232355,
+      "tau": 0.001519934830130981,
+      "critic_lr": 0.00023270677083837802,
+      "actor_lr": 0.0004059611610484307,
+      "buffer_size": 100000,
+      "batch_size": 256,
+      "param_noise_stddev": 0.40332918262685613
+    },
+    "avg_reward": -2.9704286250213703,
+    "avg_steps": 4.8,
+    "crash_rate": 1.0,
+    "completion_rate": 0.0,
+    "results": [
+      {
+        "steps": 3,
+        "reward": -2.9647074777983113,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 4,
+        "reward": -2.9664282796047496,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 4,
+        "reward": -2.967285259604952,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 5,
+        "reward": -2.9670988480989586,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 9,
+        "reward": -2.964106338213902,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 3,
+        "reward": -2.974136056712918,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 5,
+        "reward": -2.9551068039888597,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 4,
+        "reward": -2.977386678550194,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 9,
+        "reward": -2.9950102624040142,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 3,
+        "reward": -2.9940040440653735,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 5,
+        "reward": -2.97115541201528,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 4,
+        "reward": -2.9518731955003132,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 4,
+        "reward": -2.9682418549270007,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 5,
+        "reward": -2.9448687443223642,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 4,
+        "reward": -2.9683319669084303,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 3,
+        "reward": -2.971017730405511,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 3,
+        "reward": -2.9736518062808446,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 4,
+        "reward": -2.946154665040225,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 8,
+        "reward": -2.990682991859329,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 7,
+        "reward": -2.9973240841258715,
+        "crashed": true,
+        "completion": 3
+      }
+    ]
+  },
+  {
+    "config": {
+      "gamma": 0.9597840153257596,
+      "tau": 0.0032676417657817635,
+      "critic_lr": 0.0015304852121831463,
+      "actor_lr": 0.0001238513729886094,
+      "buffer_size": 100000,
+      "batch_size": 32,
+      "param_noise_stddev": 0.3579048619304706
+    },
+    "avg_reward": -2.940126811094305,
+    "avg_steps": 11.0,
+    "crash_rate": 1.0,
+    "completion_rate": 0.0,
+    "results": [
+      {
+        "steps": 12,
+        "reward": -2.95038546027358,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 3,
+        "reward": -2.9668657831351197,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 8,
+        "reward": -2.8648342453465943,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 9,
+        "reward": -2.9964354428523983,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 4,
+        "reward": -2.950411313688121,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 5,
+        "reward": -2.9765242417929034,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 4,
+        "reward": -2.9635494194546643,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 4,
+        "reward": -2.9549675509163076,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 5,
+        "reward": -2.9715034568342014,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 25,
+        "reward": -2.9673954884138967,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 8,
+        "reward": -2.9595013055241024,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 5,
+        "reward": -2.926336085945816,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 4,
+        "reward": -2.951070229552293,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 7,
+        "reward": -2.9646978771185677,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 5,
+        "reward": -2.9344793934738647,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 5,
+        "reward": -2.959467898613436,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 4,
+        "reward": -2.9562085944628005,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 93,
+        "reward": -2.638228994372005,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 5,
+        "reward": -2.998868694116401,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 5,
+        "reward": -2.950804745999022,
+        "crashed": true,
+        "completion": 2
+      }
+    ]
+  },
+  {
+    "config": {
+      "gamma": 0.9715674721932405,
+      "tau": 0.0013244581340099357,
+      "critic_lr": 0.0009780337016659412,
+      "actor_lr": 0.00011715937392307068,
+      "buffer_size": 10000,
+      "batch_size": 256,
+      "param_noise_stddev": 0.39880977051250155
+    },
+    "avg_reward": -2.9267623492824515,
+    "avg_steps": 7.75,
+    "crash_rate": 1.0,
+    "completion_rate": 0.0,
+    "results": [
+      {
+        "steps": 21,
+        "reward": -2.7764708879798112,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 4,
+        "reward": -2.98551095101578,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 3,
+        "reward": -2.9918812504210144,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 3,
+        "reward": -2.9921888998711617,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 3,
+        "reward": -2.9947616095073477,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 6,
+        "reward": -2.9782706420530434,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 6,
+        "reward": -2.9519878476021044,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 5,
+        "reward": -2.954839273368968,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 33,
+        "reward": -2.5421954118148875,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 8,
+        "reward": -2.9027556445014073,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 3,
+        "reward": -2.9986364969733454,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 9,
+        "reward": -2.9161949622412338,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 5,
+        "reward": -2.9330236001482115,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 4,
+        "reward": -2.985458327271547,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 10,
+        "reward": -2.884077962461556,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 5,
+        "reward": -2.9726684791575635,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 14,
+        "reward": -2.8440321164293256,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 3,
+        "reward": -2.9953764930662636,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 5,
+        "reward": -2.974326197687506,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 5,
+        "reward": -2.9605899320769513,
+        "crashed": true,
+        "completion": 2
+      }
+    ]
+  },
+  {
+    "config": {
+      "gamma": 0.9960354481366452,
+      "tau": 0.007849235338159356,
+      "critic_lr": 0.0015696396388661157,
+      "actor_lr": 0.0069782812651260325,
+      "buffer_size": 100000,
+      "batch_size": 128,
+      "param_noise_stddev": 0.17642052935932134
+    },
+    "avg_reward": -2.2065240185990853,
+    "avg_steps": 50.15,
+    "crash_rate": 1.0,
+    "completion_rate": 0.0,
+    "results": [
+      {
+        "steps": 67,
+        "reward": -1.5580820663005814,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 30,
+        "reward": -2.4032623492097613,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 72,
+        "reward": -1.8534379334868765,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 130,
+        "reward": -0.8171258796090082,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 47,
+        "reward": -2.3928571458660635,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 14,
+        "reward": -2.835821521961534,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 47,
+        "reward": -1.9448594732302427,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 82,
+        "reward": -1.769855893423767,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 96,
+        "reward": -0.8340467616979912,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 18,
+        "reward": -2.9245109348987888,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 59,
+        "reward": -2.371773010906258,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 25,
+        "reward": -2.8330680199632794,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 37,
+        "reward": -2.5574966157310475,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 77,
+        "reward": -1.7786490138844662,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 37,
+        "reward": -2.693892107315968,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 59,
+        "reward": -1.8744569766990158,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 42,
+        "reward": -2.5311710473050675,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 32,
+        "reward": -2.504850526381091,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 29,
+        "reward": -2.664123153947246,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 3,
+        "reward": -2.98713994016366,
+        "crashed": true,
+        "completion": 3
+      }
+    ]
+  },
+  {
+    "config": {
+      "gamma": 0.9765921080747542,
+      "tau": 0.001383324997521996,
+      "critic_lr": 0.0040215545266902904,
+      "actor_lr": 0.00014096175149815865,
+      "buffer_size": 10000,
+      "batch_size": 32,
+      "param_noise_stddev": 0.08332009328034067
+    },
+    "avg_reward": -1.9022210950596208,
+    "avg_steps": 188.8,
+    "crash_rate": 1.0,
+    "completion_rate": 0.0,
+    "results": [
+      {
+        "steps": 195,
+        "reward": -0.8598548113219633,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 53,
+        "reward": -2.7269554883021687,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 372,
+        "reward": 1.609829802080549,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 64,
+        "reward": -2.5461244623543218,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 180,
+        "reward": -0.974143990856668,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 190,
+        "reward": -2.05750734568144,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 316,
+        "reward": -1.8930774261004302,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 110,
+        "reward": -1.6561917996936717,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 449,
+        "reward": -1.0349767247134618,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 27,
+        "reward": -2.8144077278284785,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 59,
+        "reward": -2.538163656246173,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 94,
+        "reward": -2.2941721209136485,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 193,
+        "reward": -1.9929411674849813,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 55,
+        "reward": -2.827179272851785,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 114,
+        "reward": -2.3112597025458643,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 24,
+        "reward": -2.680033338107509,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 1100,
+        "reward": -1.617429999907368,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 114,
+        "reward": -1.3250646582911818,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 28,
+        "reward": -2.896562693422255,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 39,
+        "reward": -2.6082053166495975,
+        "crashed": true,
+        "completion": 2
+      }
+    ]
+  },
+  {
+    "config": {
+      "gamma": 0.9675648206986693,
+      "tau": 0.0013057771348997226,
+      "critic_lr": 0.005323617594751502,
+      "actor_lr": 0.0017643967683381545,
+      "buffer_size": 10000,
+      "batch_size": 128,
+      "param_noise_stddev": 0.10381741067223577
+    },
+    "avg_reward": -2.4402864948233938,
+    "avg_steps": 104.1,
+    "crash_rate": 1.0,
+    "completion_rate": 0.0,
+    "results": [
+      {
+        "steps": 144,
+        "reward": -1.9873132496324486,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 12,
+        "reward": -2.8227796469369686,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 5,
+        "reward": -2.9401057230279317,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 5,
+        "reward": -2.940115066424879,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 348,
+        "reward": -1.2160625761509696,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 168,
+        "reward": -1.9154065678469572,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 9,
+        "reward": -2.880828849833074,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 20,
+        "reward": -2.7260733959328856,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 255,
+        "reward": -2.049893267637087,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 174,
+        "reward": -2.1631131395142336,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 156,
+        "reward": -2.5429355412007015,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 25,
+        "reward": -2.9222215366044875,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 4,
+        "reward": -2.98403939618068,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 136,
+        "reward": -2.837169549641822,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 157,
+        "reward": -1.8999645601181774,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 74,
+        "reward": -2.311320315123721,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 47,
+        "reward": -2.645028279456985,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 90,
+        "reward": -2.772641087821391,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 163,
+        "reward": -2.377197504783431,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 90,
+        "reward": -1.8715206425990358,
+        "crashed": true,
+        "completion": 2
+      }
+    ]
+  },
+  {
+    "config": {
+      "gamma": 0.9849489945739267,
+      "tau": 0.005764810670114668,
+      "critic_lr": 0.0013260331922696556,
+      "actor_lr": 0.003482846706526885,
+      "buffer_size": 30000,
+      "batch_size": 128,
+      "param_noise_stddev": 0.27885681102411625
+    },
+    "avg_reward": -2.8919487353149207,
+    "avg_steps": 14.05,
+    "crash_rate": 1.0,
+    "completion_rate": 0.0,
+    "results": [
+      {
+        "steps": 8,
+        "reward": -2.916543663980356,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 8,
+        "reward": -2.9317821141129032,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 36,
+        "reward": -2.5622655346969196,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 53,
+        "reward": -2.7809720056069316,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 9,
+        "reward": -2.9254295300496973,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 6,
+        "reward": -2.9535417121793435,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 14,
+        "reward": -2.882083699479126,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 13,
+        "reward": -2.8677093716492688,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 11,
+        "reward": -2.8405724083570316,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 2,
+        "reward": -2.9985657017545395,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 6,
+        "reward": -2.8987853965563666,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 8,
+        "reward": -2.9314265129664063,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 16,
+        "reward": -2.9346427204896455,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 7,
+        "reward": -2.932388277451712,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 4,
+        "reward": -2.9425088003433033,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 25,
+        "reward": -2.6969542362699594,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 10,
+        "reward": -2.9534459780440994,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 9,
+        "reward": -2.994404214452293,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 13,
+        "reward": -2.9476282232555393,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 23,
+        "reward": -2.9473246046029717,
+        "crashed": true,
+        "completion": 2
+      }
+    ]
+  },
+  {
+    "config": {
+      "gamma": 0.9733126116575711,
+      "tau": 0.0013451138780827192,
+      "critic_lr": 0.0034925742810604133,
+      "actor_lr": 0.00011845366232515815,
+      "buffer_size": 100000,
+      "batch_size": 32,
+      "param_noise_stddev": 0.111748102566569
+    },
+    "avg_reward": -2.8827132083567806,
+    "avg_steps": 12.75,
+    "crash_rate": 1.0,
+    "completion_rate": 0.0,
+    "results": [
+      {
+        "steps": 5,
+        "reward": -2.9235581477014208,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 35,
+        "reward": -2.9386529449677283,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 11,
+        "reward": -2.962462617758169,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 5,
+        "reward": -2.936911716471977,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 4,
+        "reward": -2.947529945712869,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 5,
+        "reward": -2.936001682605376,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 7,
+        "reward": -2.9126333821502266,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 6,
+        "reward": -2.9446100934845045,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 9,
+        "reward": -2.994672791368333,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 8,
+        "reward": -2.924045207158758,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 21,
+        "reward": -2.7703830264150233,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 4,
+        "reward": -2.944106232338757,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 10,
+        "reward": -2.9403985076146424,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 19,
+        "reward": -2.811696266412151,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 45,
+        "reward": -2.518330763665757,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 30,
+        "reward": -2.5196266341760434,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 4,
+        "reward": -2.9475648113304573,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 5,
+        "reward": -2.9262986775183806,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 14,
+        "reward": -2.9395033018231778,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 8,
+        "reward": -2.9152774164618522,
+        "crashed": true,
+        "completion": 2
+      }
+    ]
+  },
+  {
+    "config": {
+      "gamma": 0.9877717286764496,
+      "tau": 0.008564228155122467,
+      "critic_lr": 0.002771361225610097,
+      "actor_lr": 0.008163556507987281,
+      "buffer_size": 100000,
+      "batch_size": 128,
+      "param_noise_stddev": 0.23604096209798406
+    },
+    "avg_reward": -2.604954305716569,
+    "avg_steps": 29.2,
+    "crash_rate": 1.0,
+    "completion_rate": 0.0,
+    "results": [
+      {
+        "steps": 34,
+        "reward": -2.4232505458188003,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 7,
+        "reward": -2.9066669829679053,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 44,
+        "reward": -2.411706000466924,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 34,
+        "reward": -2.531578567186722,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 7,
+        "reward": -2.9283904100089155,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 7,
+        "reward": -2.962370961551964,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 70,
+        "reward": -1.3498853140291502,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 25,
+        "reward": -2.5517483814190163,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 6,
+        "reward": -2.93409322556209,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 30,
+        "reward": -2.614405058696585,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 10,
+        "reward": -2.821355481353504,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 9,
+        "reward": -2.8445528375461473,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 43,
+        "reward": -2.1580875630366556,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 5,
+        "reward": -2.95589243109927,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 55,
+        "reward": -2.699159094168323,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 53,
+        "reward": -2.7336409009206286,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 18,
+        "reward": -2.889539946240757,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 6,
+        "reward": -2.931965635766534,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 15,
+        "reward": -2.8791628385569323,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 106,
+        "reward": -1.5716339379345587,
+        "crashed": true,
+        "completion": 2
+      }
+    ]
+  },
+  {
+    "config": {
+      "gamma": 0.9954044948983839,
+      "tau": 0.001735121917306587,
+      "critic_lr": 0.009256228818384797,
+      "actor_lr": 0.00026515575912032687,
+      "buffer_size": 50000,
+      "batch_size": 32,
+      "param_noise_stddev": 0.07018817055696797
+    },
+    "avg_reward": -2.8997089570640027,
+    "avg_steps": 11.3,
+    "crash_rate": 1.0,
+    "completion_rate": 0.0,
+    "results": [
+      {
+        "steps": 5,
+        "reward": -2.9652431647959006,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 7,
+        "reward": -2.9052571329981602,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 6,
+        "reward": -2.9585907374118445,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 9,
+        "reward": -2.892912546598703,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 6,
+        "reward": -2.9204146747936246,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 7,
+        "reward": -2.948176355194097,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 5,
+        "reward": -2.9210125631082575,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 12,
+        "reward": -2.972510740291177,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 7,
+        "reward": -2.879738132162045,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 10,
+        "reward": -2.8151390648503876,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 12,
+        "reward": -2.8116107938007477,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 12,
+        "reward": -2.9530659195385325,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 7,
+        "reward": -2.9087951827836678,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 5,
+        "reward": -2.9382092920981657,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 10,
+        "reward": -2.950604161095475,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 14,
+        "reward": -2.9675732589737143,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 27,
+        "reward": -2.5785217519588244,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 24,
+        "reward": -2.9440773715174196,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 11,
+        "reward": -2.898142137733077,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 30,
+        "reward": -2.8645841595762325,
+        "crashed": true,
+        "completion": 2
+      }
+    ]
+  },
+  {
+    "config": {
+      "gamma": 0.9988112985455313,
+      "tau": 0.00505356469827428,
+      "critic_lr": 0.0007226393614486144,
+      "actor_lr": 0.002937380642021175,
+      "buffer_size": 100000,
+      "batch_size": 128,
+      "param_noise_stddev": 0.10833499495437282
+    },
+    "avg_reward": 2.5200363199670064,
+    "avg_steps": 361.3,
+    "crash_rate": 0.6,
+    "completion_rate": 0.4,
+    "results": [
+      {
+        "steps": 483,
+        "reward": 6.71594067500924,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 476,
+        "reward": 6.931734995497636,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 130,
+        "reward": -2.790724352930453,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 458,
+        "reward": 6.807589262399357,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 473,
+        "reward": 6.801354741614322,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 687,
+        "reward": 6.91049738030977,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 64,
+        "reward": -1.9951707573112016,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 613,
+        "reward": 7.244291061014267,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 350,
+        "reward": 1.5867899770045284,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 504,
+        "reward": 6.701782580294001,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 163,
+        "reward": -1.2016608632909769,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 24,
+        "reward": -2.8443285989215252,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 187,
+        "reward": -1.3634979685206798,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 628,
+        "reward": 1.5600941105854025,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 200,
+        "reward": 0.5627878759328939,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 338,
+        "reward": 0.24135134616239817,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 330,
+        "reward": 1.199714503393075,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 547,
+        "reward": 6.809209178895663,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 217,
+        "reward": 0.5988913492269243,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 354,
+        "reward": -0.07592009702451774,
+        "crashed": true,
+        "completion": 2
+      }
+    ]
+  },
+  {
+    "config": {
+      "gamma": 0.9961419526546985,
+      "tau": 0.004180025501247475,
+      "critic_lr": 0.00012246152681955904,
+      "actor_lr": 0.002808263499602917,
+      "buffer_size": 100000,
+      "batch_size": 256,
+      "param_noise_stddev": 0.0796216704799822
+    },
+    "avg_reward": -2.3680332102207173,
+    "avg_steps": 85.35,
+    "crash_rate": 1.0,
+    "completion_rate": 0.0,
+    "results": [
+      {
+        "steps": 130,
+        "reward": -1.6905590246482776,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 8,
+        "reward": -2.996567022853433,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 109,
+        "reward": -2.087051516805338,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 119,
+        "reward": -2.060355771472871,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 58,
+        "reward": -2.76934686268483,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 88,
+        "reward": -2.029135947519698,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 114,
+        "reward": -2.0336868015756138,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 39,
+        "reward": -2.8888165757879287,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 112,
+        "reward": -2.0614581842826567,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 104,
+        "reward": -2.193476014505718,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 93,
+        "reward": -2.4181759963648606,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 84,
+        "reward": -2.4711364219235787,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 100,
+        "reward": -2.3203861939094836,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 69,
+        "reward": -2.6340094160910597,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 89,
+        "reward": -2.526654127576345,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 77,
+        "reward": -2.6389543014216845,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 66,
+        "reward": -2.6729088218740276,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 130,
+        "reward": -1.7426593341398886,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 85,
+        "reward": -2.4504104833636537,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 33,
+        "reward": -2.674915385613406,
+        "crashed": true,
+        "completion": 2
+      }
+    ]
+  },
+  {
+    "config": {
+      "gamma": 0.9780795083684808,
+      "tau": 0.003308717190244111,
+      "critic_lr": 0.0005779746433080973,
+      "actor_lr": 0.0006924363809730767,
+      "buffer_size": 100000,
+      "batch_size": 128,
+      "param_noise_stddev": 0.08659136927500413
+    },
+    "avg_reward": -2.915571178302569,
+    "avg_steps": 8.05,
+    "crash_rate": 1.0,
+    "completion_rate": 0.0,
+    "results": [
+      {
+        "steps": 5,
+        "reward": -2.964754848517846,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 5,
+        "reward": -2.9704428802855163,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 6,
+        "reward": -2.9587250741584388,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 6,
+        "reward": -2.9406171677343185,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 13,
+        "reward": -2.8466765209554574,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 5,
+        "reward": -2.958187358012875,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 5,
+        "reward": -2.9202709198883112,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 6,
+        "reward": -2.9534393488293946,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 29,
+        "reward": -2.5067241812211054,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 7,
+        "reward": -2.9598476075951456,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 3,
+        "reward": -2.9840053668660005,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 4,
+        "reward": -2.9490891588340573,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 5,
+        "reward": -2.9545008534826134,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 5,
+        "reward": -2.9541598428442577,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 4,
+        "reward": -2.9512861952397493,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 18,
+        "reward": -2.666916469551141,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 3,
+        "reward": -2.9991694358442462,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 5,
+        "reward": -2.945965388824027,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 21,
+        "reward": -2.96179240895221,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 6,
+        "reward": -2.9648525384146653,
+        "crashed": true,
+        "completion": 2
+      }
+    ]
+  },
+  {
+    "config": {
+      "gamma": 0.9986452570568108,
+      "tau": 0.0029486525290298576,
+      "critic_lr": 0.0012345298173828624,
+      "actor_lr": 0.002117836148940329,
+      "buffer_size": 50000,
+      "batch_size": 256,
+      "param_noise_stddev": 0.09923903893022176
+    },
+    "avg_reward": -2.6361198874366356,
+    "avg_steps": 33.5,
+    "crash_rate": 1.0,
+    "completion_rate": 0.0,
+    "results": [
+      {
+        "steps": 33,
+        "reward": -2.53346224455486,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 29,
+        "reward": -2.6856793029548776,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 53,
+        "reward": -2.28284269853987,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 74,
+        "reward": -2.0679378958622867,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 16,
+        "reward": -2.904153374727254,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 31,
+        "reward": -2.4802668844076137,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 24,
+        "reward": -2.760178475315872,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 9,
+        "reward": -2.8881138213711752,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 28,
+        "reward": -2.917166031673926,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 38,
+        "reward": -2.5187573119705102,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 8,
+        "reward": -2.870227483424057,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 18,
+        "reward": -2.9652654119396544,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 40,
+        "reward": -2.5271649253433615,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 6,
+        "reward": -2.908739163087243,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 118,
+        "reward": -1.8409322342598673,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 41,
+        "reward": -2.4822126104195776,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 5,
+        "reward": -2.9530061187270795,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 48,
+        "reward": -2.8145222636379037,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 40,
+        "reward": -2.476301512301256,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 11,
+        "reward": -2.8454679842144657,
+        "crashed": true,
+        "completion": 2
+      }
+    ]
+  },
+  {
+    "config": {
+      "gamma": 0.9625406017161522,
+      "tau": 0.0010699156790373386,
+      "critic_lr": 0.0007392784770070905,
+      "actor_lr": 0.0002338118206659121,
+      "buffer_size": 10000,
+      "batch_size": 128,
+      "param_noise_stddev": 0.12043365076103005
+    },
+    "avg_reward": -1.8849569350214928,
+    "avg_steps": 110.6,
+    "crash_rate": 1.0,
+    "completion_rate": 0.0,
+    "results": [
+      {
+        "steps": 106,
+        "reward": -2.6360296044238574,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 58,
+        "reward": -1.8526007738896852,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 132,
+        "reward": -2.123245500282489,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 30,
+        "reward": -2.849771215580106,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 139,
+        "reward": -1.460474882668752,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 1,
+        "reward": -3.0,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 30,
+        "reward": -2.52142799374459,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 287,
+        "reward": -2.2937875976912956,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 27,
+        "reward": -2.5608777809110324,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 107,
+        "reward": -2.730081058726287,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 108,
+        "reward": -2.550342373517722,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 52,
+        "reward": -2.2309365785490263,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 261,
+        "reward": 0.40838847695627356,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 96,
+        "reward": -1.1973504248336586,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 126,
+        "reward": -2.2219935101985833,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 88,
+        "reward": -2.9277723578217025,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 175,
+        "reward": -0.3451369419314734,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 188,
+        "reward": 0.541778523368492,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 41,
+        "reward": -2.6660229923489425,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 160,
+        "reward": -0.48145411363542134,
+        "crashed": true,
+        "completion": 2
+      }
+    ]
+  },
+  {
+    "config": {
+      "gamma": 0.9558742664252544,
+      "tau": 0.002814310808130564,
+      "critic_lr": 0.0003831998810149867,
+      "actor_lr": 0.00019622060426424808,
+      "buffer_size": 10000,
+      "batch_size": 128,
+      "param_noise_stddev": 0.10370855840946014
+    },
+    "avg_reward": -1.4841690967663221,
+    "avg_steps": 90.35,
+    "crash_rate": 1.0,
+    "completion_rate": 0.0,
+    "results": [
+      {
+        "steps": 24,
+        "reward": -2.5378349840920995,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 133,
+        "reward": -0.6719835832225041,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 158,
+        "reward": -0.8519234642154379,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 93,
+        "reward": -0.9735240750408645,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 33,
+        "reward": -2.8740121865452366,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 89,
+        "reward": -1.4400798820114744,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 85,
+        "reward": -1.8085992700482798,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 158,
+        "reward": -0.7768115664152337,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 97,
+        "reward": -1.0276031241533128,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 36,
+        "reward": -2.255560604738328,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 121,
+        "reward": -1.030536181761471,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 165,
+        "reward": -0.9295984091638485,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 86,
+        "reward": -1.2438251446495172,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 33,
+        "reward": -2.8278364848151316,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 48,
+        "reward": -1.9565829891089717,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 84,
+        "reward": -1.8780402261787899,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 109,
+        "reward": -0.7756894128465004,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 65,
+        "reward": -2.215090954439331,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 95,
+        "reward": -0.6894663462963013,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 95,
+        "reward": -0.9187830455838135,
+        "crashed": true,
+        "completion": 2
+      }
+    ]
+  },
+  {
+    "config": {
+      "gamma": 0.954422333065249,
+      "tau": 0.0010241299192912758,
+      "critic_lr": 0.0006987597513542222,
+      "actor_lr": 0.00013267233735406454,
+      "buffer_size": 30000,
+      "batch_size": 128,
+      "param_noise_stddev": 0.17495124053105737
+    },
+    "avg_reward": -2.966057023653938,
+    "avg_steps": 5.3,
+    "crash_rate": 1.0,
+    "completion_rate": 0.0,
+    "results": [
+      {
+        "steps": 4,
+        "reward": -2.9481044950119184,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 4,
+        "reward": -2.966528854920563,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 6,
+        "reward": -2.9755071783051754,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 5,
+        "reward": -2.956990483399599,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 16,
+        "reward": -2.98990889035639,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 4,
+        "reward": -2.9694048052264272,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 4,
+        "reward": -2.9565450744416037,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 4,
+        "reward": -2.943150850684213,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 12,
+        "reward": -2.9732971328813957,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 4,
+        "reward": -2.9610172155635435,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 5,
+        "reward": -2.945168334368361,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 5,
+        "reward": -2.94707791141108,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 3,
+        "reward": -2.966226741514612,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 3,
+        "reward": -2.983400649293927,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 3,
+        "reward": -2.9846132885941916,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 4,
+        "reward": -2.945440310814489,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 2,
+        "reward": -2.9980143817407092,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 6,
+        "reward": -2.9720397879342686,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 3,
+        "reward": -2.9637040901586795,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 9,
+        "reward": -2.9749999964576146,
+        "crashed": true,
+        "completion": 2
+      }
+    ]
+  },
+  {
+    "config": {
+      "gamma": 0.9554737378487208,
+      "tau": 0.004791071261067464,
+      "critic_lr": 0.0003774138652621452,
+      "actor_lr": 0.00030123310332757656,
+      "buffer_size": 10000,
+      "batch_size": 128,
+      "param_noise_stddev": 0.15862812296041043
+    },
+    "avg_reward": -2.382972235367882,
+    "avg_steps": 45.45,
+    "crash_rate": 1.0,
+    "completion_rate": 0.0,
+    "results": [
+      {
+        "steps": 23,
+        "reward": -2.6483916928891205,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 55,
+        "reward": -2.0683159263744497,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 29,
+        "reward": -2.4259686199300217,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 14,
+        "reward": -2.942392507756462,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 73,
+        "reward": -2.0349622715429643,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 31,
+        "reward": -2.478273864360787,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 78,
+        "reward": -1.9731780420286802,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 68,
+        "reward": -1.767543124378784,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 17,
+        "reward": -2.742654187840669,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 93,
+        "reward": -1.8276557738119241,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 9,
+        "reward": -2.9400294687249597,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 97,
+        "reward": -2.154926361576587,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 34,
+        "reward": -2.61299176368681,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 13,
+        "reward": -2.916108058169461,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 8,
+        "reward": -2.862399873553776,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 7,
+        "reward": -2.8820333241378258,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 107,
+        "reward": -1.672484814491936,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 72,
+        "reward": -1.9729545158006745,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 28,
+        "reward": -2.471540784212416,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 53,
+        "reward": -2.2646397320893303,
+        "crashed": true,
+        "completion": 2
+      }
+    ]
+  },
+  {
+    "config": {
+      "gamma": 0.9638384260346629,
+      "tau": 0.0011570170371784192,
+      "critic_lr": 0.0009985356532072251,
+      "actor_lr": 0.00011699274796641518,
+      "buffer_size": 10000,
+      "batch_size": 128,
+      "param_noise_stddev": 0.0875958745702175
+    },
+    "avg_reward": -2.7263491952819043,
+    "avg_steps": 31.55,
+    "crash_rate": 1.0,
+    "completion_rate": 0.0,
+    "results": [
+      {
+        "steps": 23,
+        "reward": -2.6402217628805302,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 9,
+        "reward": -2.935990080593384,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 10,
+        "reward": -2.9239472838173333,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 13,
+        "reward": -2.9356468909958626,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 18,
+        "reward": -2.796597443949267,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 65,
+        "reward": -1.9257716581349758,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 62,
+        "reward": -2.197244300985761,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 68,
+        "reward": -2.8820916307099056,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 50,
+        "reward": -2.292320663577879,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 20,
+        "reward": -2.833075000422001,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 8,
+        "reward": -2.95389119370327,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 18,
+        "reward": -2.6764187899740906,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 9,
+        "reward": -2.929524060823199,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 6,
+        "reward": -2.9456694219009716,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 138,
+        "reward": -2.6835898106380163,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 53,
+        "reward": -2.8847241930667287,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 12,
+        "reward": -2.8420996338858813,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 17,
+        "reward": -2.782378968736605,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 7,
+        "reward": -2.9166804972957308,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 25,
+        "reward": -2.549100619546691,
+        "crashed": true,
+        "completion": 2
+      }
+    ]
+  },
+  {
+    "config": {
+      "gamma": 0.959293546492047,
+      "tau": 0.0026322569635011182,
+      "critic_lr": 0.0004845643422230715,
+      "actor_lr": 0.0002578030021034472,
+      "buffer_size": 10000,
+      "batch_size": 256,
+      "param_noise_stddev": 0.11723476157103137
+    },
+    "avg_reward": -2.926224191187135,
+    "avg_steps": 10.8,
+    "crash_rate": 1.0,
+    "completion_rate": 0.0,
+    "results": [
+      {
+        "steps": 5,
+        "reward": -2.922823747817492,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 6,
+        "reward": -2.960663904642777,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 18,
+        "reward": -2.961538716588908,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 8,
+        "reward": -2.936195936196738,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 6,
+        "reward": -2.9522160540298215,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 6,
+        "reward": -2.9456616336035806,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 4,
+        "reward": -2.9502914668118185,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 7,
+        "reward": -2.9978337158956676,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 8,
+        "reward": -2.9592294145421922,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 6,
+        "reward": -2.927738098511045,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 11,
+        "reward": -2.8513726142430134,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 18,
+        "reward": -2.9760304515487768,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 7,
+        "reward": -2.9537970768402477,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 12,
+        "reward": -2.9525719177037333,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 26,
+        "reward": -2.867022312444746,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 10,
+        "reward": -2.8990293280620736,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 7,
+        "reward": -2.937748051980654,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 28,
+        "reward": -2.790122265232852,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 4,
+        "reward": -2.9506312979273663,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 19,
+        "reward": -2.831965819119195,
+        "crashed": true,
+        "completion": 2
+      }
+    ]
+  },
+  {
+    "config": {
+      "gamma": 0.994101921591017,
+      "tau": 0.005402866102681742,
+      "critic_lr": 0.00032401221788838695,
+      "actor_lr": 0.004299013378227046,
+      "buffer_size": 50000,
+      "batch_size": 128,
+      "param_noise_stddev": 0.06332422893447248
+    },
+    "avg_reward": -2.3515617100684167,
+    "avg_steps": 55.9,
+    "crash_rate": 1.0,
+    "completion_rate": 0.0,
+    "results": [
+      {
+        "steps": 9,
+        "reward": -2.8894322286447602,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 17,
+        "reward": -2.7146889819211593,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 33,
+        "reward": -2.828735761882654,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 127,
+        "reward": -2.2405427873128243,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 18,
+        "reward": -2.733103870280831,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 23,
+        "reward": -2.587820162724558,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 9,
+        "reward": -2.9160025042238966,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 49,
+        "reward": -2.524438182822535,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 11,
+        "reward": -2.8097299335436454,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 11,
+        "reward": -2.8123974027567322,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 149,
+        "reward": -1.1144687352331073,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 37,
+        "reward": -2.5089035272006375,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 87,
+        "reward": -1.70711661498783,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 82,
+        "reward": -2.0758750393528476,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 42,
+        "reward": -2.2402328248013665,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 38,
+        "reward": -2.6729952243960136,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 7,
+        "reward": -2.913796305884156,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 45,
+        "reward": -2.4485261278668937,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 185,
+        "reward": -0.6962589952826872,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 139,
+        "reward": -1.5961689902491956,
+        "crashed": true,
+        "completion": 2
+      }
+    ]
+  },
+  {
+    "config": {
+      "gamma": 0.9682983934721757,
+      "tau": 0.0016604618061654493,
+      "critic_lr": 0.0006341401838086194,
+      "actor_lr": 0.00034573107015332017,
+      "buffer_size": 50000,
+      "batch_size": 32,
+      "param_noise_stddev": 0.11094898541355455
+    },
+    "avg_reward": -2.1732619837453155,
+    "avg_steps": 101.95,
+    "crash_rate": 1.0,
+    "completion_rate": 0.0,
+    "results": [
+      {
+        "steps": 95,
+        "reward": -2.4501034253236513,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 323,
+        "reward": -0.1931153631680731,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 9,
+        "reward": -2.8942099366663934,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 63,
+        "reward": -2.556135477391999,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 95,
+        "reward": -1.8191916602492497,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 71,
+        "reward": -2.200526132668558,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 56,
+        "reward": -2.211837854796011,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 62,
+        "reward": -2.3912931778214,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 158,
+        "reward": -1.644233637629187,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 76,
+        "reward": -2.588268858173492,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 72,
+        "reward": -2.3930553903656904,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 86,
+        "reward": -2.5290792699874634,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 31,
+        "reward": -2.726592095523247,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 34,
+        "reward": -2.8183745418101602,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 109,
+        "reward": -2.5159032176160565,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 317,
+        "reward": -0.33160765793125213,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 188,
+        "reward": -1.3883795104001861,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 82,
+        "reward": -2.5764633447632503,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 15,
+        "reward": -2.9951968509788798,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 97,
+        "reward": -2.2416722716421162,
+        "crashed": true,
+        "completion": 2
+      }
+    ]
+  },
+  {
+    "config": {
+      "gamma": 0.997724699825077,
+      "tau": 0.008396664227386885,
+      "critic_lr": 0.0004230735631050343,
+      "actor_lr": 0.001095990989902998,
+      "buffer_size": 100000,
+      "batch_size": 32,
+      "param_noise_stddev": 0.1499986433915148
+    },
+    "avg_reward": -2.584763094014576,
+    "avg_steps": 32.65,
+    "crash_rate": 1.0,
+    "completion_rate": 0.0,
+    "results": [
+      {
+        "steps": 18,
+        "reward": -2.866093657949261,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 46,
+        "reward": -2.666230154296003,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 32,
+        "reward": -2.8998206953071333,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 20,
+        "reward": -2.620048902684009,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 41,
+        "reward": -2.372366285004117,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 5,
+        "reward": -2.9226625341139894,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 6,
+        "reward": -2.9404171227619447,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 54,
+        "reward": -2.0038137336492183,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 44,
+        "reward": -2.569726846976187,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 71,
+        "reward": -1.926805025268372,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 69,
+        "reward": -1.828676217773323,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 78,
+        "reward": -1.7278719742784554,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 24,
+        "reward": -2.680355676280085,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 6,
+        "reward": -2.929355029183348,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 25,
+        "reward": -2.9414026227312773,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 28,
+        "reward": -2.884140467234832,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 6,
+        "reward": -2.9193422593959375,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 24,
+        "reward": -2.8633606228886475,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 13,
+        "reward": -2.920495409148217,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 43,
+        "reward": -2.2122766433671552,
+        "crashed": true,
+        "completion": 2
+      }
+    ]
+  },
+  {
+    "config": {
+      "gamma": 0.998394323185318,
+      "tau": 0.003818687669820878,
+      "critic_lr": 0.0008699204202450159,
+      "actor_lr": 0.0010569325217714629,
+      "buffer_size": 10000,
+      "batch_size": 128,
+      "param_noise_stddev": 0.11530813887618628
+    },
+    "avg_reward": -1.4923599514368138,
+    "avg_steps": 179.25,
+    "crash_rate": 1.0,
+    "completion_rate": 0.0,
+    "results": [
+      {
+        "steps": 116,
+        "reward": -1.966214921195928,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 318,
+        "reward": -0.5098174928653565,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 354,
+        "reward": 0.462594520324084,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 35,
+        "reward": -2.7964882217153946,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 322,
+        "reward": -0.4157898995317786,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 179,
+        "reward": -1.3700216952017432,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 137,
+        "reward": -2.0640039078459083,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 167,
+        "reward": -1.5592734220669073,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 382,
+        "reward": 0.2758327153939657,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 24,
+        "reward": -2.849864358856854,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 261,
+        "reward": -0.9735507075714569,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 162,
+        "reward": -1.7038587375390137,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 35,
+        "reward": -2.754660592246832,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 291,
+        "reward": -0.6420484765561487,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 267,
+        "reward": -0.4611672927212469,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 29,
+        "reward": -2.8811716651358315,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 167,
+        "reward": -1.5378421289001365,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 304,
+        "reward": -0.3240973077095197,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 15,
+        "reward": -2.831955026125147,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 20,
+        "reward": -2.9438004106691196,
+        "crashed": true,
+        "completion": 2
+      }
+    ]
+  },
+  {
+    "config": {
+      "gamma": 0.9981458877515581,
+      "tau": 0.003998897662123949,
+      "critic_lr": 0.002465529322407263,
+      "actor_lr": 0.0008250676659803995,
+      "buffer_size": 100000,
+      "batch_size": 128,
+      "param_noise_stddev": 0.1503329249660928
+    },
+    "avg_reward": -2.2317762286531577,
+    "avg_steps": 53.05,
+    "crash_rate": 1.0,
+    "completion_rate": 0.0,
+    "results": [
+      {
+        "steps": 127,
+        "reward": -1.5316282203621436,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 101,
+        "reward": -1.6751082890510558,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 26,
+        "reward": -2.7960200380115547,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 4,
+        "reward": -2.98906670304948,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 115,
+        "reward": -1.4150315793619206,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 16,
+        "reward": -2.7017271316712628,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 30,
+        "reward": -2.459769153925002,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 40,
+        "reward": -2.3403951570290573,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 49,
+        "reward": -2.076407641272951,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 76,
+        "reward": -1.5252614876006627,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 122,
+        "reward": -1.7671580188858327,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 7,
+        "reward": -2.9195949719188974,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 63,
+        "reward": -2.062886623694901,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 61,
+        "reward": -1.7726870292486685,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 26,
+        "reward": -2.5659444273289584,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 30,
+        "reward": -2.5737656534443816,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 15,
+        "reward": -2.866062606117652,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 55,
+        "reward": -2.000842110965719,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 56,
+        "reward": -2.1884238562165166,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 42,
+        "reward": -2.407743873906539,
+        "crashed": true,
+        "completion": 2
+      }
+    ]
+  },
+  {
+    "config": {
+      "gamma": 0.9929276817991097,
+      "tau": 0.005717317878381394,
+      "critic_lr": 0.0003256948253723813,
+      "actor_lr": 0.0003648920568708382,
+      "buffer_size": 10000,
+      "batch_size": 128,
+      "param_noise_stddev": 0.20895806472519335
+    },
+    "avg_reward": -1.6584088529917114,
+    "avg_steps": 86.45,
+    "crash_rate": 1.0,
+    "completion_rate": 0.0,
+    "results": [
+      {
+        "steps": 96,
+        "reward": -1.0159750495581101,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 43,
+        "reward": -2.3165794220125653,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 124,
+        "reward": -1.2624584251257158,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 31,
+        "reward": -2.4249139547947607,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 141,
+        "reward": -0.30137744717884596,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 127,
+        "reward": -0.6178939814195181,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 39,
+        "reward": -2.671636108876032,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 159,
+        "reward": -0.43187092080058953,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 26,
+        "reward": -2.47711997208324,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 118,
+        "reward": -1.2014712609332279,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 14,
+        "reward": -2.7380947872796155,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 132,
+        "reward": -1.5090349758473922,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 11,
+        "reward": -2.8398840134799994,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 89,
+        "reward": -1.7673936100692444,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 94,
+        "reward": -1.6758630695260297,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 188,
+        "reward": 0.26192841840333614,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 50,
+        "reward": -2.1402503031992888,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 77,
+        "reward": -1.903843796579458,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 18,
+        "reward": -2.867767594699394,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 152,
+        "reward": -1.2666767847745346,
+        "crashed": true,
+        "completion": 2
+      }
+    ]
+  },
+  {
+    "config": {
+      "gamma": 0.9981379963873087,
+      "tau": 0.00593240460208582,
+      "critic_lr": 0.00042016194559049,
+      "actor_lr": 0.00043719022790759916,
+      "buffer_size": 10000,
+      "batch_size": 128,
+      "param_noise_stddev": 0.24813857582969961
+    },
+    "avg_reward": -2.9021274779540027,
+    "avg_steps": 13.05,
+    "crash_rate": 1.0,
+    "completion_rate": 0.0,
+    "results": [
+      {
+        "steps": 12,
+        "reward": -2.950038052660146,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 6,
+        "reward": -2.9284561781007317,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 35,
+        "reward": -2.7727313787088272,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 5,
+        "reward": -2.9442998620544585,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 7,
+        "reward": -2.8831563565919063,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 33,
+        "reward": -2.803325534848569,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 7,
+        "reward": -2.912899610681306,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 18,
+        "reward": -2.8750585909802906,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 4,
+        "reward": -2.9940198137171903,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 15,
+        "reward": -2.7417971427724654,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 12,
+        "reward": -2.9157753788766234,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 9,
+        "reward": -2.901446590356664,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 8,
+        "reward": -2.916497845122578,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 9,
+        "reward": -2.9059861090387944,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 4,
+        "reward": -2.9717313511859804,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 7,
+        "reward": -2.907448494407504,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 49,
+        "reward": -2.803096412270035,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 5,
+        "reward": -2.9989821308613216,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 2,
+        "reward": -2.9988355149492585,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 14,
+        "reward": -2.91696721089541,
+        "crashed": true,
+        "completion": 2
+      }
+    ]
+  },
+  {
+    "config": {
+      "gamma": 0.9882309603730136,
+      "tau": 0.004538187215680195,
+      "critic_lr": 0.0007761499523493379,
+      "actor_lr": 0.0016988053369186274,
+      "buffer_size": 10000,
+      "batch_size": 128,
+      "param_noise_stddev": 0.06979636955045937
+    },
+    "avg_reward": 0.92211502336467,
+    "avg_steps": 275.1,
+    "crash_rate": 0.75,
+    "completion_rate": 0.25,
+    "results": [
+      {
+        "steps": 88,
+        "reward": -2.5240819293374446,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 442,
+        "reward": 6.855107816342084,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 679,
+        "reward": 6.928923541128194,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 158,
+        "reward": -0.43949717649652253,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 53,
+        "reward": -2.6459410414418594,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 246,
+        "reward": -1.9872877095867938,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 101,
+        "reward": -1.9516767687733652,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 112,
+        "reward": -0.9189796186343786,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 123,
+        "reward": -2.7333720555243857,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 637,
+        "reward": 6.582055005256621,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 568,
+        "reward": 6.777028291694515,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 704,
+        "reward": 6.468640383727277,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 249,
+        "reward": 1.4000404748250022,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 300,
+        "reward": -0.39637269249691576,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 267,
+        "reward": -0.705346718618237,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 309,
+        "reward": 2.2985636531267453,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 271,
+        "reward": 1.585867823967769,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 65,
+        "reward": -1.925315489730329,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 60,
+        "reward": -2.5894365449115058,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 70,
+        "reward": -1.6366187772230703,
+        "crashed": true,
+        "completion": 2
+      }
+    ]
+  },
+  {
+    "config": {
+      "gamma": 0.9931072642627277,
+      "tau": 0.0033454389384565777,
+      "critic_lr": 0.0006762556849195003,
+      "actor_lr": 0.001720977361274098,
+      "buffer_size": 10000,
+      "batch_size": 128,
+      "param_noise_stddev": 0.1538151312682801
+    },
+    "avg_reward": -2.778852974622277,
+    "avg_steps": 34.55,
+    "crash_rate": 1.0,
+    "completion_rate": 0.0,
+    "results": [
+      {
+        "steps": 17,
+        "reward": -2.7386150048328144,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 18,
+        "reward": -2.9926122195071603,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 29,
+        "reward": -2.523934900233267,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 6,
+        "reward": -2.9098959104369855,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 71,
+        "reward": -2.854584502753357,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 28,
+        "reward": -2.9785054072023374,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 7,
+        "reward": -2.912176097175781,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 66,
+        "reward": -2.8622279425228374,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 19,
+        "reward": -2.991575952823354,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 9,
+        "reward": -2.9983632551011783,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 100,
+        "reward": -2.558495331987103,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 22,
+        "reward": -2.682796098412962,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 92,
+        "reward": -1.7189762283139338,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 35,
+        "reward": -2.7588403812519906,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 19,
+        "reward": -2.799217031907579,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 43,
+        "reward": -2.5248711378045754,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 13,
+        "reward": -2.993676768140383,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 60,
+        "reward": -2.927452411258408,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 10,
+        "reward": -2.8814655508905758,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 27,
+        "reward": -2.9687773598889584,
+        "crashed": true,
+        "completion": 3
+      }
+    ]
+  },
+  {
+    "config": {
+      "gamma": 0.9534837990965288,
+      "tau": 0.0022788642250646442,
+      "critic_lr": 0.00021778129312616292,
+      "actor_lr": 0.0001322376195762295,
+      "buffer_size": 10000,
+      "batch_size": 32,
+      "param_noise_stddev": 0.05130377962965254
+    },
+    "avg_reward": -0.11923596023087188,
+    "avg_steps": 200.65,
+    "crash_rate": 0.9,
+    "completion_rate": 0.1,
+    "results": [
+      {
+        "steps": 373,
+        "reward": 0.8244983259684218,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 100,
+        "reward": -2.4268622593879465,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 180,
+        "reward": -1.3740114252302982,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 11,
+        "reward": -2.9867409830375573,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 481,
+        "reward": 6.577240352679958,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 67,
+        "reward": -1.8735375061316972,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 334,
+        "reward": 2.128661610017984,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 356,
+        "reward": 0.9412769134645864,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 135,
+        "reward": -1.3834829714414962,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 272,
+        "reward": 0.4001916357536439,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 171,
+        "reward": -0.34342393447881125,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 138,
+        "reward": -1.0028800689986825,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 457,
+        "reward": 6.662296199319848,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 126,
+        "reward": -2.2523983269752783,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 202,
+        "reward": 0.39452262209795697,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 25,
+        "reward": -2.896814378325795,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 25,
+        "reward": -2.595657728731176,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 164,
+        "reward": -0.2255887776599801,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 100,
+        "reward": -1.3359796192255715,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 296,
+        "reward": 0.3839711157044534,
+        "crashed": true,
+        "completion": 2
+      }
+    ]
+  },
+  {
+    "config": {
+      "gamma": 0.957153752309959,
+      "tau": 0.002725613577080334,
+      "critic_lr": 0.0006281682829632135,
+      "actor_lr": 0.00015676993187596983,
+      "buffer_size": 10000,
+      "batch_size": 32,
+      "param_noise_stddev": 0.06892483731775338
+    },
+    "avg_reward": -2.7603726563007323,
+    "avg_steps": 32.5,
+    "crash_rate": 1.0,
+    "completion_rate": 0.0,
+    "results": [
+      {
+        "steps": 8,
+        "reward": -2.8848243902959827,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 5,
+        "reward": -2.984372690186091,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 80,
+        "reward": -2.2600429655891405,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 18,
+        "reward": -2.8769436793256205,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 15,
+        "reward": -2.993370327784807,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 21,
+        "reward": -2.7272761899068074,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 50,
+        "reward": -2.9175419200433055,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 117,
+        "reward": -1.8663240539140689,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 22,
+        "reward": -2.9837564990498397,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 10,
+        "reward": -2.8478455401333984,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 20,
+        "reward": -2.8570476523456403,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 77,
+        "reward": -2.2018965287000722,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 26,
+        "reward": -2.589382470649927,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 16,
+        "reward": -2.912549616722737,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 15,
+        "reward": -2.7564138721501723,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 4,
+        "reward": -2.9995661845177617,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 37,
+        "reward": -2.9542299855448224,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 53,
+        "reward": -2.753646046918198,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 8,
+        "reward": -2.9000822210677293,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 48,
+        "reward": -2.9403402911685226,
+        "crashed": true,
+        "completion": 3
+      }
+    ]
+  },
+  {
+    "config": {
+      "gamma": 0.9608662865800917,
+      "tau": 0.0012151489571176636,
+      "critic_lr": 0.0001317497711165777,
+      "actor_lr": 0.00010510777125037655,
+      "buffer_size": 10000,
+      "batch_size": 32,
+      "param_noise_stddev": 0.058039089109360474
+    },
+    "avg_reward": -1.2097343883201697,
+    "avg_steps": 125.5,
+    "crash_rate": 1.0,
+    "completion_rate": 0.0,
+    "results": [
+      {
+        "steps": 51,
+        "reward": -2.199544703465707,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 140,
+        "reward": -0.5968371860618356,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 58,
+        "reward": -2.277911609322553,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 111,
+        "reward": -1.7471659167072102,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 145,
+        "reward": -1.2468788559356694,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 206,
+        "reward": 0.2268296082306862,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 42,
+        "reward": -2.230720857814626,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 270,
+        "reward": 1.039182360113318,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 117,
+        "reward": -1.387426290716327,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 55,
+        "reward": -2.0888397260809044,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 232,
+        "reward": 0.7133863250868435,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 130,
+        "reward": -1.0230530698504539,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 29,
+        "reward": -2.6003927914070935,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 98,
+        "reward": -1.8786113513636238,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 148,
+        "reward": -0.5995768952591232,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 107,
+        "reward": -1.5079359319095649,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 76,
+        "reward": -2.083231716598741,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 126,
+        "reward": -1.3534268983179443,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 210,
+        "reward": 0.1049718865445497,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 159,
+        "reward": -1.4575041455674165,
+        "crashed": true,
+        "completion": 2
+      }
+    ]
+  },
+  {
+    "config": {
+      "gamma": 0.9643167703050004,
+      "tau": 0.001431378491665029,
+      "critic_lr": 0.00010699231711344563,
+      "actor_lr": 0.00010600593492731505,
+      "buffer_size": 10000,
+      "batch_size": 32,
+      "param_noise_stddev": 0.20741040164063337
+    },
+    "avg_reward": -2.4144407109981896,
+    "avg_steps": 49.95,
+    "crash_rate": 1.0,
+    "completion_rate": 0.0,
+    "results": [
+      {
+        "steps": 59,
+        "reward": -1.8318406501741327,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 22,
+        "reward": -2.604431840883375,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 59,
+        "reward": -2.0297918884302026,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 10,
+        "reward": -2.920575883135006,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 72,
+        "reward": -2.279605823920683,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 40,
+        "reward": -2.307135115867307,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 25,
+        "reward": -2.623634123289352,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 8,
+        "reward": -2.8971123370889873,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 16,
+        "reward": -2.770265982746525,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 43,
+        "reward": -2.402991150404237,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 88,
+        "reward": -2.2485275265962414,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 48,
+        "reward": -2.0207308855742747,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 156,
+        "reward": -1.1876384113902985,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 86,
+        "reward": -2.309269125239998,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 15,
+        "reward": -2.7474069270485635,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 82,
+        "reward": -2.5440280211783315,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 66,
+        "reward": -2.4812090940836358,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 33,
+        "reward": -2.5240614276105213,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 61,
+        "reward": -2.6470347132016605,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 10,
+        "reward": -2.9115232921004646,
+        "crashed": true,
+        "completion": 2
+      }
+    ]
+  },
+  {
+    "config": {
+      "gamma": 0.9968680249376201,
+      "tau": 0.00827075172415499,
+      "critic_lr": 0.0008358616632083705,
+      "actor_lr": 0.005643768307941697,
+      "buffer_size": 10000,
+      "batch_size": 64,
+      "param_noise_stddev": 0.06970000551640931
+    },
+    "avg_reward": -2.90712082210635,
+    "avg_steps": 11.7,
+    "crash_rate": 1.0,
+    "completion_rate": 0.0,
+    "results": [
+      {
+        "steps": 7,
+        "reward": -2.954033804291727,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 8,
+        "reward": -2.952840937542172,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 16,
+        "reward": -2.8160254634748294,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 65,
+        "reward": -2.7758408198426188,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 15,
+        "reward": -2.9341769181054507,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 5,
+        "reward": -2.9195215059034627,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 14,
+        "reward": -2.9186950252748822,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 6,
+        "reward": -2.9022216565264767,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 7,
+        "reward": -2.8849577038375984,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 5,
+        "reward": -2.9508562831770297,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 6,
+        "reward": -2.9219764878827927,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 13,
+        "reward": -2.8310471915127073,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 9,
+        "reward": -2.968735253914028,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 6,
+        "reward": -2.9069346885075857,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 10,
+        "reward": -2.9353794657772636,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 6,
+        "reward": -2.9371496633252594,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 6,
+        "reward": -2.9091974525484896,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 12,
+        "reward": -2.8783317916725863,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 5,
+        "reward": -2.9520252621941108,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 13,
+        "reward": -2.892469066815924,
+        "crashed": true,
+        "completion": 2
+      }
+    ]
+  },
+  {
+    "config": {
+      "gamma": 0.96387189547916,
+      "tau": 0.0015129570251444162,
+      "critic_lr": 0.00029561385978206154,
+      "actor_lr": 0.00013451161844437544,
+      "buffer_size": 100000,
+      "batch_size": 64,
+      "param_noise_stddev": 0.08306411643487681
+    },
+    "avg_reward": -2.6695655843591317,
+    "avg_steps": 30.7,
+    "crash_rate": 1.0,
+    "completion_rate": 0.0,
+    "results": [
+      {
+        "steps": 36,
+        "reward": -2.961923195223994,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 23,
+        "reward": -2.8498635848307647,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 94,
+        "reward": -1.9529869979387655,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 14,
+        "reward": -2.929746427492238,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 7,
+        "reward": -2.9048739326576354,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 112,
+        "reward": -1.3271274745682589,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 20,
+        "reward": -2.954348438891208,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 11,
+        "reward": -2.930699942685052,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 5,
+        "reward": -2.9403887077038253,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 15,
+        "reward": -2.740618228163063,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 38,
+        "reward": -2.3779663023269286,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 59,
+        "reward": -2.3487569058064213,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 11,
+        "reward": -2.821132623251778,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 3,
+        "reward": -2.9942789316774165,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 86,
+        "reward": -2.2500992330465595,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 36,
+        "reward": -2.43696616078699,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 7,
+        "reward": -2.880434566096688,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 9,
+        "reward": -2.878450048457295,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 10,
+        "reward": -2.942619297993141,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 18,
+        "reward": -2.9680306875846183,
+        "crashed": true,
+        "completion": 2
+      }
+    ]
+  },
+  {
+    "config": {
+      "gamma": 0.956014620879195,
+      "tau": 0.0015703251830047312,
+      "critic_lr": 0.00012097229744127226,
+      "actor_lr": 0.0003025110324039983,
+      "buffer_size": 10000,
+      "batch_size": 32,
+      "param_noise_stddev": 0.06066918241237085
+    },
+    "avg_reward": -1.1957781400787761,
+    "avg_steps": 133.9,
+    "crash_rate": 1.0,
+    "completion_rate": 0.0,
+    "results": [
+      {
+        "steps": 289,
+        "reward": 0.6192787374844926,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 58,
+        "reward": -2.189953979297192,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 116,
+        "reward": -0.7861736734829812,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 51,
+        "reward": -2.130865330130186,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 195,
+        "reward": -0.5412341840182568,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 80,
+        "reward": -2.0193021095893777,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 200,
+        "reward": -0.5377001632846197,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 239,
+        "reward": -0.6639712978147769,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 142,
+        "reward": -0.37211047304870837,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 70,
+        "reward": -1.8092957828098122,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 262,
+        "reward": 0.3233032398729505,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 154,
+        "reward": -1.4612655394661087,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 31,
+        "reward": -2.8715969090475264,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 205,
+        "reward": 0.26935442847695557,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 18,
+        "reward": -2.9023814659471903,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 132,
+        "reward": -0.7086965195531669,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 154,
+        "reward": -0.7252957515722906,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 37,
+        "reward": -2.253913425683132,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 3,
+        "reward": -2.9998127554156175,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 242,
+        "reward": -0.1539298472489774,
+        "crashed": true,
+        "completion": 2
+      }
+    ]
+  },
+  {
+    "config": {
+      "gamma": 0.953143753533559,
+      "tau": 0.001080491948812647,
+      "critic_lr": 0.00032071711967713223,
+      "actor_lr": 0.0001395159777491454,
+      "buffer_size": 10000,
+      "batch_size": 32,
+      "param_noise_stddev": 0.055680337523910745
+    },
+    "avg_reward": -1.0759745505739935,
+    "avg_steps": 127.0,
+    "crash_rate": 1.0,
+    "completion_rate": 0.0,
+    "results": [
+      {
+        "steps": 140,
+        "reward": -0.7468781488444516,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 246,
+        "reward": 0.5735903993827614,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 80,
+        "reward": -2.637767669629173,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 143,
+        "reward": -0.24965176956457702,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 32,
+        "reward": -2.4398599470971685,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 157,
+        "reward": -1.7777340288402896,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 187,
+        "reward": -0.9676445025760128,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 259,
+        "reward": 1.6155264138710193,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 71,
+        "reward": -2.1304309818522085,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 132,
+        "reward": -1.0406111948147283,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 146,
+        "reward": -0.34200964944763523,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 123,
+        "reward": -0.8741330062460464,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 52,
+        "reward": -2.157736820076859,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 91,
+        "reward": -1.8325984259110457,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 43,
+        "reward": -2.433068027354701,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 193,
+        "reward": 0.6242403855115368,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 150,
+        "reward": -0.16465768453255603,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 59,
+        "reward": -1.938430122997905,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 24,
+        "reward": -2.548436886004896,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 212,
+        "reward": -0.05119934445493213,
+        "crashed": true,
+        "completion": 2
+      }
+    ]
+  },
+  {
+    "config": {
+      "gamma": 0.9649794695950846,
+      "tau": 0.0017591446879225683,
+      "critic_lr": 0.00014182134285153341,
+      "actor_lr": 0.00039428690514564473,
+      "buffer_size": 30000,
+      "batch_size": 32,
+      "param_noise_stddev": 0.0869329090193709
+    },
+    "avg_reward": -1.166393056729239,
+    "avg_steps": 207.5,
+    "crash_rate": 0.95,
+    "completion_rate": 0.05,
+    "results": [
+      {
+        "steps": 620,
+        "reward": 6.200118520101462,
+        "crashed": false,
+        "completion": 1
+      },
+      {
+        "steps": 41,
+        "reward": -2.8365156984607522,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 220,
+        "reward": -1.1875623685719028,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 457,
+        "reward": 1.6471536523009478,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 147,
+        "reward": -2.639961831121058,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 44,
+        "reward": -2.7879474854854815,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 172,
+        "reward": -2.751464135588687,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 62,
+        "reward": -2.05339508582929,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 213,
+        "reward": -0.9417142104180627,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 566,
+        "reward": 2.7057421729459064,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 139,
+        "reward": -2.334074144632902,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 67,
+        "reward": -2.7635225933365533,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 30,
+        "reward": -2.9201481388797106,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 51,
+        "reward": -2.906168631918616,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 369,
+        "reward": 0.6926070885005022,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 232,
+        "reward": -1.219699655133162,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 127,
+        "reward": -2.771271597491693,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 74,
+        "reward": -2.703398953362929,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 148,
+        "reward": -2.572213972167041,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 371,
+        "reward": 0.815575933964241,
+        "crashed": true,
+        "completion": 2
+      }
+    ]
+  },
+  {
+    "config": {
+      "gamma": 0.9565746448686221,
+      "tau": 0.0026481647122127004,
+      "critic_lr": 0.0001305001780063725,
+      "actor_lr": 0.0013938094778885044,
+      "buffer_size": 30000,
+      "batch_size": 32,
+      "param_noise_stddev": 0.051478050054806074
+    },
+    "avg_reward": -0.8779173570703881,
+    "avg_steps": 145.75,
+    "crash_rate": 1.0,
+    "completion_rate": 0.0,
+    "results": [
+      {
+        "steps": 145,
+        "reward": -1.0485992231344492,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 126,
+        "reward": -1.3476957544308963,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 133,
+        "reward": -0.19584794888265256,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 169,
+        "reward": -0.16552135844891902,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 229,
+        "reward": -1.3712049585330193,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 32,
+        "reward": -2.8784420132973243,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 104,
+        "reward": -1.072538432824641,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 205,
+        "reward": 0.3565798698148561,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 241,
+        "reward": 1.6546184388531202,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 22,
+        "reward": -2.5675583027259954,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 195,
+        "reward": -0.8374407227161127,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 255,
+        "reward": 0.3063808225287872,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 22,
+        "reward": -2.9572513734726096,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 52,
+        "reward": -1.870621897084563,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 156,
+        "reward": -0.6864736458478564,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 27,
+        "reward": -2.4435208960834065,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 202,
+        "reward": -0.4408091951334394,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 226,
+        "reward": 1.391047940689667,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 169,
+        "reward": -0.5942491509498198,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 205,
+        "reward": -0.7891993397284884,
+        "crashed": true,
+        "completion": 2
+      }
+    ]
+  },
+  {
+    "config": {
+      "gamma": 0.954756040030008,
+      "tau": 0.002552196176558391,
+      "critic_lr": 0.0002472772593196575,
+      "actor_lr": 0.004520342663424898,
+      "buffer_size": 30000,
+      "batch_size": 32,
+      "param_noise_stddev": 0.12417392947931377
+    },
+    "avg_reward": -2.012338537097833,
+    "avg_steps": 63.65,
+    "crash_rate": 1.0,
+    "completion_rate": 0.0,
+    "results": [
+      {
+        "steps": 10,
+        "reward": -2.9513237829717984,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 115,
+        "reward": -2.223751901092389,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 25,
+        "reward": -2.5105790550980154,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 53,
+        "reward": -2.2208128217697958,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 56,
+        "reward": -1.9542310889046897,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 10,
+        "reward": -2.9304141620899045,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 69,
+        "reward": -1.508553725212414,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 130,
+        "reward": -0.8029701626005106,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 30,
+        "reward": -2.8481303692498634,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 198,
+        "reward": 0.3017322099017945,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 14,
+        "reward": -2.788629665760677,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 80,
+        "reward": -1.4138795102462076,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 36,
+        "reward": -2.822816320513613,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 12,
+        "reward": -2.8784452978175863,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 35,
+        "reward": -2.700551820928434,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 75,
+        "reward": -1.8359128167676813,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 110,
+        "reward": -0.808195170275424,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 50,
+        "reward": -2.4362169012923225,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 104,
+        "reward": -0.4300819627544379,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 61,
+        "reward": -2.483006416512695,
+        "crashed": true,
+        "completion": 2
+      }
+    ]
+  },
+  {
+    "config": {
+      "gamma": 0.961782404831268,
+      "tau": 0.0020981961772064744,
+      "critic_lr": 0.00011353469160220381,
+      "actor_lr": 0.0003571974047105704,
+      "buffer_size": 30000,
+      "batch_size": 32,
+      "param_noise_stddev": 0.08667556316401104
+    },
+    "avg_reward": -2.925658083367745,
+    "avg_steps": 10.8,
+    "crash_rate": 1.0,
+    "completion_rate": 0.0,
+    "results": [
+      {
+        "steps": 6,
+        "reward": -2.9431872649795805,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 17,
+        "reward": -2.898192481300397,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 9,
+        "reward": -2.964694147760411,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 9,
+        "reward": -2.9712281191758843,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 11,
+        "reward": -2.9465478706940567,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 8,
+        "reward": -2.945455178546706,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 31,
+        "reward": -2.9450887170454614,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 13,
+        "reward": -2.945834832658426,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 16,
+        "reward": -2.9620034772212387,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 8,
+        "reward": -2.8922613051891535,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 6,
+        "reward": -2.9122378416263484,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 5,
+        "reward": -2.9480902162117864,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 17,
+        "reward": -2.7371792595877684,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 5,
+        "reward": -2.927137253083059,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 18,
+        "reward": -2.9388891723436226,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 6,
+        "reward": -2.949627669024512,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 5,
+        "reward": -2.930710588512915,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 8,
+        "reward": -2.9614964014084144,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 6,
+        "reward": -2.944575481761349,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 12,
+        "reward": -2.848724389223812,
+        "crashed": true,
+        "completion": 2
+      }
+    ]
+  },
+  {
+    "config": {
+      "gamma": 0.9915317058981754,
+      "tau": 0.0031768563066101483,
+      "critic_lr": 0.0014861585968088463,
+      "actor_lr": 0.006822420566557026,
+      "buffer_size": 100000,
+      "batch_size": 32,
+      "param_noise_stddev": 0.08212606308388766
+    },
+    "avg_reward": -2.505157928086478,
+    "avg_steps": 70.55,
+    "crash_rate": 1.0,
+    "completion_rate": 0.0,
+    "results": [
+      {
+        "steps": 90,
+        "reward": -2.4693435338775505,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 74,
+        "reward": -2.653464045685567,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 67,
+        "reward": -2.6736211210859198,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 94,
+        "reward": -2.4041495563372743,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 10,
+        "reward": -2.9946590309378354,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 68,
+        "reward": -2.2664401368081086,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 97,
+        "reward": -2.3415819019735156,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 133,
+        "reward": -1.7218709102139853,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 27,
+        "reward": -2.9575388819655317,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 9,
+        "reward": -2.995894390662126,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 54,
+        "reward": -2.807143187343755,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 102,
+        "reward": -2.2624690504168985,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 61,
+        "reward": -2.766212556416732,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 7,
+        "reward": -2.997764896624561,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 65,
+        "reward": -2.115525274435962,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 141,
+        "reward": -1.6693980282389853,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 64,
+        "reward": -2.737357943162931,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 136,
+        "reward": -1.6769660329927936,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 51,
+        "reward": -2.8244541162994463,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 61,
+        "reward": -2.7673039662500716,
+        "crashed": true,
+        "completion": 3
+      }
+    ]
+  },
+  {
+    "config": {
+      "gamma": 0.9619132426469376,
+      "tau": 0.0027781142189656715,
+      "critic_lr": 0.00012096687501895566,
+      "actor_lr": 0.0015602839208313137,
+      "buffer_size": 50000,
+      "batch_size": 64,
+      "param_noise_stddev": 0.12642794423874665
+    },
+    "avg_reward": -2.9403288202171676,
+    "avg_steps": 8.1,
+    "crash_rate": 1.0,
+    "completion_rate": 0.0,
+    "results": [
+      {
+        "steps": 3,
+        "reward": -2.995045025588504,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 6,
+        "reward": -2.9661937156088714,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 3,
+        "reward": -2.9949164895079097,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 6,
+        "reward": -2.971044460777585,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 5,
+        "reward": -2.9981489147688554,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 9,
+        "reward": -2.9710397764650764,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 6,
+        "reward": -2.913401698833147,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 9,
+        "reward": -2.962959892794202,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 7,
+        "reward": -2.917327822322105,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 12,
+        "reward": -2.9157995134686225,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 7,
+        "reward": -2.931992483151598,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 9,
+        "reward": -2.9490689495462736,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 26,
+        "reward": -2.668730755083688,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 9,
+        "reward": -2.9360567716553296,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 1,
+        "reward": -3.0,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 8,
+        "reward": -2.9711398000661955,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 6,
+        "reward": -2.945953200146587,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 6,
+        "reward": -2.942287388021115,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 17,
+        "reward": -2.9676197729794893,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 7,
+        "reward": -2.887849973558199,
+        "crashed": true,
+        "completion": 2
+      }
+    ]
+  },
+  {
+    "config": {
+      "gamma": 0.9619503661464228,
+      "tau": 0.003153012165921401,
+      "critic_lr": 0.00015912823250774073,
+      "actor_lr": 0.0012073649947327483,
+      "buffer_size": 100000,
+      "batch_size": 256,
+      "param_noise_stddev": 0.07694721229663043
+    },
+    "avg_reward": -1.945936700039971,
+    "avg_steps": 76.2,
+    "crash_rate": 1.0,
+    "completion_rate": 0.0,
+    "results": [
+      {
+        "steps": 239,
+        "reward": -0.30023051344238816,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 48,
+        "reward": -2.106231807080424,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 5,
+        "reward": -2.999826844040098,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 1,
+        "reward": -3.0,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 64,
+        "reward": -1.8419962259482037,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 123,
+        "reward": -2.2638890797952094,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 159,
+        "reward": -1.0734464023052075,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 60,
+        "reward": -2.1794625928332882,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 24,
+        "reward": -2.56492744112836,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 161,
+        "reward": -0.17533247472620062,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 50,
+        "reward": -2.025963626026048,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 63,
+        "reward": -1.8349917792218708,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 16,
+        "reward": -2.995178979482659,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 43,
+        "reward": -2.722485021693393,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 79,
+        "reward": -1.950839238911393,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 67,
+        "reward": -1.6463476360772549,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 193,
+        "reward": -0.2604739331530439,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 83,
+        "reward": -1.8437990765953733,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 31,
+        "reward": -2.3365162548367095,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 15,
+        "reward": -2.796795073502292,
+        "crashed": true,
+        "completion": 2
+      }
+    ]
+  },
+  {
+    "config": {
+      "gamma": 0.9578728729473956,
+      "tau": 0.003242911395501919,
+      "critic_lr": 0.0009556220297915306,
+      "actor_lr": 0.001506486092932185,
+      "buffer_size": 30000,
+      "batch_size": 64,
+      "param_noise_stddev": 0.07640712905912687
+    },
+    "avg_reward": -1.0043148365518735,
+    "avg_steps": 182.7,
+    "crash_rate": 1.0,
+    "completion_rate": 0.0,
+    "results": [
+      {
+        "steps": 81,
+        "reward": -2.615719733495999,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 15,
+        "reward": -2.7567019149128384,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 328,
+        "reward": 0.2441170980696108,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 112,
+        "reward": -1.373568377005049,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 210,
+        "reward": -0.9080562310182438,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 257,
+        "reward": 0.6751819205134915,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 151,
+        "reward": -1.550280012867838,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 138,
+        "reward": -1.4203528014524072,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 70,
+        "reward": -2.816613544583434,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 242,
+        "reward": -0.15179736139100708,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 449,
+        "reward": 1.1016475629443612,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 282,
+        "reward": 1.2940880430432227,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 215,
+        "reward": -0.37841026933566724,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 131,
+        "reward": -1.9997045193880183,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 17,
+        "reward": -2.7401363568879384,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 67,
+        "reward": -2.335329370670914,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 75,
+        "reward": -2.681135855916254,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 94,
+        "reward": -1.9885734146499687,
+        "crashed": true,
+        "completion": 3
+      },
+      {
+        "steps": 535,
+        "reward": 3.365125263351864,
+        "crashed": true,
+        "completion": 2
+      },
+      {
+        "steps": 185,
+        "reward": -1.0500768553844457,
+        "crashed": true,
+        "completion": 2
+      }
+    ]
+  }
+]

@@ -11,15 +11,16 @@ racer = tracks.Racer()
 
 ########################################
 ###### HYPERPARAMETERS #################
+# Optimized with Optuna hyperparameter tuning
 
 total_iterations = 50000
-# Discount factor
-gamma = 0.99
-# Target network parameter update factor, for double DQN
-tau = 0.005
-# Learning rate for actor-critic models
-critic_lr = 0.001
-aux_lr = 0.001
+# Discount factor (optimized)
+gamma = 0.951773
+# Target network parameter update factor, for double DQN (optimized)
+tau = 0.001023
+# Learning rate for actor-critic models (optimized)
+critic_lr = 0.000249
+aux_lr = 0.000138  # actor learning rate (optimized)
 
 num_states = 5 #we reduce the state dim through observation (see below)
 num_actions = 2 #acceleration and steering
@@ -29,8 +30,9 @@ upper_bound = 1
 lower_bound = -1
 print("Min and Max Value of Action: {}".format(lower_bound,upper_bound))
 
-buffer_dim = 50000
-batch_size = 64
+# Buffer and batch size (optimized)
+buffer_dim = 100000
+batch_size = 32
 
 
 is_training = True

@@ -15,24 +15,25 @@ upper_bound = 1
 lower_bound = -1
 
 
-# Learning rate for actor-critic models
-critic_lr = 3e-4
-actor_lr = 3e-4
+# Learning rate for actor-critic models (optimized with Optuna)
+critic_lr = 0.00038624034184440395
+actor_lr = 0.00010776685849271864
 
 # Number of episodes
 total_iterations = 600
-# Mini-batch size for training
-batch_size = 64
-# Number of training steps with the same episode
-epochs = 10
+# Mini-batch size for training (optimized)
+batch_size = 128
+# Number of training steps with the same episode (optimized)
+epochs = 6
 
-gamma = 0.99
-gae_lambda = 0.95
-policy_clip = tf.constant(0.25, dtype=tf.float32)
+# Optimized hyperparameters
+gamma = 0.9609223284133016
+gae_lambda = 0.9762711648817055
+policy_clip = tf.constant(0.2719159674653176, dtype=tf.float32)
 
-target_entropy = tf.constant(0.01, dtype=tf.float32)
+target_entropy = tf.constant(0.0402014676442065, dtype=tf.float32)
 
-target_kl = 0.01
+target_kl = 0.032757102597342096
 
 is_training = True
 
@@ -54,7 +55,7 @@ class Get_actor(tf.keras.Model):
         out = self.d1(s)
         out = self.d2(out)
         mu = self.m(out)
-        sigma = 0.2
+        sigma = 0.13160206417334422  # optimized
         return  mu, sigma
     
     @property  

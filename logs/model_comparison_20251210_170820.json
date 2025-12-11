@@ -1,0 +1,1192 @@
+{
+  "timestamp": "2025-12-10T17:08:20.896163",
+  "num_episodes": 25,
+  "track_config": {
+    "obstacles": true,
+    "turn_limit": true,
+    "chicanes": true,
+    "low_speed_termination": false
+  },
+  "first_to_complete": "DDPG",
+  "earliest_completion_episode": 1,
+  "rankings": [
+    {
+      "rank": 1,
+      "model": "DDPG",
+      "completion_rate": 0.92,
+      "crash_rate": 0.08,
+      "avg_reward": 6.144278279675872
+    },
+    {
+      "rank": 2,
+      "model": "TD3",
+      "completion_rate": 0.88,
+      "crash_rate": 0.12,
+      "avg_reward": 6.010407695130621
+    },
+    {
+      "rank": 3,
+      "model": "SAC",
+      "completion_rate": 0.6,
+      "crash_rate": 0.4,
+      "avg_reward": 3.747890451689756
+    },
+    {
+      "rank": 4,
+      "model": "PPO",
+      "completion_rate": 0.52,
+      "crash_rate": 0.48,
+      "avg_reward": 4.566785846462349
+    },
+    {
+      "rank": 5,
+      "model": "DSAC",
+      "completion_rate": 0.4,
+      "crash_rate": 0.6,
+      "avg_reward": 2.40330207860645
+    },
+    {
+      "rank": 6,
+      "model": "DDPG2",
+      "completion_rate": 0.0,
+      "crash_rate": 1.0,
+      "avg_reward": -0.7699272127930599
+    }
+  ],
+  "detailed_results": {
+    "DDPG": {
+      "model_type": "DDPG",
+      "num_episodes": 25,
+      "crashes": 2,
+      "completions": 23,
+      "crash_rate": 0.08,
+      "completion_rate": 0.92,
+      "avg_reward": 6.144278279675872,
+      "avg_steps": 692.6,
+      "avg_speed": 0.2339683404279299,
+      "first_completion_episode": 1,
+      "results": [
+        {
+          "steps": 759,
+          "reward": 6.853376072088169,
+          "crashed": false,
+          "completion": 1,
+          "avg_speed": 0.22573702477233745
+        },
+        {
+          "steps": 785,
+          "reward": 7.3129929170494155,
+          "crashed": false,
+          "completion": 1,
+          "avg_speed": 0.2328978636002997
+        },
+        {
+          "steps": 712,
+          "reward": 6.557315550688663,
+          "crashed": false,
+          "completion": 1,
+          "avg_speed": 0.23024282130227053
+        },
+        {
+          "steps": 703,
+          "reward": 6.465923126371951,
+          "crashed": false,
+          "completion": 1,
+          "avg_speed": 0.22994036722517608
+        },
+        {
+          "steps": 770,
+          "reward": 7.130638407714757,
+          "crashed": false,
+          "completion": 1,
+          "avg_speed": 0.2315142340167129
+        },
+        {
+          "steps": 712,
+          "reward": 6.430152535852846,
+          "crashed": false,
+          "completion": 1,
+          "avg_speed": 0.22577782780382177
+        },
+        {
+          "steps": 732,
+          "reward": 6.67983441166665,
+          "crashed": false,
+          "completion": 1,
+          "avg_speed": 0.22813642116347832
+        },
+        {
+          "steps": 732,
+          "reward": 6.531452991097383,
+          "crashed": false,
+          "completion": 1,
+          "avg_speed": 0.22306874969594895
+        },
+        {
+          "steps": 795,
+          "reward": 7.086862004930925,
+          "crashed": false,
+          "completion": 1,
+          "avg_speed": 0.22285729575254487
+        },
+        {
+          "steps": 771,
+          "reward": 7.149998623534331,
+          "crashed": false,
+          "completion": 1,
+          "avg_speed": 0.2318417193104517
+        },
+        {
+          "steps": 103,
+          "reward": -1.689526891284393,
+          "crashed": true,
+          "completion": 2,
+          "avg_speed": 0.3211943893910801
+        },
+        {
+          "steps": 792,
+          "reward": 7.079969371276852,
+          "crashed": false,
+          "completion": 1,
+          "avg_speed": 0.22348388166909264
+        },
+        {
+          "steps": 751,
+          "reward": 6.726511959324571,
+          "crashed": false,
+          "completion": 1,
+          "avg_speed": 0.2239185073010843
+        },
+        {
+          "steps": 675,
+          "reward": 6.513241100013434,
+          "crashed": false,
+          "completion": 1,
+          "avg_speed": 0.24123115185234947
+        },
+        {
+          "steps": 706,
+          "reward": 6.626579867978709,
+          "crashed": false,
+          "completion": 1,
+          "avg_speed": 0.23465226161397693
+        },
+        {
+          "steps": 775,
+          "reward": 6.833782738959651,
+          "crashed": false,
+          "completion": 1,
+          "avg_speed": 0.22044460448256908
+        },
+        {
+          "steps": 670,
+          "reward": 6.525613689700903,
+          "crashed": false,
+          "completion": 1,
+          "avg_speed": 0.24349304812316822
+        },
+        {
+          "steps": 248,
+          "reward": -0.6753550622444413,
+          "crashed": true,
+          "completion": 2,
+          "avg_speed": 0.23528794916554233
+        },
+        {
+          "steps": 697,
+          "reward": 6.781491097964475,
+          "crashed": false,
+          "completion": 1,
+          "avg_speed": 0.24323856161995985
+        },
+        {
+          "steps": 734,
+          "reward": 6.816243499810527,
+          "crashed": false,
+          "completion": 1,
+          "avg_speed": 0.23216088214613526
+        },
+        {
+          "steps": 673,
+          "reward": 6.480034994330488,
+          "crashed": false,
+          "completion": 1,
+          "avg_speed": 0.24071452430648188
+        },
+        {
+          "steps": 726,
+          "reward": 6.693226579904588,
+          "crashed": false,
+          "completion": 1,
+          "avg_speed": 0.23048300894988247
+        },
+        {
+          "steps": 787,
+          "reward": 7.0126456806230015,
+          "crashed": false,
+          "completion": 1,
+          "avg_speed": 0.2227651105661689
+        },
+        {
+          "steps": 743,
+          "reward": 6.869146528332926,
+          "crashed": false,
+          "completion": 1,
+          "avg_speed": 0.23112875263569746
+        },
+        {
+          "steps": 764,
+          "reward": 6.814805196210421,
+          "crashed": false,
+          "completion": 1,
+          "avg_speed": 0.22299755223201656
+        }
+      ]
+    },
+    "DDPG2": {
+      "model_type": "DDPG2",
+      "num_episodes": 25,
+      "crashes": 25,
+      "completions": 0,
+      "crash_rate": 1.0,
+      "completion_rate": 0.0,
+      "avg_reward": -0.7699272127930599,
+      "avg_steps": 165.24,
+      "avg_speed": 0.34431523622763743,
+      "first_completion_episode": null,
+      "results": [
+        {
+          "steps": 84,
+          "reward": -1.6138261205823816,
+          "crashed": true,
+          "completion": 2,
+          "avg_speed": 0.41752225283663225
+        },
+        {
+          "steps": 245,
+          "reward": -0.33875158954130846,
+          "crashed": true,
+          "completion": 2,
+          "avg_speed": 0.27266889451421034
+        },
+        {
+          "steps": 156,
+          "reward": 0.028031510417954042,
+          "crashed": true,
+          "completion": 2,
+          "avg_speed": 0.4883921790996701
+        },
+        {
+          "steps": 260,
+          "reward": 0.37414463567512657,
+          "crashed": true,
+          "completion": 2,
+          "avg_speed": 0.3256896366481785
+        },
+        {
+          "steps": 286,
+          "reward": 0.8795420617253664,
+          "crashed": true,
+          "completion": 2,
+          "avg_speed": 0.34031070716889167
+        },
+        {
+          "steps": 105,
+          "reward": -1.248266920206835,
+          "crashed": true,
+          "completion": 2,
+          "avg_speed": 0.42108968264258784
+        },
+        {
+          "steps": 279,
+          "reward": 0.1948360103872644,
+          "crashed": true,
+          "completion": 2,
+          "avg_speed": 0.2873053966175597
+        },
+        {
+          "steps": 296,
+          "reward": 1.1125141239073928,
+          "crashed": true,
+          "completion": 2,
+          "avg_speed": 0.34851814609384674
+        },
+        {
+          "steps": 138,
+          "reward": -1.8302947611601241,
+          "crashed": true,
+          "completion": 2,
+          "avg_speed": 0.2134498611021671
+        },
+        {
+          "steps": 185,
+          "reward": -0.40154296621413943,
+          "crashed": true,
+          "completion": 2,
+          "avg_speed": 0.3530512274165572
+        },
+        {
+          "steps": 79,
+          "reward": -1.4692534621349442,
+          "crashed": true,
+          "completion": 2,
+          "avg_speed": 0.49062389034136383
+        },
+        {
+          "steps": 29,
+          "reward": -2.932500707989184,
+          "crashed": true,
+          "completion": 2,
+          "avg_speed": 0.06026722500965716
+        },
+        {
+          "steps": 124,
+          "reward": -0.926279743432064,
+          "crashed": true,
+          "completion": 2,
+          "avg_speed": 0.4214878570260033
+        },
+        {
+          "steps": 142,
+          "reward": -1.1622675378043859,
+          "crashed": true,
+          "completion": 2,
+          "avg_speed": 0.32583908904177544
+        },
+        {
+          "steps": 224,
+          "reward": 0.7194010223488565,
+          "crashed": true,
+          "completion": 2,
+          "avg_speed": 0.41697320878350397
+        },
+        {
+          "steps": 49,
+          "reward": -2.067579197840671,
+          "crashed": true,
+          "completion": 2,
+          "avg_speed": 0.4856358344579841
+        },
+        {
+          "steps": 136,
+          "reward": -1.00988672725253,
+          "crashed": true,
+          "completion": 2,
+          "avg_speed": 0.36853949495323507
+        },
+        {
+          "steps": 314,
+          "reward": 1.7098184960677774,
+          "crashed": true,
+          "completion": 2,
+          "avg_speed": 0.3761835859479054
+        },
+        {
+          "steps": 63,
+          "reward": -2.748028149538465,
+          "crashed": true,
+          "completion": 2,
+          "avg_speed": 0.1016015526054577
+        },
+        {
+          "steps": 172,
+          "reward": -1.1096599424304703,
+          "crashed": true,
+          "completion": 2,
+          "avg_speed": 0.27636550549262123
+        },
+        {
+          "steps": 262,
+          "reward": 0.2965360310578986,
+          "crashed": true,
+          "completion": 2,
+          "avg_speed": 0.31576015623159964
+        },
+        {
+          "steps": 41,
+          "reward": -2.295732694598409,
+          "crashed": true,
+          "completion": 2,
+          "avg_speed": 0.44016706587599447
+        },
+        {
+          "steps": 40,
+          "reward": -2.2896424913376907,
+          "crashed": true,
+          "completion": 2,
+          "avg_speed": 0.45535737734763426
+        },
+        {
+          "steps": 177,
+          "reward": -0.3468452297096589,
+          "crashed": true,
+          "completion": 2,
+          "avg_speed": 0.3768685753253326
+        },
+        {
+          "steps": 245,
+          "reward": -0.7726459696408705,
+          "crashed": true,
+          "completion": 2,
+          "avg_speed": 0.22821250311056648
+        }
+      ]
+    },
+    "DSAC": {
+      "model_type": "DSAC",
+      "num_episodes": 25,
+      "crashes": 15,
+      "completions": 10,
+      "crash_rate": 0.6,
+      "completion_rate": 0.4,
+      "avg_reward": 2.40330207860645,
+      "avg_steps": 332.24,
+      "avg_speed": 0.3579868696964065,
+      "first_completion_episode": 3,
+      "results": [
+        {
+          "steps": 56,
+          "reward": -2.002061989192706,
+          "crashed": true,
+          "completion": 2,
+          "avg_speed": 0.4536081867305882
+        },
+        {
+          "steps": 457,
+          "reward": 2.081708656654114,
+          "crashed": true,
+          "completion": 2,
+          "avg_speed": 0.2786024482814757
+        },
+        {
+          "steps": 655,
+          "reward": 6.8965151260714475,
+          "crashed": false,
+          "completion": 1,
+          "avg_speed": 0.26322576817066606
+        },
+        {
+          "steps": 475,
+          "reward": 6.577509868848131,
+          "crashed": false,
+          "completion": 1,
+          "avg_speed": 0.34618472993937516
+        },
+        {
+          "steps": 53,
+          "reward": -2.025730901858579,
+          "crashed": true,
+          "completion": 2,
+          "avg_speed": 0.4683986048756831
+        },
+        {
+          "steps": 590,
+          "reward": 6.460315117894025,
+          "crashed": false,
+          "completion": 1,
+          "avg_speed": 0.27374216601245877
+        },
+        {
+          "steps": 193,
+          "reward": 0.1319050922530236,
+          "crashed": true,
+          "completion": 2,
+          "avg_speed": 0.40780014222044597
+        },
+        {
+          "steps": 572,
+          "reward": 6.593250129491829,
+          "crashed": false,
+          "completion": 1,
+          "avg_speed": 0.28816652663862863
+        },
+        {
+          "steps": 385,
+          "reward": 2.566066016409871,
+          "crashed": true,
+          "completion": 2,
+          "avg_speed": 0.36237408961001777
+        },
+        {
+          "steps": 366,
+          "reward": 6.476095213797557,
+          "crashed": false,
+          "completion": 1,
+          "avg_speed": 0.442356230450653
+        },
+        {
+          "steps": 113,
+          "reward": -1.193402009763442,
+          "crashed": true,
+          "completion": 2,
+          "avg_speed": 0.40325847996351744
+        },
+        {
+          "steps": 70,
+          "reward": -1.8216616296901456,
+          "crashed": true,
+          "completion": 2,
+          "avg_speed": 0.42693419214125167
+        },
+        {
+          "steps": 437,
+          "reward": 1.592078761971739,
+          "crashed": true,
+          "completion": 2,
+          "avg_speed": 0.2633072684616823
+        },
+        {
+          "steps": 635,
+          "reward": 6.630261998899396,
+          "crashed": false,
+          "completion": 1,
+          "avg_speed": 0.26103393696454325
+        },
+        {
+          "steps": 670,
+          "reward": 7.0393556671134165,
+          "crashed": false,
+          "completion": 1,
+          "avg_speed": 0.2626625248922916
+        },
+        {
+          "steps": 18,
+          "reward": -2.7769166800757343,
+          "crashed": true,
+          "completion": 2,
+          "avg_speed": 0.32806370577097904
+        },
+        {
+          "steps": 140,
+          "reward": -0.3994191766544213,
+          "crashed": true,
+          "completion": 2,
+          "avg_speed": 0.4677303639110753
+        },
+        {
+          "steps": 109,
+          "reward": -0.8848458031145126,
+          "crashed": true,
+          "completion": 2,
+          "avg_speed": 0.4896190270568258
+        },
+        {
+          "steps": 594,
+          "reward": 6.998111728623063,
+          "crashed": false,
+          "completion": 1,
+          "avg_speed": 0.29453332191174486
+        },
+        {
+          "steps": 299,
+          "reward": 0.7809458446427553,
+          "crashed": true,
+          "completion": 2,
+          "avg_speed": 0.31719344334251326
+        },
+        {
+          "steps": 176,
+          "reward": 0.45467834827802367,
+          "crashed": true,
+          "completion": 2,
+          "avg_speed": 0.49352547832543225
+        },
+        {
+          "steps": 568,
+          "reward": 6.2729499161295825,
+          "crashed": false,
+          "completion": 1,
+          "avg_speed": 0.2760981477169713
+        },
+        {
+          "steps": 448,
+          "reward": 6.376585066378926,
+          "crashed": false,
+          "completion": 1,
+          "avg_speed": 0.3558362202220381
+        },
+        {
+          "steps": 125,
+          "reward": -1.2339489919225197,
+          "crashed": true,
+          "completion": 2,
+          "avg_speed": 0.35605867098336286
+        },
+        {
+          "steps": 102,
+          "reward": -1.5077934060235942,
+          "crashed": true,
+          "completion": 2,
+          "avg_speed": 0.3693580678159422
+        }
+      ]
+    },
+    "PPO": {
+      "model_type": "PPO",
+      "num_episodes": 25,
+      "crashes": 12,
+      "completions": 13,
+      "crash_rate": 0.48,
+      "completion_rate": 0.52,
+      "avg_reward": 4.566785846462349,
+      "avg_steps": 1315.44,
+      "avg_speed": 0.15132693464979574,
+      "first_completion_episode": 4,
+      "results": [
+        {
+          "steps": 2000,
+          "reward": 6.661798647833319,
+          "crashed": true,
+          "completion": 0,
+          "avg_speed": 0.08327248309791639
+        },
+        {
+          "steps": 194,
+          "reward": -0.3774307946907509,
+          "crashed": true,
+          "completion": 2,
+          "avg_speed": 0.3397110369571567
+        },
+        {
+          "steps": 2000,
+          "reward": 6.083288007337427,
+          "crashed": true,
+          "completion": 0,
+          "avg_speed": 0.07604110009171791
+        },
+        {
+          "steps": 1543,
+          "reward": 6.735942040250383,
+          "crashed": false,
+          "completion": 1,
+          "avg_speed": 0.10913710369815924
+        },
+        {
+          "steps": 1546,
+          "reward": 6.717177010532068,
+          "crashed": false,
+          "completion": 1,
+          "avg_speed": 0.10862187921300247
+        },
+        {
+          "steps": 1599,
+          "reward": 7.05471808272049,
+          "crashed": false,
+          "completion": 1,
+          "avg_speed": 0.11029890685929461
+        },
+        {
+          "steps": 1577,
+          "reward": 6.810005229321537,
+          "crashed": false,
+          "completion": 1,
+          "avg_speed": 0.10795823128283953
+        },
+        {
+          "steps": 78,
+          "reward": -1.7408343013713286,
+          "crashed": true,
+          "completion": 2,
+          "avg_speed": 0.40882003202229583
+        },
+        {
+          "steps": 2000,
+          "reward": 6.514167761815533,
+          "crashed": true,
+          "completion": 0,
+          "avg_speed": 0.08142709702269428
+        },
+        {
+          "steps": 1269,
+          "reward": -0.2843364239749424,
+          "crashed": true,
+          "completion": 3,
+          "avg_speed": 0.05354226293424793
+        },
+        {
+          "steps": 180,
+          "reward": -1.0998641365640758,
+          "crashed": true,
+          "completion": 2,
+          "avg_speed": 0.265382103831833
+        },
+        {
+          "steps": 1386,
+          "reward": 6.701502694329863,
+          "crashed": false,
+          "completion": 1,
+          "avg_speed": 0.12087847572745052
+        },
+        {
+          "steps": 1595,
+          "reward": 6.5045033354908295,
+          "crashed": false,
+          "completion": 1,
+          "avg_speed": 0.10195146293872757
+        },
+        {
+          "steps": 1563,
+          "reward": 6.850890663087386,
+          "crashed": false,
+          "completion": 1,
+          "avg_speed": 0.10957918527011172
+        },
+        {
+          "steps": 1768,
+          "reward": 6.580075504131144,
+          "crashed": false,
+          "completion": 1,
+          "avg_speed": 0.09304405407425236
+        },
+        {
+          "steps": 1388,
+          "reward": 6.340233534635802,
+          "crashed": false,
+          "completion": 1,
+          "avg_speed": 0.11419728988897329
+        },
+        {
+          "steps": 1710,
+          "reward": 6.785412761126519,
+          "crashed": false,
+          "completion": 1,
+          "avg_speed": 0.09920194095214217
+        },
+        {
+          "steps": 96,
+          "reward": -1.7631812509572555,
+          "crashed": true,
+          "completion": 2,
+          "avg_speed": 0.3254786181691432
+        },
+        {
+          "steps": 111,
+          "reward": -1.2122810242889506,
+          "crashed": true,
+          "completion": 2,
+          "avg_speed": 0.4062997672070568
+        },
+        {
+          "steps": 2000,
+          "reward": 6.614340267675669,
+          "crashed": true,
+          "completion": 0,
+          "avg_speed": 0.08267925334594575
+        },
+        {
+          "steps": 947,
+          "reward": 2.7894163000027152,
+          "crashed": true,
+          "completion": 2,
+          "avg_speed": 0.1529972595138137
+        },
+        {
+          "steps": 1379,
+          "reward": 6.949999984333123,
+          "crashed": false,
+          "completion": 1,
+          "avg_speed": 0.12599709906332715
+        },
+        {
+          "steps": 1028,
+          "reward": 6.693342249174223,
+          "crashed": false,
+          "completion": 1,
+          "avg_speed": 0.16277583290793352
+        },
+        {
+          "steps": 1929,
+          "reward": 6.784406957185169,
+          "crashed": false,
+          "completion": 1,
+          "avg_speed": 0.08792647689457189
+        },
+        {
+          "steps": 2000,
+          "reward": 4.476353062422861,
+          "crashed": true,
+          "completion": 0,
+          "avg_speed": 0.055954413280285734
+        }
+      ]
+    },
+    "SAC": {
+      "model_type": "SAC",
+      "num_episodes": 25,
+      "crashes": 10,
+      "completions": 15,
+      "crash_rate": 0.4,
+      "completion_rate": 0.6,
+      "avg_reward": 3.747890451689756,
+      "avg_steps": 719.92,
+      "avg_speed": 0.2341753149644967,
+      "first_completion_episode": 1,
+      "results": [
+        {
+          "steps": 1187,
+          "reward": 6.727566869125935,
+          "crashed": false,
+          "completion": 1,
+          "avg_speed": 0.1416926467802429
+        },
+        {
+          "steps": 357,
+          "reward": -1.198768769635576,
+          "crashed": true,
+          "completion": 2,
+          "avg_speed": 0.126490957188513
+        },
+        {
+          "steps": 1177,
+          "reward": 6.767752809945409,
+          "crashed": false,
+          "completion": 1,
+          "avg_speed": 0.1437500596844818
+        },
+        {
+          "steps": 1143,
+          "reward": 6.909552204574673,
+          "crashed": false,
+          "completion": 1,
+          "avg_speed": 0.1511275635296298
+        },
+        {
+          "steps": 1305,
+          "reward": 7.2712350527546254,
+          "crashed": false,
+          "completion": 1,
+          "avg_speed": 0.13929569066579744
+        },
+        {
+          "steps": 1044,
+          "reward": 5.727871101078344,
+          "crashed": false,
+          "completion": 1,
+          "avg_speed": 0.13716166429785287
+        },
+        {
+          "steps": 387,
+          "reward": 2.8838959139992557,
+          "crashed": true,
+          "completion": 2,
+          "avg_speed": 0.3810813415802627
+        },
+        {
+          "steps": 834,
+          "reward": 6.811240035295241,
+          "crashed": false,
+          "completion": 1,
+          "avg_speed": 0.20417386196928183
+        },
+        {
+          "steps": 531,
+          "reward": 6.714946488504049,
+          "crashed": false,
+          "completion": 1,
+          "avg_speed": 0.3161462565209063
+        },
+        {
+          "steps": 1099,
+          "reward": 6.896133261736493,
+          "crashed": false,
+          "completion": 1,
+          "avg_speed": 0.15687291314232252
+        },
+        {
+          "steps": 1094,
+          "reward": 6.065908325223564,
+          "crashed": false,
+          "completion": 1,
+          "avg_speed": 0.13861764911388388
+        },
+        {
+          "steps": 44,
+          "reward": -2.2981267018539464,
+          "crashed": true,
+          "completion": 2,
+          "avg_speed": 0.4080658710151477
+        },
+        {
+          "steps": 1105,
+          "reward": 6.796234800169313,
+          "crashed": false,
+          "completion": 1,
+          "avg_speed": 0.15376096832962227
+        },
+        {
+          "steps": 1070,
+          "reward": 6.4768459445428155,
+          "crashed": false,
+          "completion": 1,
+          "avg_speed": 0.15132817627436462
+        },
+        {
+          "steps": 177,
+          "reward": -0.10167430621945517,
+          "crashed": true,
+          "completion": 2,
+          "avg_speed": 0.4116939905938274
+        },
+        {
+          "steps": 139,
+          "reward": -1.0353894179792704,
+          "crashed": true,
+          "completion": 2,
+          "avg_speed": 0.3559077141341902
+        },
+        {
+          "steps": 218,
+          "reward": -1.7437613910109366,
+          "crashed": true,
+          "completion": 2,
+          "avg_speed": 0.14472795034436206
+        },
+        {
+          "steps": 210,
+          "reward": -1.8440564850207837,
+          "crashed": true,
+          "completion": 2,
+          "avg_speed": 0.13827075538028905
+        },
+        {
+          "steps": 1062,
+          "reward": 6.459935395951445,
+          "crashed": false,
+          "completion": 1,
+          "avg_speed": 0.15207004227757637
+        },
+        {
+          "steps": 168,
+          "reward": 0.41685138742077754,
+          "crashed": true,
+          "completion": 2,
+          "avg_speed": 0.5115046987156852
+        },
+        {
+          "steps": 79,
+          "reward": -1.5886775210030175,
+          "crashed": true,
+          "completion": 2,
+          "avg_speed": 0.45234694839646866
+        },
+        {
+          "steps": 1127,
+          "reward": 6.2013432834618,
+          "crashed": false,
+          "completion": 1,
+          "avg_speed": 0.13756307194901946
+        },
+        {
+          "steps": 1139,
+          "reward": 6.608324669359368,
+          "crashed": false,
+          "completion": 1,
+          "avg_speed": 0.1450466345337877
+        },
+        {
+          "steps": 1088,
+          "reward": 6.4479708574628525,
+          "crashed": false,
+          "completion": 1,
+          "avg_speed": 0.14816109507037786
+        },
+        {
+          "steps": 214,
+          "reward": 1.3241074843609404,
+          "crashed": true,
+          "completion": 2,
+          "avg_speed": 0.5075243526245236
+        }
+      ]
+    },
+    "TD3": {
+      "model_type": "TD3",
+      "num_episodes": 25,
+      "crashes": 3,
+      "completions": 22,
+      "crash_rate": 0.12,
+      "completion_rate": 0.88,
+      "avg_reward": 6.010407695130621,
+      "avg_steps": 837.08,
+      "avg_speed": 0.2073995789447346,
+      "first_completion_episode": 1,
+      "results": [
+        {
+          "steps": 866,
+          "reward": 6.459332409340068,
+          "crashed": false,
+          "completion": 1,
+          "avg_speed": 0.18647033514261152
+        },
+        {
+          "steps": 1033,
+          "reward": 7.254440635543089,
+          "crashed": false,
+          "completion": 1,
+          "avg_speed": 0.1755672951486712
+        },
+        {
+          "steps": 765,
+          "reward": 7.051708301062747,
+          "crashed": false,
+          "completion": 1,
+          "avg_speed": 0.23044798369486094
+        },
+        {
+          "steps": 858,
+          "reward": 6.875773353846454,
+          "crashed": false,
+          "completion": 1,
+          "avg_speed": 0.20034304644074766
+        },
+        {
+          "steps": 214,
+          "reward": 1.4988330124126188,
+          "crashed": true,
+          "completion": 2,
+          "avg_speed": 0.5280320437104016
+        },
+        {
+          "steps": 870,
+          "reward": 6.500740180260956,
+          "crashed": false,
+          "completion": 1,
+          "avg_speed": 0.18680287874313076
+        },
+        {
+          "steps": 969,
+          "reward": 6.89516652090111,
+          "crashed": false,
+          "completion": 1,
+          "avg_speed": 0.1778938730882639
+        },
+        {
+          "steps": 814,
+          "reward": 6.395548317639165,
+          "crashed": false,
+          "completion": 1,
+          "avg_speed": 0.19642347412896652
+        },
+        {
+          "steps": 529,
+          "reward": 1.3688829325785044,
+          "crashed": true,
+          "completion": 2,
+          "avg_speed": 0.2068599873379973
+        },
+        {
+          "steps": 796,
+          "reward": 6.695204338169039,
+          "crashed": false,
+          "completion": 1,
+          "avg_speed": 0.21027651815857515
+        },
+        {
+          "steps": 910,
+          "reward": 6.760277456297869,
+          "crashed": false,
+          "completion": 1,
+          "avg_speed": 0.18572190814005154
+        },
+        {
+          "steps": 918,
+          "reward": 6.763600073992816,
+          "crashed": false,
+          "completion": 1,
+          "avg_speed": 0.18419390179719028
+        },
+        {
+          "steps": 906,
+          "reward": 6.6923796915408476,
+          "crashed": false,
+          "completion": 1,
+          "avg_speed": 0.1846683137842394
+        },
+        {
+          "steps": 926,
+          "reward": 6.701871679769991,
+          "crashed": false,
+          "completion": 1,
+          "avg_speed": 0.18093606046895244
+        },
+        {
+          "steps": 926,
+          "reward": 6.591370516258726,
+          "crashed": false,
+          "completion": 1,
+          "avg_speed": 0.17795276771756807
+        },
+        {
+          "steps": 905,
+          "reward": 6.599685103385054,
+          "crashed": false,
+          "completion": 1,
+          "avg_speed": 0.18231174318743226
+        },
+        {
+          "steps": 984,
+          "reward": 6.90367593144997,
+          "crashed": false,
+          "completion": 1,
+          "avg_speed": 0.17539827061610685
+        },
+        {
+          "steps": 875,
+          "reward": 6.7222845099956885,
+          "crashed": false,
+          "completion": 1,
+          "avg_speed": 0.19206527171416232
+        },
+        {
+          "steps": 956,
+          "reward": 6.999206138078028,
+          "crashed": false,
+          "completion": 1,
+          "avg_speed": 0.1830336333179399
+        },
+        {
+          "steps": 870,
+          "reward": 6.30458256575958,
+          "crashed": false,
+          "completion": 1,
+          "avg_speed": 0.18116616568274654
+        },
+        {
+          "steps": 922,
+          "reward": 6.652418584277879,
+          "crashed": false,
+          "completion": 1,
+          "avg_speed": 0.1803801134565588
+        },
+        {
+          "steps": 1032,
+          "reward": 7.109012910204848,
+          "crashed": false,
+          "completion": 1,
+          "avg_speed": 0.17221446003403226
+        },
+        {
+          "steps": 943,
+          "reward": 6.931771632619649,
+          "crashed": false,
+          "completion": 1,
+          "avg_speed": 0.18376913129956654
+        },
+        {
+          "steps": 1035,
+          "reward": 7.071189757622873,
+          "crashed": false,
+          "completion": 1,
+          "avg_speed": 0.17080168496673592
+        },
+        {
+          "steps": 105,
+          "reward": -1.5387641747420455,
+          "crashed": true,
+          "completion": 2,
+          "avg_speed": 0.35125861184085455
+        }
+      ]
+    }
+  }
+}
