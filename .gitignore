@@ -128,3 +128,9 @@ dmypy.json
 # Pyre type checker
 .pyre/
 Miniconda3-latest-MacOSX-x86_64.sh
+
+# Ignore large media outputs
+*.mp4
+*.mov
+*.avi
+visualizations/*.mp4
