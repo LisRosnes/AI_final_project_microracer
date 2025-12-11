@@ -35,14 +35,14 @@ buffer_dim = 100000
 batch_size = 32
 
 
-is_training = True
+is_training = False  # Set to True for training, False for visualization
 
 #pesi
 # ddpg_critic_weigths_32_car0_split.h5 #versione con reti distinte per le mosse. Muove bene ma lento
 # ddpg_critic_weigths_32_car1_split.h5 #usual problem: sembra ok
 
-load_weights = False
-save_weights = True #beware when saving weights to not overwrite previous data
+load_weights = True  # Set to True to load saved weights for visualization
+save_weights = False  # Set to True during training to save weights (beware of overwriting!)
 
 #weights_file_actor = "weights/ddpg_actor_weigths_32_car3_split.h5"
 #weights_file_critic = "weights/ddpg_critic_weigths_32_car3_split.h5"
