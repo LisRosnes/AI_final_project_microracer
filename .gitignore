@@ -134,3 +134,52 @@ Miniconda3-latest-MacOSX-x86_64.sh
 *.mov
 *.avi
 visualizations/*.mp4
+
+# Project-specific runtime artifacts
+# Logs from SLURM runs and job wrappers
+logs/
+slurm-*.out
+slurm-*.err
+
+# Saved model weights / checkpoints (keep out of VCS; weights can be large)
+weights/
+
+# Local experiment artifacts and frames
+easy_frames/
+fgm_frames/
+ppo_frames/
+
+# Virtual environments and conda env dirs that may be created by job scripts
+.venv*/
+venv*/
+env*/
+microracer_env/
+microracer_modern/
+
+# Conda package caches / lockfiles
+conda-meta/
+pkgs/
+
+# Cython/compiled artifacts
+*.so
+*.c
+build/
+
+# Python bytecode and caches (already listed above, keep explicit)
+__pycache__/
+*.py[cod]
+
+# Temporary files created by training runs
+*.log
+*.pid
+*.tmp
+
+# Jupyter and editor state
+.ipynb_checkpoints/
+.vscode/
+
+# Large binaries and generated artifacts created during experiments
+*.h5
+*.ckpt
+*.pth
+

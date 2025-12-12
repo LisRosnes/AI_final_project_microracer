@@ -12,6 +12,9 @@ cpdef dist_grid(double x0,double y0,double dirang, map,float step=1./250,verbose
     cdef double y = y0
     cdef int xg = int(x * 500) + 650
     cdef int yg = int(y * 500) + 650
+    # get map bounds (assume numpy array)
+    cdef int nx = map.shape[0]
+    cdef int ny = map.shape[1]
     cdef bint check
     cdef bint up
     cdef bint down
@@ -19,11 +22,15 @@ cpdef dist_grid(double x0,double y0,double dirang, map,float step=1./250,verbose
     cdef bint right
     cdef bint center
     cdef int i = 0
-    if not map[xg,yg]:
-        print(x,y,xg,yg)
-        print(map[xg,yg])
-        assert(map[xg,yg])
-    check = map[xg,yg]
+    # guard initial access
+    if xg < 0 or xg >= nx or yg < 0 or yg >= ny:
+        # off-map, return current point
+        return x, y
+    if not map[xg, yg]:
+        # if starting point is off the route, still proceed but guard
+        check = False
+    else:
+        check = True
     while (check):
         if i == 10:
             step = 1./100
@@ -33,12 +40,27 @@ cpdef dist_grid(double x0,double y0,double dirang, map,float step=1./250,verbose
         y += stepy
         xg = int(x * 500) + 650
         yg = int(y * 500) + 650
-        up = map[xg,yg+1]
-        down = map[xg,yg-1]
-        left = map[xg-1,yg]
-        right = map[xg+1,yg]
-        center = map[xg,yg]
-        check = up and down and left and right
+        # if we've moved off the map, stop tracing
+        if xg < 0 or xg >= nx or yg < 0 or yg >= ny:
+            check = False
+            break
+        # safe neighbor checks
+        up = False
+        down = False
+        left = False
+        right = False
+        center = False
+        if yg + 1 < ny:
+            up = map[xg, yg+1]
+        if yg - 1 >= 0:
+            down = map[xg, yg-1]
+        if xg - 1 >= 0:
+            left = map[xg-1, yg]
+        if xg + 1 < nx:
+            right = map[xg+1, yg]
+        center = map[xg, yg]
+        # require center and all four neighbors to continue
+        check = center and up and down and left and right
         i += 1
     x -= stepx
     y -= stepy
