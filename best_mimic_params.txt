@@ -1,0 +1,1 @@
+{'speed_threshold': 9.404454314852789, 'accel_threshold': 3.4571913426174223}
