@@ -16,7 +16,7 @@ import tracks
 
 ########################################
 ###### TRAINING MODE CONFIGURATION #####
-TRAINING_MODE = 'hard'  # Options: 'easy', 'hard', 'curriculum'
+TRAINING_MODE = 'curriculum'  # Options: 'easy', 'hard', 'curriculum'
 
 # Curriculum training configuration
 CURRICULUM_CONFIG = {
@@ -24,19 +24,25 @@ CURRICULUM_CONFIG = {
         'name': 'Easy',
         'obstacles': False,
         'chicanes': False,
-        'steps': 15000
+        'min_success_rate': 0.80,  # 80% completion rate to advance
+        'min_steps': 5000,          # Minimum exploration time before evaluation
+        'eval_episodes': 10         # Episodes to test mastery
     },
     'level_2': {
         'name': 'Medium', 
         'obstacles': True,
         'chicanes': False,
-        'steps': 20000
+        'min_success_rate': 0.70,   # 70% completion rate to advance
+        'min_steps': 8000,
+        'eval_episodes': 10
     },
     'level_3': {
         'name': 'Hard',
         'obstacles': True,
         'chicanes': True,
-        'steps': 15000
+        'min_success_rate': 0.60,   # Final level - trains to convergence/max iterations
+        'min_steps': 10000,
+        'eval_episodes': 10
     }
 }
 
@@ -96,7 +102,7 @@ QUICK_TEST = False
 total_iterations = 5000 if QUICK_TEST else 50000
 
 # Early stopping configuration
-use_early_stopping = True
+use_early_stopping = False
 eval_frequency = 2000
 eval_episodes = 10
 patience = 10
@@ -382,56 +388,6 @@ if __name__ == '__main__':
         
         while i < total_iterations:
             
-            # CURRICULUM PROGRESSION
-            if TRAINING_MODE == 'curriculum':
-                if current_curriculum_level == 1 and i >= CURRICULUM_CONFIG['level_1']['steps']:
-                    current_curriculum_level = 2
-                    config = CURRICULUM_CONFIG['level_2']
-                    racer = tracks.Racer(
-                        obstacles=config['obstacles'],
-                        chicanes=config['chicanes'],
-                        turn_limit=True,
-                        low_speed_termination=True
-                    )
-                    transition_msg = f"📈 CURRICULUM TRANSITION → Level {current_curriculum_level}: {config['name']} track"
-                    print(f"\n{'='*60}")
-                    print(transition_msg)
-                    print(f"[PAUSE] Resetting early stopping (grace period: {curriculum_grace_steps} steps)")
-                    print(f"{'='*60}\n")
-                    curriculum_transitions.append({
-                        'step': i,
-                        'level': current_curriculum_level,
-                        'name': config['name'],
-                        'avg_reward': avg_reward
-                    })
-                    last_curriculum_transition_step = i
-                    evaluations_without_improvement = 0
-                    best_eval_reward = -np.inf
-                
-                elif current_curriculum_level == 2 and i >= (CURRICULUM_CONFIG['level_1']['steps'] + CURRICULUM_CONFIG['level_2']['steps']):
-                    current_curriculum_level = 3
-                    config = CURRICULUM_CONFIG['level_3']
-                    racer = tracks.Racer(
-                        obstacles=config['obstacles'],
-                        chicanes=config['chicanes'],
-                        turn_limit=True,
-                        low_speed_termination=True
-                    )
-                    transition_msg = f"📈 CURRICULUM TRANSITION → Level {current_curriculum_level}: {config['name']} track"
-                    print(f"\n{'='*60}")
-                    print(transition_msg)
-                    print(f"[PAUSE] Resetting early stopping (grace period: {curriculum_grace_steps} steps)")
-                    print(f"{'='*60}\n")
-                    curriculum_transitions.append({
-                        'step': i,
-                        'level': current_curriculum_level,
-                        'name': config['name'],
-                        'avg_reward': avg_reward
-                    })
-                    last_curriculum_transition_step = i
-                    evaluations_without_improvement = 0
-                    best_eval_reward = -np.inf
-            
             prev_state = racer.reset()
             episodic_reward = 0
             mean_speed += prev_state[num_states-1]
@@ -506,6 +462,76 @@ if __name__ == '__main__':
                 
                 if i % 100 == 0:
                     avg_reward_list.append(avg_reward)
+                
+                # CURRICULUM PROGRESSION - Performance-based transitions
+                if (TRAINING_MODE == 'curriculum' and 
+                    current_curriculum_level < 3 and 
+                    i % eval_frequency == 0 and 
+                    i > 0 and 
+                    buffer.buffer_counter > warmup_steps):
+                    
+                    current_level_key = f'level_{current_curriculum_level}'
+                    current_config = CURRICULUM_CONFIG[current_level_key]
+                    steps_in_level = i - last_curriculum_transition_step
+                    
+                    # Check for transition: must meet minimum steps
+                    if steps_in_level >= current_config['min_steps']:
+                        # Evaluate mastery on current difficulty
+                        print(f"\n{'='*60}")
+                        print(f"🎯 CURRICULUM CHECK at step {i} (Level {current_curriculum_level}: {current_config['name']})")
+                        print(f"   Steps in this level: {steps_in_level}")
+                        print(f"   Testing mastery with {current_config['eval_episodes']} episodes...")
+                        
+                        mastery_results = evaluate_policy(
+                            actor_model, 
+                            num_episodes=current_config['eval_episodes'],
+                            verbose=False,
+                            eval_difficulty='current',
+                            current_level=current_curriculum_level
+                        )
+                        
+                        success_rate = mastery_results['success_rate']
+                        avg_mastery_reward = mastery_results['avg_reward']
+                        
+                        print(f"   Success Rate: {success_rate:.1%} (need {current_config['min_success_rate']:.1%})")
+                        print(f"   Avg Reward: {avg_mastery_reward:.2f}")
+                        
+                        # Check if ready to advance
+                        if success_rate >= current_config['min_success_rate']:
+                            current_curriculum_level += 1
+                            next_level_key = f'level_{current_curriculum_level}'
+                            config = CURRICULUM_CONFIG[next_level_key]
+                            
+                            racer = tracks.Racer(
+                                obstacles=config['obstacles'],
+                                chicanes=config['chicanes'],
+                                turn_limit=True,
+                                low_speed_termination=True
+                            )
+                            
+                            transition_msg = f"📈 CURRICULUM TRANSITION → Level {current_curriculum_level}: {config['name']} track"
+                            print(f"   ✅ MASTERY ACHIEVED! Advancing to next level.")
+                            print(transition_msg)
+                            print(f"   [PAUSE] Resetting early stopping (grace period: {curriculum_grace_steps} steps)")
+                            print(f"{'='*60}\n")
+                            
+                            curriculum_transitions.append({
+                                'step': i,
+                                'level': current_curriculum_level,
+                                'name': config['name'],
+                                'avg_reward': avg_reward,
+                                'mastery_success_rate': success_rate,
+                                'mastery_reward': avg_mastery_reward
+                            })
+                            last_curriculum_transition_step = i
+                            evaluations_without_improvement = 0
+                            best_eval_reward = -np.inf
+                            
+                            # IMPORTANT: Break to start new episode with new racer
+                            break
+                        else:
+                            print(f"   ⏳ Not ready yet. Continue training on {current_config['name']} level.")
+                            print(f"{'='*60}\n")
                 
                 # Early stopping evaluation
                 if use_early_stopping and i % eval_frequency == 0 and i > 0 and buffer.buffer_counter > warmup_steps:
