@@ -114,7 +114,7 @@ class FGMReflexAgent:
 if __name__ == '__main__':
     try:
         import tracks
-        racer = tracks.Racer(obstacles=True, turn_limit=True, chicanes=True, low_speed_termination=False)
+        racer = tracks.Racer(obstacles=False, turn_limit=True, chicanes=True, low_speed_termination=False)
         agent = FGMReflexAgent()
         state = racer.reset()
         steps = 0
