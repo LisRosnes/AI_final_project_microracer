@@ -60,6 +60,9 @@ def border_poly(cs,theta,track_width):
 #we try to avoid too sharp turns in tracks
 def smooth(var):
     n = var.shape[0]
+    # Guard against empty or too-small arrays
+    if n < 3:
+        return var
     if 2*var[0]-(var[n-1]+var[1]) > 1:
         var[0] = (1 + var[n-1]+var[1])/2
     elif 2*var[0]-(var[n-1]+var[1]) < -1:
@@ -128,8 +131,15 @@ def generate_chicanes(y,theta, var, curves):
     return y, theta, var
     
 def create_random_track(curves=20,track_width=.04, chicanes=False):
+    # Ensure minimum number of curves
+    curves = max(curves, 4)
     theta = 2 * np.pi * np.linspace(0, 1, curves)
     var = np.random.rand(curves)
+    # Guard against empty var array
+    if len(var) == 0:
+        var = np.random.rand(4)
+        curves = 4
+        theta = 2 * np.pi * np.linspace(0, 1, curves)
     var = smooth(var)
     var = var*.5+.7
     var[curves-1]=var[0]
@@ -330,6 +340,7 @@ class Racer:
         self.chicanes = chicanes
         self.turn_limit = turn_limit
         self.low_speed_termination = low_speed_termination
+        self.completion_counter = 0  # Counter for printing first 10 completions
 
     
     def reset(self, shared_map=None):
@@ -367,7 +378,45 @@ class Racer:
         vnorm = v/((self.carvx ** 2 + self.carvy ** 2) ** .5)
         self.carvx *= vnorm
         self.carvy *= vnorm
-        assert (self.map[int(self.carx*500)+650, int(self.cary*500)+650])
+        
+        # Validate initial position is on track, retry if not
+        max_retries = 10
+        retry_count = 0
+        while retry_count < max_retries:
+            try:
+                map_idx_x = int(self.carx*500)+650
+                map_idx_y = int(self.cary*500)+650
+                # Check bounds
+                if map_idx_x < 0 or map_idx_x >= self.map.shape[0] or map_idx_y < 0 or map_idx_y >= self.map.shape[1]:
+                    raise AssertionError(f"Initial position out of bounds: ({map_idx_x}, {map_idx_y}) vs map shape {self.map.shape}")
+                # Check track validity
+                assert (self.map[map_idx_x, map_idx_y]), f"Initial position not on track at ({map_idx_x}, {map_idx_y})"
+                break  # Success, exit loop
+            except (AssertionError, IndexError) as e:
+                retry_count += 1
+                if retry_count >= max_retries:
+                    print(f"WARNING: Failed to generate valid track after {max_retries} retries. Last error: {e}")
+                    raise
+                # Retry: regenerate track
+                if shared_map is None:
+                    legal_map = False
+                    while not(legal_map):
+                        self.cs,self.csin,self.csout = create_random_track(self.curves,self.track_width , chicanes=self.chicanes)
+                        self.map,legal_map = create_route_map(self.csin, self.csout)
+                        if self.obstacles:
+                            _ , self.obs_pos = generate_obstacles(self.csout, self.obstacles_number, self.map, self.track_width)
+                        else:
+                            self.obs_pos = []
+                    # Regenerate starting position
+                    self.carx,self.cary = self.cs(0)
+                    self.carvx,self.carvy = -self.cs(0,1)
+                    vnorm = v/((self.carvx ** 2 + self.carvy ** 2) ** .5)
+                    self.carvx *= vnorm
+                    self.carvy *= vnorm
+                else:
+                    # Can't retry with shared_map, re-raise
+                    raise
+        
         lidar_signal = lidar_grid(self.carx,self.cary,self.carvx,self.carvy,self.map)
         #print("distance = {}, direction = {}".format(dist,dir))
         return (observe([lidar_signal, v]))
@@ -392,7 +441,19 @@ class Racer:
         newcarx = self.carx + newcarvx*self.tstep
         newcary = self.cary + newcarvy*self.tstep
         newcartheta = np.arctan2(newcary,newcarx)
-        on_route = self.map[int(newcarx*500)+650, int(newcary*500)+650]
+        
+        # Bounds check for map access
+        map_idx_x = int(newcarx*500)+650
+        map_idx_y = int(newcary*500)+650
+        if map_idx_x < 0 or map_idx_x >= self.map.shape[0] or map_idx_y < 0 or map_idx_y >= self.map.shape[1]:
+            # Out of bounds - treat as crash
+            self.completation = 2
+            self.done = True
+            reward = -3
+            state = None
+            return(observe(state), reward, True)
+        
+        on_route = self.map[map_idx_x, map_idx_y]
         if on_route and no_inversion(newcartheta, self.cartheta):
             if newv<0.05 and self.low_speed_termination:
                 # debug: low-speed termination
@@ -409,7 +470,9 @@ class Racer:
             reward = newv*self.tstep
             lidar_signal = lidar_grid(self.carx, self.cary, self.carvx, self.carvy, self.map)
             if complete(newcartheta, self.cartheta):
-                print("completed")
+                if self.completion_counter < 10:
+                    self.completion_counter += 1
+                    print(f"completed #{self.completion_counter}")
                 self.completation = 1
                 self.done = True
             self.cartheta = newcartheta

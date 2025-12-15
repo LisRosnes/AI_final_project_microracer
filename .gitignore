@@ -164,6 +164,14 @@ pkgs/
 *.so
 *.c
 build/
+.pyxbld/
+
+# Conda environment files (local machine-specific)
+environment.yml
+environment_modern.yml
+
+# SLURM scripts (machine-specific paths)
+scripts/
 
 # Python bytecode and caches (already listed above, keep explicit)
 __pycache__/
