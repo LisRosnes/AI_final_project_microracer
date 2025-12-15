@@ -16,7 +16,7 @@ import tracks
 
 ########################################
 ###### TRAINING MODE CONFIGURATION #####
-TRAINING_MODE = 'curriculum'  # Options: 'easy', 'hard', 'curriculum'
+TRAINING_MODE = 'easy'  # Options: 'easy', 'hard', 'curriculum'
 
 # Curriculum training configuration
 CURRICULUM_CONFIG = {
@@ -24,6 +24,7 @@ CURRICULUM_CONFIG = {
         'name': 'Easy',
         'obstacles': False,
         'chicanes': False,
+        'track_width': 0.1,
         'min_success_rate': 0.80,  # 80% completion rate to advance
         'min_steps': 5000,          # Minimum exploration time before evaluation
         'eval_episodes': 10         # Episodes to test mastery
@@ -52,6 +53,7 @@ if TRAINING_MODE == 'curriculum':
     racer = tracks.Racer(
         obstacles=initial_config['obstacles'],
         chicanes=initial_config['chicanes'],
+        track_width=initial_config['track_width'],
         turn_limit=True,
         low_speed_termination=True
     )
@@ -68,6 +70,7 @@ elif TRAINING_MODE == 'hard':
     racer = tracks.Racer(
         obstacles=True,
         chicanes=True,
+        track_width=0.1,
         turn_limit=True,
         low_speed_termination=True
     )
@@ -314,6 +317,7 @@ if __name__ == '__main__':
             eval_racer = tracks.Racer(
                 obstacles=config['obstacles'],
                 chicanes=config['chicanes'],
+                # track_width=config['track_width'],
                 turn_limit=True,
                 low_speed_termination=True
             )
@@ -397,7 +401,18 @@ if __name__ == '__main__':
             while not(done):
                 i = i + 1
                 tf_prev_state = tf.expand_dims(tf.convert_to_tensor(prev_state), 0)
-                action = policy(tf_prev_state, current_iteration=i, max_iterations=total_iterations)[0]
+                
+                # Use random exploration during warmup for better initial data collection
+                if buffer.buffer_counter < warmup_steps:
+                    # Random actions: acceleration in [0.5, 1.0], steering constrained
+                    # CRITICAL: Limit steering to prevent backward theta movement
+                    # At episode start, cartheta ~0, so we need small steering to stay on track
+                    action = np.array([
+                        np.random.uniform(0.5, 1.0),     # Strong forward acceleration
+                        np.random.uniform(-0.3, 0.3)     # Conservative steering (±30%)
+                    ])
+                else:
+                    action = policy(tf_prev_state, current_iteration=i, max_iterations=total_iterations)[0]
                 
                 state, reward, done = step(action)
                 
@@ -455,8 +470,10 @@ if __name__ == '__main__':
                     # Update target networks
                     update_target(target_actor.variables, actor_model.variables, tau)
                     update_target(target_critic.variables, critic_model.variables, tau)
-                elif i % 500 == 0 and buffer.buffer_counter <= warmup_steps:
-                    print(f"🔄 Warmup: {buffer.buffer_counter}/{warmup_steps} samples collected")
+                
+                # Warmup progress updates
+                if buffer.buffer_counter <= warmup_steps and i % 500 == 0:
+                    print(f"🔄 Warmup (random exploration): {buffer.buffer_counter}/{warmup_steps} samples collected ({100*buffer.buffer_counter/warmup_steps:.1f}%)")
                 
                 prev_state = state
                 
@@ -505,6 +522,7 @@ if __name__ == '__main__':
                             racer = tracks.Racer(
                                 obstacles=config['obstacles'],
                                 chicanes=config['chicanes'],
+                                track_width=config['track_width'],
                                 turn_limit=True,
                                 low_speed_termination=True
                             )
@@ -533,8 +551,8 @@ if __name__ == '__main__':
                             print(f"   ⏳ Not ready yet. Continue training on {current_config['name']} level.")
                             print(f"{'='*60}\n")
                 
-                # Early stopping evaluation
-                if use_early_stopping and i % eval_frequency == 0 and i > 0 and buffer.buffer_counter > warmup_steps:
+                # Periodic evaluation and best weight tracking
+                if i % eval_frequency == 0 and i > 0 and buffer.buffer_counter > warmup_steps:
                     steps_since_transition = i - last_curriculum_transition_step
                     in_grace_period = (TRAINING_MODE == 'curriculum' and 
                                       steps_since_transition < curriculum_grace_steps and 
@@ -562,11 +580,12 @@ if __name__ == '__main__':
                     eval_history.append({'step': i, 'reward': eval_reward, 'success_rate': eval_results['success_rate'],
                                         'curriculum_level': current_curriculum_level if TRAINING_MODE == 'curriculum' else None})
                     
-                    if in_grace_period:
+                    if in_grace_period and use_early_stopping:
                         print(f"  [PAUSE] Skipping early stopping check (adapting to new difficulty)")
                         print(f"{'='*60}\n")
                         continue
                     
+                    # Track and save best weights
                     if eval_reward > best_eval_reward + min_improvement:
                         improvement = eval_reward - best_eval_reward
                         best_eval_reward = eval_reward
@@ -582,7 +601,8 @@ if __name__ == '__main__':
                         effective_patience = patience * curriculum_patience_multiplier if TRAINING_MODE == 'curriculum' else patience
                         print(f"  No improvement ({evaluations_without_improvement}/{effective_patience})")
                         
-                        if evaluations_without_improvement >= effective_patience:
+                        # Only trigger early stopping if enabled
+                        if use_early_stopping and evaluations_without_improvement >= effective_patience:
                             print(f"\n{'='*60}")
                             print(f"⚠️ EARLY STOPPING TRIGGERED")
                             print(f"No improvement for {effective_patience} evaluations ({effective_patience * eval_frequency} steps)")
