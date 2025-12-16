@@ -16,7 +16,7 @@ import tracks
 
 ########################################
 ###### TRAINING MODE CONFIGURATION #####
-TRAINING_MODE = 'easy'  # Options: 'easy', 'hard', 'curriculum'
+TRAINING_MODE = 'hard'  # Options: 'easy', 'hard', 'curriculum'
 
 # Curriculum training configuration
 CURRICULUM_CONFIG = {
@@ -65,12 +65,12 @@ elif TRAINING_MODE == 'easy':
         turn_limit=True,
         low_speed_termination=True
     )
+    racer.track_width=0.06
     print("🟢 EASY MODE: Training on easy track (no obstacles, no chicanes)")
 elif TRAINING_MODE == 'hard':
     racer = tracks.Racer(
         obstacles=True,
         chicanes=True,
-        track_width=0.1,
         turn_limit=True,
         low_speed_termination=True
     )
@@ -416,13 +416,8 @@ if __name__ == '__main__':
                 
                 state, reward, done = step(action)
                 
-                # IMPROVED REWARD SHAPING
-                # 1. Completion bonus
-                if done and racer.completation == 1:
-                    reward += 15.0  # Increased completion bonus
-                    print("🏁 Episode completed! Bonus reward added.")
-                
-                # 2. FIXED: Track actual progress along track (theta-based)
+                # IMPROVED REWARD SHAPING - FIXED ORDER
+                # Track theta for progress (before modifying reward)
                 if not done:
                     current_theta = racer.cartheta
                     theta_progress = current_theta - prev_theta
@@ -433,14 +428,17 @@ if __name__ == '__main__':
                     elif theta_progress > np.pi:
                         theta_progress -= 2 * np.pi
                     
-                    # Reward forward progress
                     if theta_progress > 0:
-                        reward += theta_progress * 3.0  # Progress reward
-                    
+                        reward += theta_progress * 1.0  # Moderate progress reward
+
                     prev_theta = current_theta
-                
-                # 3. NEW: Reward clipping for stability
-                reward = np.clip(reward, -5, 5)
+                    # Add completion bonus BEFORE clipping
+                    if done and racer.completation == 1:
+                        reward += 10.0  # Strong but not overwhelming
+                        print("🏁 Episode completed! Bonus reward added.")
+
+                    # Clip to focused range (allows completion bonus to matter)
+                    reward = np.clip(reward, -5, 5)
                 
                 fail = done and len(state) < num_states
                 buffer.record((prev_state, action, reward, fail, state))
