@@ -112,7 +112,7 @@ def load_training_metadata():
     
     # Try to load metadata for each training mode
     # First try the improved metadata, then fall back to old training metadata
-    for mode in ['easy', 'hard', 'curriculum']:
+    for mode in ['easy', 'hard', 'curriculum', 'imitation']:
         improved_meta_file = f"../../logs/ddpg_{mode}_improved_metadata.json"
         old_meta_file = f"../../logs/ddpg_{mode}_training_metadata.json"
         
@@ -140,10 +140,10 @@ def load_training_metadata():
 
 def compare_models(num_episodes=50):
     """
-    Load and compare DDPG models trained with Easy, Hard, and Curriculum modes.
+    Load and compare DDPG models trained with Easy, Hard, Curriculum, and Imitation modes.
     """
     print("="*80)
-    print("COMPARING DDPG TRAINING MODES: Easy vs Hard vs Curriculum")
+    print("COMPARING DDPG TRAINING MODES: Easy vs Hard vs Curriculum vs Imitation")
     print("="*80)
     print(f"Evaluation episodes: {num_episodes}")
     print(f"Evaluation track: HARD (obstacles + chicanes)\n")
@@ -157,7 +157,8 @@ def compare_models(num_episodes=50):
     model_configs = {
         'easy': 'weights/ddpg_actor_easy_best',
         'hard': 'weights/ddpg_actor_hard_best',
-        'curriculum': 'weights/ddpg_actor_curriculum_best'
+        'curriculum': 'weights/ddpg_actor_curriculum_best',
+        'imitation': 'weights/ddpg_actor_imitation_best'
     }
     
     for mode, path in model_configs.items():
@@ -299,8 +300,8 @@ def visualize_comparison(results, training_metadata=None):
     modes = list(results.keys())
     num_modes = len(modes)
     
-    # Color scheme for up to 3 modes
-    colors = {'easy': '#2ecc71', 'hard': '#e74c3c', 'curriculum': '#3498db'}
+    # Color scheme for up to 4 modes
+    colors = {'easy': '#2ecc71', 'hard': '#e74c3c', 'curriculum': '#3498db', 'imitation': '#9b59b6'}
     mode_colors = [colors.get(mode, '#95a5a6') for mode in modes]
     
     fig = plt.figure(figsize=(20, 12))

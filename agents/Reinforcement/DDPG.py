@@ -1,22 +1,41 @@
 from datetime import datetime
+import sys
+import os
+
+# Set matplotlib to non-interactive backend to prevent hanging
+import matplotlib
+matplotlib.use('Agg')
+import matplotlib.pyplot as plt
+
+print("[DEBUG] Starting DDPG.py...", flush=True)
+
 import tensorflow as tf
 from tensorflow.keras import layers
 from tensorflow import keras
 from tensorflow.keras import regularizers
 import numpy as np
-import matplotlib.pyplot as plt
 import json
-import sys
-import os
+
+print("[DEBUG] Imports successful", flush=True)
 
 # Add MicroRacer root to path to find tracks.py
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', '..'))
 
-import tracks 
+import tracks
+print("[DEBUG] Tracks module imported", flush=True)
+
+# Import FGM agent for imitation learning
+try:
+    from agents.fgm.fgm_agent import FGMReflexAgent
+    print("[DEBUG] FGM agent imported successfully", flush=True)
+except Exception as e:
+    print(f"[DEBUG] FGM agent import failed: {e}", flush=True)
+    FGMReflexAgent = None 
 
 ########################################
 ###### TRAINING MODE CONFIGURATION #####
-TRAINING_MODE = 'hard'  # Options: 'easy', 'hard', 'curriculum'
+TRAINING_MODE = 'imitation'  # Options: 'easy', 'hard', 'curriculum', 'imitation'
+print(f"[DEBUG] Training mode set to: {TRAINING_MODE}", flush=True)
 
 # Curriculum training configuration
 CURRICULUM_CONFIG = {
@@ -47,6 +66,28 @@ CURRICULUM_CONFIG = {
     }
 }
 
+# Imitation learning configuration
+IMITATION_CONFIG = {
+    'imitation_steps': 3000,        # Number of steps for imitation learning phase
+    'imitation_batch_size': 64,     # Batch size for supervised learning
+    'imitation_lr': 0.001,          # Learning rate for imitation phase
+    'max_imitation_loss': 0.05,     # Max MSE loss to transition to RL
+    'demo_buffer_size': 5000,       # Size of demonstration buffer
+    'eval_frequency': 500,          # How often to evaluate imitation performance
+}
+
+# Better config for easy track imitation learning
+BEST_FGM_CONFIG = {
+    'accel_scale': 1.0,  # Full acceleration for easy track
+    'bubble_radius_factor': 0.5981,
+    'curvature_threshold_factor': 0.6725,
+    'gap_min_width': 2.0,
+    'max_speed_straight': 0.95,  # Higher speeds on easy track
+    'max_speed_turn': 0.50,
+    'steering_gain': 1.6095,
+}
+
+
 # Initialize racer based on training mode
 if TRAINING_MODE == 'curriculum':
     initial_config = CURRICULUM_CONFIG['level_1']
@@ -67,6 +108,18 @@ elif TRAINING_MODE == 'easy':
     )
     racer.track_width=0.06
     print("🟢 EASY MODE: Training on easy track (no obstacles, no chicanes)")
+elif TRAINING_MODE == 'imitation':
+    # Start with very easy track for imitation learning
+    racer = tracks.Racer(
+        obstacles=False,
+        chicanes=False,
+        turn_limit=False,  # Disable turn limit for imitation phase
+        low_speed_termination=False  # Disable speed termination too
+    )
+    racer.track_width = 0.10  # Moderately wider track
+    print("🎯 IMITATION MODE: Starting with imitation learning from reflex agent")
+    print("   Phase 1: Supervised learning on easy track (wide, no termination limits)")
+    print("   Phase 2: RL fine-tuning on hard track")
 elif TRAINING_MODE == 'hard':
     racer = tracks.Racer(
         obstacles=True,
@@ -76,7 +129,7 @@ elif TRAINING_MODE == 'hard':
     )
     print("🔴 HARD MODE: Training on hard track (obstacles + chicanes)")
 else:
-    raise ValueError(f"Invalid TRAINING_MODE: {TRAINING_MODE}. Must be 'easy', 'hard', or 'curriculum'")
+    raise ValueError(f"Invalid TRAINING_MODE: {TRAINING_MODE}. Must be 'easy', 'hard', 'curriculum', or 'imitation'")
 
 ########################################
 ###### IMPROVED HYPERPARAMETERS ########
@@ -102,7 +155,7 @@ warmup_steps = 2000  # NEW: Warmup before training starts
 
 # Training configuration
 QUICK_TEST = False
-total_iterations = 5000 if QUICK_TEST else 50000
+total_iterations = 5000 if QUICK_TEST else 75000
 
 # Early stopping configuration
 use_early_stopping = False
@@ -289,6 +342,179 @@ if __name__ == '__main__':
     
     buffer = Buffer(buffer_dim, batch_size)
     
+    # Imitation learning components
+    if TRAINING_MODE == 'imitation':
+        # Create a simple reflex agent that works with 5D state [direction, distl, dist, distr, speed]
+        class SimpleReflexAgent:
+            """Simple reflex agent optimized for 5D state space - focuses on centerline following."""
+            def __init__(self, steering_gain=1.5, base_speed=0.7):
+                self.steering_gain = steering_gain
+                self.base_speed = base_speed
+            
+            def act(self, state):
+                """Return [throttle, steering] based on 5D state."""
+                if len(state) < 5:
+                    return np.array([0.0, 0.0])
+                
+                direction, distl, dist, distr, speed = state[:5]
+                
+                # Simple steering: just follow the direction to centerline
+                steering = -direction * self.steering_gain
+                steering = float(np.clip(steering, -1.0, 1.0))
+                
+                # Simple throttle: slow down when turning hard
+                turn_amount = abs(steering)
+                
+                if turn_amount < 0.3:
+                    # Mostly straight
+                    throttle = self.base_speed
+                elif turn_amount < 0.6:
+                    # Moderate turn
+                    throttle = self.base_speed * 0.7
+                else:
+                    # Sharp turn
+                    throttle = self.base_speed * 0.5
+                
+                # Also slow down if too close to walls
+                if dist > 0 and dist < 0.15:
+                    throttle *= 0.6
+                
+                throttle = float(np.clip(throttle, 0.0, 1.0))
+                
+                return np.array([throttle, steering])
+        
+        fgm_teacher = SimpleReflexAgent(
+            steering_gain=1.5,
+            base_speed=0.7
+        )
+        print("🤖 Simple Reflex teacher agent initialized for 5D state space")
+        print(f"   Strategy: Centerline following with adaptive throttle")
+        print(f"   Steering gain: 1.5")
+        print(f"   Base speed: 0.7")
+        print(f"   Note: Teacher doesn't need perfect completion - just demonstrates basic behaviors")
+        
+        # Demonstration buffer for imitation learning
+        class DemonstrationBuffer:
+            def __init__(self, capacity):
+                self.capacity = capacity
+                self.states = []
+                self.actions = []
+                self.counter = 0
+            
+            def add(self, state, action):
+                if len(self.states) < self.capacity:
+                    self.states.append(state)
+                    self.actions.append(action)
+                else:
+                    idx = self.counter % self.capacity
+                    self.states[idx] = state
+                    self.actions[idx] = action
+                self.counter += 1
+            
+            def sample_batch(self, batch_size):
+                indices = np.random.choice(len(self.states), min(batch_size, len(self.states)))
+                return np.array([self.states[i] for i in indices]), np.array([self.actions[i] for i in indices])
+            
+            def size(self):
+                return len(self.states)
+        
+        demo_buffer = DemonstrationBuffer(IMITATION_CONFIG['demo_buffer_size'])
+        imitation_losses = []
+        print(f"📚 Demonstration buffer created (capacity: {IMITATION_CONFIG['demo_buffer_size']})")
+        
+        # Test FGM teacher agent before starting imitation learning
+        def test_fgm_teacher(teacher_agent, test_racer, num_episodes=5):
+            """Test the FGM teacher agent to verify it's working correctly."""
+            print(f"\n{'='*60}")
+            print(f"🔬 TESTING FGM TEACHER AGENT")
+            print(f"{'='*60}")
+            print(f"Running {num_episodes} test episodes to verify teacher performance...\n")
+            
+            test_rewards = []
+            test_completions = []
+            test_steps = []
+            action_stats = {'throttle': [], 'steering': []}
+            
+            for ep in range(num_episodes):
+                state = test_racer.reset()
+                done = False
+                episode_reward = 0
+                steps = 0
+                episode_throttles = []
+                episode_steerings = []
+                
+                try:
+                    while not done and steps < 1000:
+                        action = teacher_agent.act(state)
+                        episode_throttles.append(action[0])
+                        episode_steerings.append(action[1])
+                        
+                        state, reward, done = test_racer.step(action)
+                        episode_reward += reward
+                        steps += 1
+                except IndexError:
+                    # Car went out of bounds - treat as failed episode
+                    print(f"  Episode {ep+1}/{num_episodes}: Out of bounds - ❌ FAILED")
+                    test_rewards.append(-3.0)
+                    completed = 0
+                    test_completions.append(completed)
+                    test_steps.append(steps)
+                    if len(episode_throttles) > 0:
+                        action_stats['throttle'].extend(episode_throttles)
+                        action_stats['steering'].extend(episode_steerings)
+                    continue
+                
+                test_rewards.append(episode_reward)
+                completed = 1 if test_racer.completation == 1 else 0
+                test_completions.append(completed)
+                test_steps.append(steps)
+                action_stats['throttle'].extend(episode_throttles)
+                action_stats['steering'].extend(episode_steerings)
+                
+                completion_str = "✅ COMPLETED" if test_racer.completation == 1 else "❌ FAILED"
+                print(f"  Episode {ep+1}/{num_episodes}: Reward={episode_reward:.2f}, Steps={steps}, {completion_str}")
+            
+            # Summary statistics
+            avg_reward = np.mean(test_rewards)
+            avg_steps = np.mean(test_steps)
+            completion_rate = sum(test_completions) / num_episodes
+            avg_throttle = np.mean(action_stats['throttle'])
+            avg_steering_abs = np.mean(np.abs(action_stats['steering']))
+            
+            print(f"\n📊 FGM Teacher Performance Summary:")
+            print(f"   Avg Reward: {avg_reward:.2f}")
+            print(f"   Avg Steps: {avg_steps:.1f}")
+            print(f"   Completion Rate: {completion_rate:.1%}")
+            print(f"   Avg Throttle: {avg_throttle:.3f}")
+            print(f"   Avg |Steering|: {avg_steering_abs:.3f}")
+            print(f"   Throttle range: [{np.min(action_stats['throttle']):.3f}, {np.max(action_stats['throttle']):.3f}]")
+            print(f"   Steering range: [{np.min(action_stats['steering']):.3f}, {np.max(action_stats['steering']):.3f}]")
+            
+            if completion_rate < 0.1:
+                print(f"\n⚠️  WARNING: Teacher has low completion rate ({completion_rate:.1%})")
+                print(f"   This is okay - imitation learning can still learn basic behaviors!")
+                print(f"   The RL phase will improve on the teacher's performance.")
+            elif completion_rate >= 0.5:
+                print(f"\n✨ Teacher shows strong performance! Good for imitation learning.")
+            else:
+                print(f"\n✓ Teacher shows moderate performance. Sufficient for bootstrapping.")
+            
+            print(f"{'='*60}\n")
+            
+            return {
+                'avg_reward': avg_reward,
+                'completion_rate': completion_rate,
+                'avg_steps': avg_steps
+            }
+        
+        # Run the test
+        teacher_stats = test_fgm_teacher(fgm_teacher, racer, num_episodes=5)
+        
+    else:
+        fgm_teacher = None
+        demo_buffer = None
+        imitation_losses = []
+    
     def step(action):
         """Wrapper for environment step."""
         n = 1
@@ -386,9 +612,108 @@ if __name__ == '__main__':
         ep = 0
         avg_reward = 0
         
-        print(f"\n{'='*60}")
-        print(f"🚀 Starting training with WARMUP of {warmup_steps} steps")
-        print(f"{'='*60}\n")
+        # IMITATION LEARNING PHASE
+        if TRAINING_MODE == 'imitation':
+            print(f"\n{'='*60}")
+            print(f"🎯 PHASE 1: IMITATION LEARNING FROM FGM AGENT")
+            print(f"{'='*60}")
+            print(f"Collecting demonstrations from FGM teacher...")
+            print(f"Target: {IMITATION_CONFIG['imitation_steps']} training steps")
+            print(f"Max acceptable loss: {IMITATION_CONFIG['max_imitation_loss']}")
+            print(f"{'='*60}\n")
+            
+            # Create a separate optimizer for imitation learning
+            imitation_optimizer = tf.keras.optimizers.Adam(IMITATION_CONFIG['imitation_lr'])
+            
+            # Collect demonstrations while running FGM agent
+            demo_episodes = 0
+            while demo_buffer.size() < IMITATION_CONFIG['demo_buffer_size']:
+                state = racer.reset()
+                done = False
+                steps_in_episode = 0
+                
+                try:
+                    while not done and steps_in_episode < 500:
+                        # Get FGM teacher's action
+                        teacher_action = fgm_teacher.act(state)
+                        
+                        # Store demonstration
+                        demo_buffer.add(state, teacher_action)
+                        
+                        # Take action in environment
+                        state, reward, done = racer.step(teacher_action)
+                        steps_in_episode += 1
+                except IndexError:
+                    # Car went out of bounds - skip this episode
+                    print(f"  [Skipped episode {demo_episodes+1} - out of bounds]")
+                    demo_episodes += 1
+                    continue
+                
+                demo_episodes += 1
+                if demo_episodes % 5 == 0:
+                    print(f"  Collected {demo_buffer.size()}/{IMITATION_CONFIG['demo_buffer_size']} demonstrations ({demo_episodes} episodes)")
+            
+            print(f"\n✅ Demonstration collection complete: {demo_buffer.size()} samples\n")
+            print(f"Starting supervised learning phase...\n")
+            
+            # Train actor to imitate FGM using supervised learning
+            imitation_step = 0
+            recent_losses = []
+            
+            while imitation_step < IMITATION_CONFIG['imitation_steps']:
+                # Sample batch of demonstrations
+                demo_states, demo_actions = demo_buffer.sample_batch(IMITATION_CONFIG['imitation_batch_size'])
+                
+                # Train actor to match teacher's actions (supervised learning)
+                with tf.GradientTape() as tape:
+                    predicted_actions = actor_model(demo_states, training=True)
+                    # MSE loss between predicted and teacher actions
+                    imitation_loss = tf.reduce_mean(tf.square(predicted_actions - demo_actions))
+                
+                # Update actor
+                gradients = tape.gradient(imitation_loss, actor_model.trainable_variables)
+                imitation_optimizer.apply_gradients(zip(gradients, actor_model.trainable_variables))
+                
+                imitation_losses.append(float(imitation_loss))
+                recent_losses.append(float(imitation_loss))
+                imitation_step += 1
+                
+                # Periodic evaluation of imitation performance
+                if imitation_step % IMITATION_CONFIG['eval_frequency'] == 0:
+                    avg_loss = np.mean(recent_losses)
+                    recent_losses = []
+                    print(f"  Step {imitation_step}/{IMITATION_CONFIG['imitation_steps']}: Avg Imitation Loss = {avg_loss:.6f}")
+                    
+                    # Check if we've achieved good enough imitation
+                    if avg_loss < IMITATION_CONFIG['max_imitation_loss']:
+                        print(f"\n🌟 Imitation loss threshold reached! ({avg_loss:.6f} < {IMITATION_CONFIG['max_imitation_loss']})")
+                        print(f"   Transitioning to RL phase early at step {imitation_step}\n")
+                        break
+            
+            # Update target networks to match trained actor
+            target_actor.set_weights(actor_model.get_weights())
+            
+            print(f"\n{'='*60}")
+            print(f"✅ IMITATION PHASE COMPLETE")
+            print(f"   Final loss: {np.mean(imitation_losses[-100:]):.6f}")
+            print(f"   Trained for {imitation_step} steps")
+            print(f"{'='*60}\n")
+            
+            # Switch to hard track for RL training
+            print(f"🔄 Switching to HARD track for RL fine-tuning...\n")
+            racer = tracks.Racer(
+                obstacles=True,
+                chicanes=True,
+                turn_limit=True,
+                low_speed_termination=True
+            )
+            print(f"{'='*60}")
+            print(f"🎯 PHASE 2: REINFORCEMENT LEARNING ON HARD TRACK")
+            print(f"{'='*60}\n")
+        else:
+            print(f"\n{'='*60}")
+            print(f"🚀 Starting training with WARMUP of {warmup_steps} steps")
+            print(f"{'='*60}\n")
         
         while i < total_iterations:
             
@@ -657,7 +982,8 @@ if __name__ == '__main__':
                     'reward_clipping': True,
                     'warmup_steps': warmup_steps,
                     'increased_network_capacity': True,
-                    'equal_learning_rates': True
+                    'equal_learning_rates': True,
+                    'imitation_learning': TRAINING_MODE == 'imitation'
                 },
                 'early_stopping': {
                     'enabled': use_early_stopping,
@@ -679,6 +1005,12 @@ if __name__ == '__main__':
                     'enabled': TRAINING_MODE == 'curriculum',
                     'transitions': curriculum_transitions if TRAINING_MODE == 'curriculum' else [],
                     'final_level': current_curriculum_level if TRAINING_MODE == 'curriculum' else None
+                },
+                'imitation': {
+                    'enabled': TRAINING_MODE == 'imitation',
+                    'imitation_losses': [float(x) for x in imitation_losses] if TRAINING_MODE == 'imitation' else [],
+                    'imitation_steps': len(imitation_losses) if TRAINING_MODE == 'imitation' else 0,
+                    'final_imitation_loss': float(np.mean(imitation_losses[-100:])) if TRAINING_MODE == 'imitation' and len(imitation_losses) > 0 else None
                 }
             }
             
