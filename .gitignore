@@ -190,4 +190,13 @@ __pycache__/
 *.h5
 *.ckpt
 *.pth
+*.mp4
+
+# Frame CSVs and evaluation logs
+*_frames.csv
+logs/fgm_frames/
+logs/eval_fgm100.json
+
+# Development clone folders
+elisa_clone/
 

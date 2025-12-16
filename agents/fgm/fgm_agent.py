@@ -16,7 +16,8 @@ class FGMReflexAgent:
                  max_speed_straight=0.95,
                  max_speed_turn=0.40,
                  curvature_threshold_factor=0.6,
-                 accel_scale=1.0):
+                 accel_scale=1.0,
+                 max_speed=1.0):
         self.bubble_radius_factor = bubble_radius_factor
         self.gap_min_width = int(gap_min_width)
         self.steering_gain = float(steering_gain)
@@ -24,18 +25,27 @@ class FGMReflexAgent:
         self.max_speed_turn = float(max_speed_turn)
         self.curvature_threshold_factor = float(curvature_threshold_factor)
         self.accel_scale = float(accel_scale)
+        self.max_speed = float(max_speed)
+        
+        # Current speed tracking (updated externally or estimated)
+        self.current_speed = 0.0
 
         # lidar geometry
         self.N = 19
         self.k_center = self.N // 2
 
-    def act(self, state, max_range=None):
+    def act(self, state, max_range=None, current_speed=None, max_acc=None, tstep=None):
         """Return [throttle, steering]. Accepts either raw 19-beam lidar or compact state."""
+        # Update current speed if provided
+        if current_speed is not None:
+            self.current_speed = current_speed
+        
         lidar = None
         if hasattr(state, '__len__') and len(state) >= self.N:
             lidar = np.asarray(state[:self.N], dtype=float)
         elif hasattr(state, '__len__') and len(state) >= 5:
             direction, distl, dist, distr, speed = state[:5]
+            self.current_speed = speed  # Extract speed from compact state
             lidar = self._estimate_lidar(direction, distl, dist, distr)
         else:
             return np.array([0.0, 0.0])
@@ -87,6 +97,30 @@ class FGMReflexAgent:
             throttle = float(np.clip(self.max_speed_turn, -1.0, 1.0))
 
         throttle = float(np.clip(throttle * self.accel_scale, -1.0, 1.0))
+        
+        # If exceeding max_speed, or the predicted next speed would exceed it,
+        # limit throttle to braking only (no positive acceleration).
+        try:
+            will_exceed = False
+            if self.current_speed is not None and self.current_speed > self.max_speed:
+                will_exceed = True
+            # if we know the vehicle's max_acc and timestep, predict delta_v
+            if (not will_exceed) and (max_acc is not None) and (tstep is not None):
+                try:
+                    max_incr = float(max_acc) * float(tstep)
+                    predicted_v = float(self.current_speed) + float(throttle) * max_incr
+                    if predicted_v > self.max_speed:
+                        will_exceed = True
+                except Exception:
+                    will_exceed = False
+            if will_exceed:
+                # Force a small negative acceleration to bleed speed down toward max_speed.
+                # Make it 10x stronger than before: clip to [-1.0, -0.01] so the vehicle
+                # decelerates faster when above the speed limit.
+                throttle = float(np.clip(throttle, -1.0, -0.01))
+        except Exception:
+            # conservative fallback
+            throttle = float(np.clip(throttle, -1.0, 1.0))
 
         return np.array([throttle, steering])
 

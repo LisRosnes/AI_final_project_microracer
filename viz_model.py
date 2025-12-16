@@ -64,6 +64,19 @@ def main():
             mod = importlib.import_module(modname)
             AgentClass = getattr(mod, clsname)
             agent = AgentClass()
+            # If a config file was supplied, apply BEST_CONFIG to the instantiated agent
+            if args.config and os.path.exists(args.config):
+                try:
+                    best = load_best_config(args.config)
+                    for k, v in best.items():
+                        try:
+                            setattr(agent, k, v)
+                        except Exception:
+                            setattr(agent, k, v)
+                    if args.verbose:
+                        print(f'Applied BEST_CONFIG from {args.config} to agent {modname}.{clsname}')
+                except Exception as e:
+                    print(f'Warning: failed to apply config {args.config} to agent: {e}')
         else:
             # treat as a weights path -> try to load a keras model and wrap it
             if os.path.exists(spec) or spec.startswith('weights'):
@@ -193,8 +206,13 @@ def main():
             pass
         print(f'Using seed={seed} for deterministic track generation')
 
+    # Extract track_width if provided (not a constructor arg, set after init)
+    track_width = racer_kwargs.pop('track_width', None)
+
     # Create racer and initial state
     racer = tracks.Racer(**racer_kwargs)
+    if track_width is not None:
+        racer.track_width = track_width
     state = racer.reset()
     cs, csin, csout = racer.cs, racer.csin, racer.csout
     obs_pos = getattr(racer, 'obs_pos', [])
@@ -301,7 +319,12 @@ def main():
         else:
             state_for_agent = safe_state
 
-        action = agent.act(state_for_agent)
+        # compute current speed from racer velocities and pass it into agent.act
+        try:
+            current_speed = float(np.sqrt(racer.carvx ** 2 + racer.carvy ** 2))
+        except Exception:
+            current_speed = None
+        action = agent.act(state_for_agent, current_speed=current_speed, max_acc=getattr(racer,'max_acc',None), tstep=getattr(racer,'tstep',None))
         action = np.array(action, dtype=float)
         a_acc = float(action[0]) if action.shape[0] > 0 else 0.0
         a_steer = float(action[1]) if action.shape[0] > 1 else 0.0
@@ -430,6 +453,25 @@ def main():
     except Exception as e:
         print('Failed to save animation:', e)
 
+    # Write per-frame telemetry CSV for debugging (time, speed, throttle, steer)
+    try:
+        csv_dir = os.path.join('logs')
+        os.makedirs(csv_dir, exist_ok=True)
+        csv_path = os.path.join(csv_dir, os.path.splitext(os.path.basename(args.out))[0] + '_frames.csv')
+        with open(csv_path, 'w') as cf:
+            cf.write('frame,throttle,steer,speed\n')
+            for i, (th, st) in enumerate(zip(accel_vals, steer_vals)):
+                sp = 0.0
+                try:
+                    sp = float(speed_vals[i])
+                except Exception:
+                    sp = 0.0
+                cf.write(f"{i},{th:.6f},{st:.6f},{sp:.6f}\n")
+        if args.verbose:
+            print('Wrote telemetry to', csv_path)
+    except Exception as e:
+        print('Failed to write telemetry CSV:', e)
+            
 
 if __name__ == '__main__':
     main()

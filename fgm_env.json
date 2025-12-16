@@ -1,0 +1,7 @@
+{
+  "obstacles": false,
+  "turn_limit": true,
+  "chicanes": false,
+  "low_speed_termination": false,
+  "track_width": 0.06
+}
