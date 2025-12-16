@@ -5,6 +5,7 @@ import matplotlib.animation as animation
 import matplotlib.transforms
 import time
 import pathlib
+import os
 
 #generate the compiled and converted files for lidar.pyx using cython in the directory .pyxbld
 #auto recompile them at every edit on lidar.pyx
@@ -60,9 +61,6 @@ def border_poly(cs,theta,track_width):
 #we try to avoid too sharp turns in tracks
 def smooth(var):
     n = var.shape[0]
-    # Guard against empty or too-small arrays
-    if n < 3:
-        return var
     if 2*var[0]-(var[n-1]+var[1]) > 1:
         var[0] = (1 + var[n-1]+var[1])/2
     elif 2*var[0]-(var[n-1]+var[1]) < -1:
@@ -131,15 +129,8 @@ def generate_chicanes(y,theta, var, curves):
     return y, theta, var
     
 def create_random_track(curves=20,track_width=.04, chicanes=False):
-    # Ensure minimum number of curves
-    curves = max(curves, 4)
     theta = 2 * np.pi * np.linspace(0, 1, curves)
     var = np.random.rand(curves)
-    # Guard against empty var array
-    if len(var) == 0:
-        var = np.random.rand(4)
-        curves = 4
-        theta = 2 * np.pi * np.linspace(0, 1, curves)
     var = smooth(var)
     var = var*.5+.7
     var[curves-1]=var[0]
@@ -155,7 +146,9 @@ def create_random_track(curves=20,track_width=.04, chicanes=False):
 def no_inversion(thetanew,thetaold):
     if thetaold < -np.pi*.9 and thetanew > np.pi*.9:
         thetanew = thetanew-np.pi*2
-    return(thetanew < thetaold)
+    # Return True when the new theta indicates forward progress (no inversion).
+    # Forward progress corresponds to thetanew < thetaold (decreasing theta = forward on this track).
+    return (thetanew < thetaold)
 
 def complete(thetanew,thetaold):
     return(thetaold > 0 and thetanew <= 0)
@@ -315,11 +308,13 @@ def max_lidar(observation,angle=np.pi/3,pins=19):
 
 
 def observe(racer_state):
-    if racer_state == None:
-        return np.array([0]) #not used; we could return None
+    # Compact observation: compress 19-beam lidar + speed into 5 values
+    # Returned vector: [dir, distl, dist, distr, v]
+    if racer_state is None:
+        return np.array([0])
     else:
-        lidar_signal, v = racer_state
-        dir, (distl,dist,distr) = max_lidar(lidar_signal)
+        lidar_signal, v = racer_state if len(racer_state) == 2 else (racer_state[0], racer_state[-1])
+        dir, (distl, dist, distr) = max_lidar(lidar_signal)
         return np.array([dir, distl, dist, distr, v])
 
 def lidar_grid(x,y,vx,vy,map,angle=np.pi/3,pins=19):
@@ -340,7 +335,6 @@ class Racer:
         self.chicanes = chicanes
         self.turn_limit = turn_limit
         self.low_speed_termination = low_speed_termination
-        self.completion_counter = 0  # Counter for printing first 10 completions
 
     
     def reset(self, shared_map=None):
@@ -378,48 +372,11 @@ class Racer:
         vnorm = v/((self.carvx ** 2 + self.carvy ** 2) ** .5)
         self.carvx *= vnorm
         self.carvy *= vnorm
-        
-        # Validate initial position is on track, retry if not
-        max_retries = 10
-        retry_count = 0
-        while retry_count < max_retries:
-            try:
-                map_idx_x = int(self.carx*500)+650
-                map_idx_y = int(self.cary*500)+650
-                # Check bounds
-                if map_idx_x < 0 or map_idx_x >= self.map.shape[0] or map_idx_y < 0 or map_idx_y >= self.map.shape[1]:
-                    raise AssertionError(f"Initial position out of bounds: ({map_idx_x}, {map_idx_y}) vs map shape {self.map.shape}")
-                # Check track validity
-                assert (self.map[map_idx_x, map_idx_y]), f"Initial position not on track at ({map_idx_x}, {map_idx_y})"
-                break  # Success, exit loop
-            except (AssertionError, IndexError) as e:
-                retry_count += 1
-                if retry_count >= max_retries:
-                    print(f"WARNING: Failed to generate valid track after {max_retries} retries. Last error: {e}")
-                    raise
-                # Retry: regenerate track
-                if shared_map is None:
-                    legal_map = False
-                    while not(legal_map):
-                        self.cs,self.csin,self.csout = create_random_track(self.curves,self.track_width , chicanes=self.chicanes)
-                        self.map,legal_map = create_route_map(self.csin, self.csout)
-                        if self.obstacles:
-                            _ , self.obs_pos = generate_obstacles(self.csout, self.obstacles_number, self.map, self.track_width)
-                        else:
-                            self.obs_pos = []
-                    # Regenerate starting position
-                    self.carx,self.cary = self.cs(0)
-                    self.carvx,self.carvy = -self.cs(0,1)
-                    vnorm = v/((self.carvx ** 2 + self.carvy ** 2) ** .5)
-                    self.carvx *= vnorm
-                    self.carvy *= vnorm
-                else:
-                    # Can't retry with shared_map, re-raise
-                    raise
-        
+        assert (self.map[int(self.carx*500)+650, int(self.cary*500)+650])
         lidar_signal = lidar_grid(self.carx,self.cary,self.carvx,self.carvy,self.map)
         #print("distance = {}, direction = {}".format(dist,dir))
-        return (observe([lidar_signal, v]))
+    # pass vx, vy for full observation
+        return (observe([lidar_signal, self.carvx, self.carvy]))
 
    
     def step(self,action):
@@ -441,19 +398,7 @@ class Racer:
         newcarx = self.carx + newcarvx*self.tstep
         newcary = self.cary + newcarvy*self.tstep
         newcartheta = np.arctan2(newcary,newcarx)
-        
-        # Bounds check for map access
-        map_idx_x = int(newcarx*500)+650
-        map_idx_y = int(newcary*500)+650
-        if map_idx_x < 0 or map_idx_x >= self.map.shape[0] or map_idx_y < 0 or map_idx_y >= self.map.shape[1]:
-            # Out of bounds - treat as crash
-            self.completation = 2
-            self.done = True
-            reward = -3
-            state = None
-            return(observe(state), reward, True)
-        
-        on_route = self.map[map_idx_x, map_idx_y]
+        on_route = self.map[int(newcarx*500)+650, int(newcary*500)+650]
         if on_route and no_inversion(newcartheta, self.cartheta):
             if newv<0.05 and self.low_speed_termination:
                 # debug: low-speed termination
@@ -470,13 +415,11 @@ class Racer:
             reward = newv*self.tstep
             lidar_signal = lidar_grid(self.carx, self.cary, self.carvx, self.carvy, self.map)
             if complete(newcartheta, self.cartheta):
-                if self.completion_counter < 10:
-                    self.completion_counter += 1
-                    print(f"completed #{self.completion_counter}")
+                print("completed")
                 self.completation = 1
                 self.done = True
             self.cartheta = newcartheta
-            n_state = observe([lidar_signal, newv])
+            n_state = observe([lidar_signal, newcarvx, newcarvy])
             return (n_state,reward,self.done)
         else:
             if not(on_route):
@@ -487,6 +430,20 @@ class Racer:
                 # debug: wrong direction
                 # print("wrong direction")
                 self.completation = 3
+            # Additional debug: when requested, print detailed state to help diagnose
+            if os.environ.get('TRACKS_DEBUG', '0') not in (None, '0', ''):
+                try:
+                    print("[TRACKS_DEBUG] Termination detected:")
+                    print(f"  action={action}")
+                    print(f"  carx={self.carx:.6f}, cary={self.cary:.6f}")
+                    print(f"  carvx={self.carvx:.6f}, carvy={self.carvy:.6f}")
+                    print(f"  cardir={cardir:.6f}, cartheta={self.cartheta:.6f}")
+                    print(f"  newcarx={newcarx:.6f}, newcary={newcary:.6f}")
+                    print(f"  newcarvx={newcarvx:.6f}, newcarvy={newcarvy:.6f}")
+                    print(f"  newdir={newdir:.6f}, newcartheta={newcartheta:.6f}")
+                    print(f"  on_route={on_route}, max_turnrad={self.max_turnrad:.6f}")
+                except Exception as e:
+                    print(f"[TRACKS_DEBUG] failed to print debug info: {e}")
             self.done = True
             reward = -3
             state = None
