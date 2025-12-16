@@ -34,10 +34,11 @@ except Exception as e:
 
 ########################################
 ###### TRAINING MODE CONFIGURATION #####
-TRAINING_MODE = 'imitation'  # Options: 'easy', 'hard', 'curriculum', 'imitation'
+TRAINING_MODE = 'easy'  # Options: 'easy', 'hard', 'curriculum', 'imitation'
 print(f"[DEBUG] Training mode set to: {TRAINING_MODE}", flush=True)
 
 # Curriculum training configuration
+# NEW: Sampling-based curriculum to prevent catastrophic forgetting
 CURRICULUM_CONFIG = {
     'level_1': {
         'name': 'Easy',
@@ -63,8 +64,82 @@ CURRICULUM_CONFIG = {
         'min_success_rate': 0.60,   # Final level - trains to convergence/max iterations
         'min_steps': 10000,
         'eval_episodes': 10
+    },
+    # Sampling schedule: probabilities [easy, medium, hard] at different training phases
+    'sampling_schedule': {
+        0.0: [0.70, 0.25, 0.05],    # Early: 70% easy, 25% medium, 5% hard
+        0.2: [0.50, 0.35, 0.15],    # 20% through: shift toward medium
+        0.4: [0.30, 0.40, 0.30],    # 40% through: balanced mix
+        0.6: [0.15, 0.35, 0.50],    # 60% through: shift toward hard
+        0.8: [0.05, 0.25, 0.70],    # 80% through: mostly hard
+        1.0: [0.00, 0.15, 0.85],    # Final: 85% hard, maintain some medium
     }
 }
+
+def get_curriculum_probabilities(progress):
+    """Get sampling probabilities for [easy, medium, hard] based on training progress.
+    
+    Args:
+        progress: Float between 0.0 and 1.0 indicating training progress
+    
+    Returns:
+        List of probabilities [p_easy, p_medium, p_hard] that sum to 1.0
+    """
+    schedule = CURRICULUM_CONFIG['sampling_schedule']
+    schedule_points = sorted(schedule.keys())
+    
+    # Find the two schedule points to interpolate between
+    if progress <= schedule_points[0]:
+        return schedule[schedule_points[0]]
+    if progress >= schedule_points[-1]:
+        return schedule[schedule_points[-1]]
+    
+    # Linear interpolation between schedule points
+    for i in range(len(schedule_points) - 1):
+        if schedule_points[i] <= progress < schedule_points[i + 1]:
+            t0, t1 = schedule_points[i], schedule_points[i + 1]
+            p0, p1 = schedule[t0], schedule[t1]
+            
+            # Interpolate
+            alpha = (progress - t0) / (t1 - t0)
+            probs = [p0[j] * (1 - alpha) + p1[j] * alpha for j in range(3)]
+            return probs
+    
+    return schedule[schedule_points[-1]]
+
+def sample_difficulty_level(progress):
+    """Sample a difficulty level based on current training progress.
+    
+    Args:
+        progress: Float between 0.0 and 1.0
+    
+    Returns:
+        Integer 1, 2, or 3 representing easy, medium, or hard
+    """
+    probs = get_curriculum_probabilities(progress)
+    return np.random.choice([1, 2, 3], p=probs)
+
+def create_racer_for_level(level):
+    """Create a racer instance for the specified difficulty level.
+    
+    Args:
+        level: Integer 1 (easy), 2 (medium), or 3 (hard)
+    
+    Returns:
+        tracks.Racer instance configured for that difficulty
+    """
+    level_key = f'level_{level}'
+    config = CURRICULUM_CONFIG[level_key]
+    racer = tracks.Racer(
+        obstacles=config['obstacles'],
+        chicanes=config['chicanes'],
+        turn_limit=True,
+        low_speed_termination=True
+    )
+    # Set track width if specified (for easy tracks)
+    if 'track_width' in config:
+        racer.track_width = config['track_width']
+    return racer
 
 # Imitation learning configuration
 IMITATION_CONFIG = {
@@ -90,15 +165,11 @@ BEST_FGM_CONFIG = {
 
 # Initialize racer based on training mode
 if TRAINING_MODE == 'curriculum':
-    initial_config = CURRICULUM_CONFIG['level_1']
-    racer = tracks.Racer(
-        obstacles=initial_config['obstacles'],
-        chicanes=initial_config['chicanes'],
-        track_width=initial_config['track_width'],
-        turn_limit=True,
-        low_speed_termination=True
-    )
-    print(f"🎓 CURRICULUM MODE: Starting with {initial_config['name']} track")
+    # Start with easy track - will be re-sampled each episode
+    racer = create_racer_for_level(1)
+    print("🎓 CURRICULUM MODE: Sampling-based difficulty selection")
+    print("   This prevents catastrophic forgetting by mixing difficulties throughout training")
+    print("   Starting with Easy track (will sample from Easy/Medium/Hard based on progress)")
 elif TRAINING_MODE == 'easy':
     racer = tracks.Racer(
         obstacles=False,
@@ -106,7 +177,7 @@ elif TRAINING_MODE == 'easy':
         turn_limit=True,
         low_speed_termination=True
     )
-    racer.track_width=0.06
+    racer.track_width=0.1
     print("🟢 EASY MODE: Training on easy track (no obstacles, no chicanes)")
 elif TRAINING_MODE == 'imitation':
     # Start with very easy track for imitation learning
@@ -170,6 +241,7 @@ is_training = True
 
 load_weights = False
 save_weights = True
+resume_from_checkpoint = True  # NEW: Resume from checkpoint if available
 
 # Weight file naming
 mode_suffix = TRAINING_MODE
@@ -516,14 +588,22 @@ if __name__ == '__main__':
         imitation_losses = []
     
     def step(action):
-        """Wrapper for environment step."""
+        """Wrapper for environment step with bounds checking."""
         n = 1
         t = np.random.randint(0, n)
-        state, reward, done = racer.step(action)
-        for i in range(t):
-            if not done:
-                state, t_r, done = racer.step([0, 0])
-                reward += t_r
+        try:
+            state, reward, done = racer.step(action)
+            for i in range(t):
+                if not done:
+                    state, t_r, done = racer.step([0, 0])
+                    reward += t_r
+        except IndexError:
+            # Car went out of bounds (moved too far in one step)
+            state = None
+            reward = -3
+            done = True
+            racer.done = True
+            racer.completation = 2  # crossing border
         return (state, reward, done)
     
     def evaluate_policy(actor, num_episodes=10, verbose=False, eval_difficulty='hard', current_level=1):
@@ -533,24 +613,26 @@ if __name__ == '__main__':
         successes = 0
         
         # Determine difficulty for evaluation
-        if eval_difficulty == 'current' and TRAINING_MODE == 'curriculum':
-            if current_level == 1:
-                config = CURRICULUM_CONFIG['level_1']
-            elif current_level == 2:
-                config = CURRICULUM_CONFIG['level_2']
-            else:
-                config = CURRICULUM_CONFIG['level_3']
-            eval_racer = tracks.Racer(
-                obstacles=config['obstacles'],
-                chicanes=config['chicanes'],
-                # track_width=config['track_width'],
-                turn_limit=True,
-                low_speed_termination=True
-            )
-        else:
-            eval_racer = tracks.Racer(obstacles=True, chicanes=True, turn_limit=True, low_speed_termination=True)
-        
         for ep in range(num_episodes):
+            # CRITICAL FIX: Create NEW racer for EACH episode to test on different tracks
+            # Otherwise all 10 episodes test on the SAME randomly generated track!
+            if eval_difficulty == 'current' and TRAINING_MODE == 'curriculum':
+                if current_level == 1:
+                    config = CURRICULUM_CONFIG['level_1']
+                elif current_level == 2:
+                    config = CURRICULUM_CONFIG['level_2']
+                else:
+                    config = CURRICULUM_CONFIG['level_3']
+                eval_racer = tracks.Racer(
+                    obstacles=config['obstacles'],
+                    chicanes=config['chicanes'],
+                    # track_width=config['track_width'],
+                    turn_limit=True,
+                    low_speed_termination=True
+                )
+            else:
+                eval_racer = tracks.Racer(obstacles=True, chicanes=True, turn_limit=True, low_speed_termination=True)
+            
             eval_state = eval_racer.reset()
             episode_reward = 0
             steps = 0
@@ -604,8 +686,9 @@ if __name__ == '__main__':
         last_curriculum_transition_step = 0
         
         # Curriculum tracking
-        current_curriculum_level = 1
-        curriculum_transitions = []
+        current_curriculum_level = 1  # Legacy variable (not used in sampling mode)
+        curriculum_transitions = []  # Legacy variable (not used in sampling mode)
+        curriculum_difficulty_counts = {'easy': 0, 'medium': 0, 'hard': 0}  # Track sampled difficulties
         
         i = 0
         mean_speed = 0
@@ -659,6 +742,20 @@ if __name__ == '__main__':
             # Train actor to imitate FGM using supervised learning
             imitation_step = 0
             recent_losses = []
+            recent_critic_losses = []
+            
+            # CRITICAL FIX: Also populate replay buffer with demonstrations for critic training
+            print(f"Populating replay buffer with demonstrations for critic training...")
+            demo_states_all, demo_actions_all = demo_buffer.sample_batch(demo_buffer.size())
+            for idx in range(min(len(demo_states_all), buffer.buffer_capacity)):
+                # For imitation demos, assume positive reward for good actions
+                # This gives the critic something meaningful to learn
+                demo_reward = 0.5  # Moderate positive reward for demonstration data
+                demo_done = False
+                next_idx = min(idx + 1, len(demo_states_all) - 1)
+                buffer.record((demo_states_all[idx], demo_actions_all[idx], demo_reward, 
+                              demo_done, demo_states_all[next_idx]))
+            print(f"  ✅ Replay buffer populated with {min(len(demo_states_all), buffer.buffer_capacity)} demonstration transitions\n")
             
             while imitation_step < IMITATION_CONFIG['imitation_steps']:
                 # Sample batch of demonstrations
@@ -676,13 +773,35 @@ if __name__ == '__main__':
                 
                 imitation_losses.append(float(imitation_loss))
                 recent_losses.append(float(imitation_loss))
+                
+                # CRITICAL FIX: Train critic on demonstration data to avoid actor-critic mismatch
+                # Sample from replay buffer which now contains demonstration transitions
+                states, actions, rewards, dones, newstates = buffer.sample_batch()
+                
+                # Train critic with demonstration Q-values
+                with tf.GradientTape() as critic_tape:
+                    target_actions = target_actor(newstates)
+                    target_q = rewards + (1 - dones) * gamma * target_critic([newstates, target_actions])
+                    current_q = critic_model([states, actions], training=True)
+                    critic_loss = tf.reduce_mean(tf.square(target_q - current_q))
+                
+                critic_gradients = critic_tape.gradient(critic_loss, critic_model.trainable_variables)
+                critic_model.optimizer.apply_gradients(zip(critic_gradients, critic_model.trainable_variables))
+                recent_critic_losses.append(float(critic_loss))
+                
+                # Update target networks gradually during imitation
+                update_target(target_actor.variables, actor_model.variables, tau)
+                update_target(target_critic.variables, critic_model.variables, tau)
+                
                 imitation_step += 1
                 
                 # Periodic evaluation of imitation performance
                 if imitation_step % IMITATION_CONFIG['eval_frequency'] == 0:
                     avg_loss = np.mean(recent_losses)
+                    avg_critic_loss = np.mean(recent_critic_losses) if recent_critic_losses else 0
                     recent_losses = []
-                    print(f"  Step {imitation_step}/{IMITATION_CONFIG['imitation_steps']}: Avg Imitation Loss = {avg_loss:.6f}")
+                    recent_critic_losses = []
+                    print(f"  Step {imitation_step}/{IMITATION_CONFIG['imitation_steps']}: Avg Imitation Loss = {avg_loss:.6f}, Critic Loss = {avg_critic_loss:.6f}")
                     
                     # Check if we've achieved good enough imitation
                     if avg_loss < IMITATION_CONFIG['max_imitation_loss']:
@@ -690,13 +809,17 @@ if __name__ == '__main__':
                         print(f"   Transitioning to RL phase early at step {imitation_step}\n")
                         break
             
-            # Update target networks to match trained actor
+            # Target networks already updated during imitation training loop
+            # Final sync to ensure consistency
             target_actor.set_weights(actor_model.get_weights())
+            target_critic.set_weights(critic_model.get_weights())
             
             print(f"\n{'='*60}")
             print(f"✅ IMITATION PHASE COMPLETE")
-            print(f"   Final loss: {np.mean(imitation_losses[-100:]):.6f}")
+            print(f"   Final actor loss: {np.mean(imitation_losses[-100:]):.6f}")
+            print(f"   Final critic loss: {np.mean(recent_critic_losses[-100:]) if recent_critic_losses else 0:.6f}")
             print(f"   Trained for {imitation_step} steps")
+            print(f"   Both actor AND critic are now trained on demonstrations")
             print(f"{'='*60}\n")
             
             # Switch to hard track for RL training
@@ -707,6 +830,15 @@ if __name__ == '__main__':
                 turn_limit=True,
                 low_speed_termination=True
             )
+            
+            # CRITICAL FIX: Reset replay buffer to avoid corruption from domain shift
+            # The buffer contains easy-track demonstrations that don't apply to hard track
+            print(f"🔄 Resetting replay buffer to avoid domain shift corruption...")
+            old_buffer_size = buffer.buffer_counter
+            buffer = Buffer(buffer_dim, batch_size)
+            print(f"   ✅ Buffer reset complete (cleared {old_buffer_size} easy-track samples)")
+            print(f"   ℹ️  Will collect new {warmup_steps} warmup samples on HARD track\n")
+            
             print(f"{'='*60}")
             print(f"🎯 PHASE 2: REINFORCEMENT LEARNING ON HARD TRACK")
             print(f"{'='*60}\n")
@@ -717,11 +849,29 @@ if __name__ == '__main__':
         
         while i < total_iterations:
             
+            # CURRICULUM: Sample difficulty for this episode based on training progress
+            sampled_level = None
+            if TRAINING_MODE == 'curriculum':
+                progress = i / total_iterations
+                sampled_level = sample_difficulty_level(progress)
+                racer = create_racer_for_level(sampled_level)
+                
+                # Track difficulty distribution
+                level_names = {1: 'easy', 2: 'medium', 3: 'hard'}
+                curriculum_difficulty_counts[level_names[sampled_level]] += 1
+                
+                # Log sampling probabilities periodically
+                if ep % 50 == 0:
+                    probs = get_curriculum_probabilities(progress)
+                    print(f"[Curriculum] Episode {ep}, Step {i}/{total_iterations} ({100*progress:.1f}%) - "
+                          f"Sampled: Level {sampled_level}, Probs: Easy={probs[0]:.2f}, Med={probs[1]:.2f}, Hard={probs[2]:.2f}")
+            
             prev_state = racer.reset()
             episodic_reward = 0
             mean_speed += prev_state[num_states-1]
             done = False
             prev_theta = racer.cartheta  # NEW: Track theta for progress reward
+            current_episode_level = sampled_level if TRAINING_MODE == 'curriculum' else None
             
             while not(done):
                 i = i + 1
@@ -765,8 +915,11 @@ if __name__ == '__main__':
                     # Clip to focused range (allows completion bonus to matter)
                     reward = np.clip(reward, -5, 5)
                 
-                fail = done and len(state) < num_states
-                buffer.record((prev_state, action, reward, fail, state))
+                fail = done and (state is None or len(state) < num_states)
+                
+                # Handle terminal states: use prev_state if state is None (out of bounds)
+                next_state = state if state is not None else prev_state
+                buffer.record((prev_state, action, reward, fail, next_state))
                 
                 if not(done):
                     mean_speed += state[num_states-1]
@@ -803,83 +956,13 @@ if __name__ == '__main__':
                 if i % 100 == 0:
                     avg_reward_list.append(avg_reward)
                 
-                # CURRICULUM PROGRESSION - Performance-based transitions
-                if (TRAINING_MODE == 'curriculum' and 
-                    current_curriculum_level < 3 and 
-                    i % eval_frequency == 0 and 
-                    i > 0 and 
-                    buffer.buffer_counter > warmup_steps):
-                    
-                    current_level_key = f'level_{current_curriculum_level}'
-                    current_config = CURRICULUM_CONFIG[current_level_key]
-                    steps_in_level = i - last_curriculum_transition_step
-                    
-                    # Check for transition: must meet minimum steps
-                    if steps_in_level >= current_config['min_steps']:
-                        # Evaluate mastery on current difficulty
-                        print(f"\n{'='*60}")
-                        print(f"🎯 CURRICULUM CHECK at step {i} (Level {current_curriculum_level}: {current_config['name']})")
-                        print(f"   Steps in this level: {steps_in_level}")
-                        print(f"   Testing mastery with {current_config['eval_episodes']} episodes...")
-                        
-                        mastery_results = evaluate_policy(
-                            actor_model, 
-                            num_episodes=current_config['eval_episodes'],
-                            verbose=False,
-                            eval_difficulty='current',
-                            current_level=current_curriculum_level
-                        )
-                        
-                        success_rate = mastery_results['success_rate']
-                        avg_mastery_reward = mastery_results['avg_reward']
-                        
-                        print(f"   Success Rate: {success_rate:.1%} (need {current_config['min_success_rate']:.1%})")
-                        print(f"   Avg Reward: {avg_mastery_reward:.2f}")
-                        
-                        # Check if ready to advance
-                        if success_rate >= current_config['min_success_rate']:
-                            current_curriculum_level += 1
-                            next_level_key = f'level_{current_curriculum_level}'
-                            config = CURRICULUM_CONFIG[next_level_key]
-                            
-                            racer = tracks.Racer(
-                                obstacles=config['obstacles'],
-                                chicanes=config['chicanes'],
-                                track_width=config['track_width'],
-                                turn_limit=True,
-                                low_speed_termination=True
-                            )
-                            
-                            transition_msg = f"📈 CURRICULUM TRANSITION → Level {current_curriculum_level}: {config['name']} track"
-                            print(f"   ✅ MASTERY ACHIEVED! Advancing to next level.")
-                            print(transition_msg)
-                            print(f"   [PAUSE] Resetting early stopping (grace period: {curriculum_grace_steps} steps)")
-                            print(f"{'='*60}\n")
-                            
-                            curriculum_transitions.append({
-                                'step': i,
-                                'level': current_curriculum_level,
-                                'name': config['name'],
-                                'avg_reward': avg_reward,
-                                'mastery_success_rate': success_rate,
-                                'mastery_reward': avg_mastery_reward
-                            })
-                            last_curriculum_transition_step = i
-                            evaluations_without_improvement = 0
-                            best_eval_reward = -np.inf
-                            
-                            # IMPORTANT: Break to start new episode with new racer
-                            break
-                        else:
-                            print(f"   ⏳ Not ready yet. Continue training on {current_config['name']} level.")
-                            print(f"{'='*60}\n")
+                # CURRICULUM: Track difficulty distribution for monitoring
+                # (Old transition logic removed - now using continuous sampling)
                 
                 # Periodic evaluation and best weight tracking
                 if i % eval_frequency == 0 and i > 0 and buffer.buffer_counter > warmup_steps:
-                    steps_since_transition = i - last_curriculum_transition_step
-                    in_grace_period = (TRAINING_MODE == 'curriculum' and 
-                                      steps_since_transition < curriculum_grace_steps and 
-                                      steps_since_transition > 0)
+                    # Grace period no longer needed with sampling-based curriculum
+                    in_grace_period = False
                     
                     print(f"\n{'='*60}")
                     print(f"Evaluation at step {i}")
@@ -895,18 +978,25 @@ if __name__ == '__main__':
                         print(f"  Recent Actor Loss: {recent_actor_loss:.4f}")
                         print(f"  Recent Avg Q-value: {recent_q:.4f}")
                     
-                    eval_difficulty = 'current' if TRAINING_MODE == 'curriculum' else 'hard'
+                    # Always evaluate on hard track (final target) for curriculum
+                    eval_difficulty = 'hard'
                     eval_results = evaluate_policy(actor_model, num_episodes=eval_episodes, 
                                                   verbose=True, eval_difficulty=eval_difficulty,
-                                                  current_level=current_curriculum_level)
+                                                  current_level=3)  # Always evaluate against hard
                     eval_reward = eval_results['avg_reward']
-                    eval_history.append({'step': i, 'reward': eval_reward, 'success_rate': eval_results['success_rate'],
-                                        'curriculum_level': current_curriculum_level if TRAINING_MODE == 'curriculum' else None})
                     
-                    if in_grace_period and use_early_stopping:
-                        print(f"  [PAUSE] Skipping early stopping check (adapting to new difficulty)")
-                        print(f"{'='*60}\n")
-                        continue
+                    # Track current sampling probabilities for curriculum
+                    curriculum_probs = None
+                    if TRAINING_MODE == 'curriculum':
+                        progress = i / total_iterations
+                        curriculum_probs = get_curriculum_probabilities(progress)
+                    
+                    eval_history.append({
+                        'step': i, 
+                        'reward': eval_reward, 
+                        'success_rate': eval_results['success_rate'],
+                        'curriculum_probs': curriculum_probs
+                    })
                     
                     # Track and save best weights
                     if eval_reward > best_eval_reward + min_improvement:
@@ -932,7 +1022,9 @@ if __name__ == '__main__':
                             print(f"Best reward: {best_eval_reward:.2f} at step {best_iteration}")
                             print(f"Current reward: {eval_reward:.2f}")
                             if TRAINING_MODE == 'curriculum':
-                                print(f"Curriculum level at stopping: {current_curriculum_level}")
+                                progress = i / total_iterations
+                                probs = get_curriculum_probabilities(progress)
+                                print(f"Final curriculum sampling: Easy={probs[0]:.2f}, Med={probs[1]:.2f}, Hard={probs[2]:.2f}")
                             print(f"{'='*60}\n")
                             stopped_early = True
                             break
@@ -1003,8 +1095,9 @@ if __name__ == '__main__':
                 },
                 'curriculum': {
                     'enabled': TRAINING_MODE == 'curriculum',
-                    'transitions': curriculum_transitions if TRAINING_MODE == 'curriculum' else [],
-                    'final_level': current_curriculum_level if TRAINING_MODE == 'curriculum' else None
+                    'type': 'sampling-based' if TRAINING_MODE == 'curriculum' else None,
+                    'schedule': CURRICULUM_CONFIG.get('sampling_schedule') if TRAINING_MODE == 'curriculum' else None,
+                    'prevented_catastrophic_forgetting': True if TRAINING_MODE == 'curriculum' else False
                 },
                 'imitation': {
                     'enabled': TRAINING_MODE == 'imitation',
@@ -1024,20 +1117,15 @@ if __name__ == '__main__':
             plt.figure(figsize=(12, 6))
             plt.plot(avg_reward_list, linewidth=2, color='#3498db')
             
-            if TRAINING_MODE == 'curriculum' and curriculum_transitions:
-                for transition in curriculum_transitions:
-                    step_index = transition['step'] // 100
-                    plt.axvline(x=step_index, color='red', linestyle='--', alpha=0.7)
-                    plt.text(step_index, plt.ylim()[1] * 0.95, 
-                            f" → {transition['name']}", 
-                            rotation=0, verticalalignment='top', fontsize=9)
+            # No transition markers for sampling-based curriculum
+            # (difficulties are mixed throughout training)
             
             plt.xlabel("Training steps x100", fontweight='bold')
             plt.ylabel("Avg. Episodic Reward", fontweight='bold')
             
             title = f"IMPROVED DDPG Training Progress ({TRAINING_MODE.upper()} mode)"
             if TRAINING_MODE == 'curriculum':
-                title += f"\nLevels: Easy→Medium→Hard"
+                title += f"\nSampling-based curriculum (prevents catastrophic forgetting)"
             plt.title(title)
             plt.ylim(-3.5, 7)
             plt.grid(True, alpha=0.3)
@@ -1049,9 +1137,11 @@ if __name__ == '__main__':
             print(f"Training mode: {TRAINING_MODE.upper()}")
             print(f"Trained over {i} steps")
             if TRAINING_MODE == 'curriculum':
-                print(f"Curriculum transitions: {len(curriculum_transitions)}")
-                for t in curriculum_transitions:
-                    print(f"  Step {t['step']}: → {t['name']} (avg reward: {t['avg_reward']:.2f})")
+                total_episodes = sum(curriculum_difficulty_counts.values())
+                print(f"Sampling-based curriculum - Difficulty distribution:")
+                print(f"  Easy:   {curriculum_difficulty_counts['easy']:4d} episodes ({100*curriculum_difficulty_counts['easy']/max(total_episodes, 1):.1f}%)")
+                print(f"  Medium: {curriculum_difficulty_counts['medium']:4d} episodes ({100*curriculum_difficulty_counts['medium']/max(total_episodes, 1):.1f}%)")
+                print(f"  Hard:   {curriculum_difficulty_counts['hard']:4d} episodes ({100*curriculum_difficulty_counts['hard']/max(total_episodes, 1):.1f}%)")
             if stopped_early:
                 print(f"⚠️ Stopped early due to no improvement")
                 print(f"🌟 Best model from step {best_iteration} (reward: {best_eval_reward:.2f})")

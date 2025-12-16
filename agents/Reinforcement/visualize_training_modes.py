@@ -232,6 +232,98 @@ def plot_final_performance_comparison(metrics_dict, save_path=None):
     
     return fig
 
+def plot_steps_to_best_performance(metrics_dict, save_path=None):
+    """Plot steps required to reach best performance (100% success rate)."""
+    fig, ax = plt.subplots(figsize=(12, 6))
+    
+    modes = []
+    steps_to_100 = []
+    steps_to_best = []
+    best_achieved = []
+    
+    for mode, metrics in metrics_dict.items():
+        if metrics is None or len(metrics['eval_success_rates']) == 0:
+            continue
+        
+        modes.append(mode.capitalize())
+        
+        # Find when model first reaches 100% success rate
+        step_100 = None
+        for i, sr in enumerate(metrics['eval_success_rates']):
+            if sr >= 1.0:  # 100% success
+                step_100 = metrics['eval_steps'][i]
+                break
+        
+        # Find the step where best performance was achieved
+        if metrics['best_eval_reward'] and len(metrics['eval_rewards']) > 0:
+            best_idx = metrics['eval_rewards'].index(metrics['best_eval_reward'])
+            step_best = metrics['eval_steps'][best_idx]
+            best_sr = metrics['eval_success_rates'][best_idx] * 100
+        else:
+            step_best = None
+            best_sr = 0
+        
+        steps_to_100.append(step_100)
+        steps_to_best.append(step_best)
+        best_achieved.append(best_sr)
+    
+    # Create bar chart
+    x = np.arange(len(modes))
+    width = 0.35
+    
+    # Bars for steps to 100%
+    bars_100 = []
+    bars_best = []
+    
+    for i, (s100, sbest) in enumerate(zip(steps_to_100, steps_to_best)):
+        color = colors[modes[i].lower()]
+        
+        # Bar for 100% success (if achieved)
+        if s100 is not None:
+            bars_100.append(ax.bar(x[i] - width/2, s100, width, 
+                                  label='100% Success' if i == 0 else '', 
+                                  color=color, alpha=0.9, edgecolor='black', linewidth=1.5))
+            ax.text(x[i] - width/2, s100 + max([s for s in steps_to_100 if s is not None])*0.02, 
+                   f'{s100:,}', ha='center', fontweight='bold', fontsize=9)
+        
+        # Bar for best performance (if different from 100%)
+        if sbest is not None and (s100 is None or sbest != s100):
+            bars_best.append(ax.bar(x[i] + width/2, sbest, width,
+                                   label='Best Reward' if i == 0 and s100 is not None else '', 
+                                   color=color, alpha=0.6, edgecolor='black', linewidth=1.5))
+            ax.text(x[i] + width/2, sbest + max([s for s in steps_to_best if s is not None])*0.02,
+                   f'{sbest:,}\n({best_achieved[i]:.0f}%)', ha='center', 
+                   fontweight='bold', fontsize=8)
+    
+    ax.set_xlabel('Training Mode', fontsize=12, fontweight='bold')
+    ax.set_ylabel('Training Steps', fontsize=12, fontweight='bold')
+    ax.set_title('Steps to Reach Best Performance', fontsize=14, fontweight='bold')
+    ax.set_xticks(x)
+    ax.set_xticklabels(modes)
+    ax.grid(True, alpha=0.3, axis='y')
+    
+    # Add legend
+    handles = []
+    labels = []
+    if any(s100 is not None for s100 in steps_to_100):
+        from matplotlib.patches import Patch
+        handles.append(Patch(facecolor='gray', alpha=0.9, edgecolor='black', linewidth=1.5))
+        labels.append('Steps to 100% Success')
+    if any(s100 is None or sbest != s100 for s100, sbest in zip(steps_to_100, steps_to_best) if sbest is not None):
+        from matplotlib.patches import Patch
+        handles.append(Patch(facecolor='gray', alpha=0.6, edgecolor='black', linewidth=1.5))
+        labels.append('Steps to Best Reward (if <100%)')
+    
+    if handles:
+        ax.legend(handles, labels, fontsize=10)
+    
+    plt.tight_layout()
+    
+    if save_path:
+        plt.savefig(save_path, dpi=300, bbox_inches='tight')
+    
+    return fig
+
 def plot_summary_table(metrics_dict, save_path=None):
     """Create a summary comparison table."""
     fig, ax = plt.subplots(figsize=(12, 6))
@@ -330,7 +422,11 @@ def main():
     plot_final_performance_comparison(metrics_dict, output_dir / 'final_performance.png')
     print("✓")
     
-    print("  5. Summary table...", end=' ')
+    print("  5. Steps to best performance...", end=' ')
+    plot_steps_to_best_performance(metrics_dict, output_dir / 'steps_to_best_performance.png')
+    print("✓")
+    
+    print("  6. Summary table...", end=' ')
     plot_summary_table(metrics_dict, output_dir / 'summary_table.png')
     print("✓")
     

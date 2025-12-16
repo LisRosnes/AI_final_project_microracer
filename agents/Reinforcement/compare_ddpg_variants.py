@@ -23,13 +23,47 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', '..'))
 import tracks
 
 
-def evaluate_model(model, num_episodes=50, verbose=False):
+def generate_test_tracks(num_tracks=50, seed=42):
+    """
+    Generate a consistent set of test tracks for fair model comparison.
+    
+    Args:
+        num_tracks: Number of different tracks to generate
+        seed: Random seed for reproducibility
+        
+    Returns:
+        list: List of shared_map tuples (cs, map, obs_pos, init_v)
+    """
+    np.random.seed(seed)
+    test_tracks = []
+    
+    print(f"Generating {num_tracks} test tracks with seed {seed}...")
+    for i in range(num_tracks):
+        racer = tracks.Racer(obstacles=True, turn_limit=True, chicanes=True)
+        racer.reset()
+        # Store the track configuration as a shared_map
+        shared_map = (racer.cs, racer.map, racer.obs_pos, racer.sinit_v)
+        test_tracks.append(shared_map)
+        if (i + 1) % 10 == 0:
+            print(f"  Generated {i + 1}/{num_tracks} tracks")
+    
+    print(f"✓ All {num_tracks} test tracks generated\n")
+    return test_tracks
+
+
+def evaluate_model(model, test_tracks=None, num_episodes=50, verbose=False):
     """
     Evaluate a model over multiple episodes.
     
     Note: racer.completation is a status code:
         0 = in progress, 1 = completed, 2 = border crash, 3 = wrong direction, 4 = too slow
     
+    Args:
+        model: The model to evaluate
+        test_tracks: List of pre-generated track configurations (shared_maps)
+        num_episodes: Number of evaluation episodes
+        verbose: Print detailed progress
+        
     Returns:
         dict: Contains success_rate, avg_completion, avg_reward, avg_steps, lap_times
     """
@@ -46,7 +80,12 @@ def evaluate_model(model, num_episodes=50, verbose=False):
     
     for ep in range(num_episodes):
         racer = tracks.Racer(obstacles=True, turn_limit=True, chicanes=True)
-        state = racer.reset()
+        
+        # Use pre-generated track if available, otherwise generate new one
+        if test_tracks is not None and ep < len(test_tracks):
+            state = racer.reset(shared_map=test_tracks[ep])
+        else:
+            state = racer.reset()
         
         episode_reward = 0
         episode_steps = 0
@@ -138,15 +177,26 @@ def load_training_metadata():
     return metadata
 
 
-def compare_models(num_episodes=50):
+def compare_models(num_episodes=50, seed=42):
     """
-    Load and compare DDPG models trained with Easy, Hard, Curriculum, and Imitation modes.
+    Compare all three DDPG training modes.
+    
+    Args:
+        num_episodes: Number of episodes to evaluate each model
+        seed: Random seed for generating consistent test tracks
     """
     print("="*80)
-    print("COMPARING DDPG TRAINING MODES: Easy vs Hard vs Curriculum vs Imitation")
+    print("DDPG Training Mode Comparison")
     print("="*80)
-    print(f"Evaluation episodes: {num_episodes}")
-    print(f"Evaluation track: HARD (obstacles + chicanes)\n")
+    print(f"\nEvaluation Settings:")
+    print(f"  • Episodes per model: {num_episodes}")
+    print(f"  • Track difficulty: Hard (obstacles + chicanes + turn limit)")
+    print(f"  • Models being compared: Easy → Hard, Hard Only, Curriculum, Imitation")
+    print(f"  • Random seed: {seed} (ensures all models tested on same tracks)")
+    print("="*80 + "\n")
+    
+    # Generate consistent test tracks for fair comparison
+    test_tracks = generate_test_tracks(num_tracks=num_episodes, seed=seed)
     
     # Load training metadata (wall time, learning curves)
     training_metadata = load_training_metadata()
@@ -180,12 +230,13 @@ def compare_models(num_episodes=50):
     
     results = {}
     
-    # Evaluate each loaded model
+    # Evaluate each loaded model on the same set of test tracks
     for mode, model in loaded_models.items():
         print("\n" + "-"*80)
         print(f"Evaluating {mode.upper()} mode (trained on {mode} track)...")
         print("-"*80)
-        results[mode] = evaluate_model(model, num_episodes, verbose=True)
+        results[mode] = evaluate_model(model, test_tracks=test_tracks, 
+                                      num_episodes=num_episodes, verbose=True)
     
     # Print comparison
     print("\n" + "="*80)
@@ -474,7 +525,9 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Compare DDPG Training Modes')
     parser.add_argument('--episodes', '-n', type=int, default=50,
                         help='Number of evaluation episodes (default: 50)')
+    parser.add_argument('--seed', '-s', type=int, default=42,
+                        help='Random seed for track generation (default: 42)')
     args = parser.parse_args()
     
-    compare_models(num_episodes=args.episodes)
+    compare_models(num_episodes=args.episodes, seed=args.seed)
 
